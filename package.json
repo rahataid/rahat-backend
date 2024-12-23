@@ -50,6 +50,9 @@
     "generate:mnemonic": "ts-node ./tools/scripts/misc/mn.ts",
     "contracts:coverage": "cd ./apps/contracts && hardhat coverage",
     "contracts:test": "cd ./apps/contracts && hardhat test",
+    "test:coverage": "jest --config ./apps/rahat/jest.config.ts --projects ./apps/rahat ./apps/beneficiary --projects ./libs/sdk/jest.config.ts --coverage",
+    "test:grievance": "jest --config ./apps/rahat/jest.config.ts ./apps/rahat/src/grievance/grievance.service.spec.ts",
+    "test:e2e": "jest --config ./apps/beneficiary-e2e/jest.config.ts",
     "test": "jest",
     "bruno:test": "cd bruno && bru run --env local",
     "bruno:coverage": "cd bruno && bru run --env local --output results.json"

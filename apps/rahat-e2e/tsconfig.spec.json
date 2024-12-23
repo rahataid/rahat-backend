@@ -3,7 +3,12 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
-    "types": ["jest", "node"]
+    "target": "es6",
+    "types": ["jest", "node"],
+    "esModuleInterop": true
   },
+  // "include": ["jest.config.ts", "src/**/*.ts", "../rahat/src/grievance/testFixtureData2.ts", "../rahat/src/grievance/grievances.service.spec.ts", "../rahat/src/vendors/vendors-controllers.spec.ts", "../rahat/src/vendors/vendors.services.spec.ts"]
+
   "include": ["jest.config.ts", "src/**/*.ts"]
+
 }

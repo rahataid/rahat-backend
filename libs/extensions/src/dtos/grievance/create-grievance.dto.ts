@@ -57,3 +57,14 @@ export class CreateGrievanceDTO implements Grievance {
   reportedBy: string;
 
 }
+
+export class createGrivenceResponseDTO {
+  @ApiProperty({
+    example: randomUUID().toString(),
+    description: 'Id of the project',
+  })
+  @IsUUID()
+  @IsString()
+  projectId: string;
+
+}

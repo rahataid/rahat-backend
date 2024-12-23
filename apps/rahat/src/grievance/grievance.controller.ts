@@ -18,8 +18,8 @@ export class GrievanceController {
 
 
   @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
-
   @Post('')
+  // @ApiOkResponse({ type: createGrivenceResponseDTO })
   create(
     @Body() createGrievanceDto: CreateGrievanceDTO,
     @Request() req: any
