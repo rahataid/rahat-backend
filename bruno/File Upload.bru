@@ -1,0 +1,19 @@
+meta {
+  name: File Upload
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://api.nx.dev.rahat.io/v1/upload/file
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Authorization: Bearer asdads
+}
+
+body:multipart-form {
+  file: @file(/Users/manjikshrestha/Downloads/Tikapur Municipality/Tikapur-IVR 1.mp3)
+}

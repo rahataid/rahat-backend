@@ -98,3 +98,6 @@ Explore the functionalities provided by the Rahat Platform locally. If you encou
 # Production deployment
 
 Refer to [deployment](docs/deployments.md) file for deployment steps.
+
+# License
+This project is licensed under the Mozilla Public License 2.0. See the [LICENSE](LICENSE) file for details.
