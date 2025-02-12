@@ -1,0 +1,34 @@
+meta {
+  name: Add Transport
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://connect.rumsan.net/api/v1/transports
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "app": "cm1ysl7p10026sahfam3ho2qe",
+      "name": "Kenya SMS",
+      "type": "API",
+      "config": {
+          "url": "https://sms.textsms.co.ke/api/services/sendbulk/",
+          "body": {
+              "smslist": [
+                  {
+                      "partnerID": "11399",
+                      "apikey": {{textsms_api_key}},
+                      "mobile": "{%address%}",
+                      "message": "{%message.content%}",
+                      "shortcode": "TextSMS",
+                      "pass_type": "plain"
+                  }
+              ]
+          }
+      }
+  }
+}

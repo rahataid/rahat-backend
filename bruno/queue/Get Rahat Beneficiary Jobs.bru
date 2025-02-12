@@ -1,0 +1,29 @@
+
+meta {
+  name: get-rahat-beneficiary-jobs
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{url}}/queue/rahat-beneficiary-jobs
+  query: {
+    status: completed
+    name: rahat.jobs.beneficiary.bulk_assign_vouchers
+    startDate: 2024-01-01
+    endDate: 2024-12-31
+  }
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body: isJson
+}
+
+tests {
+  test('should return list of rahat beneficiary jobs', async () => {
+    const data = res.getBody();
+    expect(data).to.have.property('data');
+  });
+}

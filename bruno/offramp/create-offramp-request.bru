@@ -1,0 +1,21 @@
+meta {
+  name: create-offramp-request
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{url}}/offramps
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "providerUuid":"0fe88e42-fd5b-4b65-bcbb-9039340f4759",
+    "chain": "CELO",
+    "token": "CUSD",
+    "amount": 1.5,
+    "senderAddress": "0xcDEe632FB1Ba1B3156b36cc0bDabBfd821305e06"
+  }
+}

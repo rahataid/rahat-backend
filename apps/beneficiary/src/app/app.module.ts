@@ -2,11 +2,14 @@ import { BullModule } from '@nestjs/bull';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { EventEmitterModule } from '@nestjs/event-emitter';
-import { BQUEUE } from '@rahataid/sdk';
+import { BQUEUE, queueOptions, RABBIT_MQ } from '@rahataid/sdk';
 import { SettingsModule } from '@rumsan/extensions/settings';
+import { PrismaService } from '@rumsan/prisma';
+import { RabbitMQModule, WorkerModule } from '@rumsan/rabbitmq';
 import { BeneficiaryModule } from '../beneficiary/beneficiary.module';
+import { ExportTargerBeneficiary } from '../consumers/target.export.rabbitmq.worker';
 import { ListenersModule } from '../listeners/listener.module';
-import { BeneficiaryProcessor } from '../processors/beneficiary.processor';
+import { ProcessorsModule } from '../processors/processor.module';
 import { VendorsModule } from '../vendors/vendors.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -15,7 +18,7 @@ import { AppService } from './app.service';
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     EventEmitterModule.forRoot({
-      maxListeners: 10,
+      maxListeners: 50,
       ignoreErrors: false,
     }),
     BullModule.forRootAsync({
@@ -32,12 +35,30 @@ import { AppService } from './app.service';
     BullModule.registerQueue({
       name: BQUEUE.RAHAT_BENEFICIARY,
     }),
+    RabbitMQModule.register({
+      workerModuleProvider: WorkerModule.register({
+        globalDataProvider: {
+          prismaService: PrismaService,
+        },
+        workers: [
+          {
+            provide: 'EXPORT_TARGET_BENEFICIARY',
+            useClass: ExportTargerBeneficiary,
+          },
+        ],
+      }),
+      ampqProviderName: RABBIT_MQ.AMQP_CONNECTION,
+      urls: [process.env.RABBIT_MQ_URL],
+      queues: queueOptions,
+    }),
+
     BeneficiaryModule,
     VendorsModule,
     ListenersModule,
-    SettingsModule
+    SettingsModule,
+    ProcessorsModule,
   ],
   controllers: [AppController],
-  providers: [AppService, BeneficiaryProcessor],
+  providers: [AppService],
 })
 export class AppModule { }

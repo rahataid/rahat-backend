@@ -19,7 +19,7 @@ services:
     volumes:
       - rahat_pg_data:/var/lib/postgresql/data
     ports:
-      - "${PG_PORT}:5432"
+      - '${PG_PORT}:5432'
     networks:
       - rahat_platform
 
@@ -33,7 +33,7 @@ services:
       - PGADMIN_DEFAULT_EMAIL=${PGADMIN_EMAIL}
       - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASS}
     ports:
-      - "${PGADMIN_PORT}:80"
+      - '${PGADMIN_PORT}:80'
     depends_on:
       - postgres-rahat
     networks:
@@ -46,7 +46,7 @@ services:
     command: --accounts 20 -m "${MNEMONIC}" --wallet.accountKeysPath /db/accounts --database.dbPath "/db" --logging.file /db/ganache.log --miner.blockTime 2 --chain.networkId "${GANACHE_PORT}" --chain.chainId "${GANACHE_PORT}" --chain.asyncRequestProcessing true
     restart: always
     ports:
-      - "${GANACHE_PORT}:8545"
+      - '${GANACHE_PORT}:8545'
     volumes:
       - rahat_ganache_data:/db
     networks:
@@ -57,7 +57,7 @@ services:
     image: bitnami/redis:latest
     restart: always
     ports:
-      - "${REDIS_PORT}:6379"
+      - '${REDIS_PORT}:6379'
     environment:
       - REDIS_PASSWORD=${REDIS_PASS}
     volumes:
@@ -65,6 +65,21 @@ services:
     networks:
       - rahat_platform
       - rahat_projects
+
+  bull-board:
+    image: deadly0/bull-board:latest
+    restart: always
+    container_name: bull-board
+    ports:
+      - '5689:3000'
+    environment:
+      - REDIS_HOST=redis-rahat # Changed from localhost to the service name
+      - REDIS_PORT=6379 # Ensure REDIS_PORT is set to 6379 in your environment file
+      - REDIS_PASSWORD=${REDIS_PASS}
+    depends_on:
+      - redis-rahat
+    networks:
+      - rahat_platform
 
 networks:
   rahat_platform:

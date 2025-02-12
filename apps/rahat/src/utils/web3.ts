@@ -15,3 +15,14 @@ export async function createContractSigner(abi: any, address: string) {
   const contracts = new Contract(address, abi, wallet);
   return contracts
 }
+
+export async function getBlocktimeStamp(txHash: string) {
+  const provider = new JsonRpcProvider(process.env.NETWORK_PROVIDER);
+  const receipt = await provider.waitForTransaction(txHash);
+  if (!receipt) {
+    console.error('Transaction is not mined or does not exist.');
+    return null;
+  }
+  const block = await provider.getBlock(receipt.blockNumber);
+  return block.timestamp;
+}

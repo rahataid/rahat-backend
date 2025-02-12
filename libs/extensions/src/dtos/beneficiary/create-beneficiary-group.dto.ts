@@ -1,6 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { IsArray, IsString, IsUUID, ValidateNested } from 'class-validator';
+import {
+  IsArray,
+  IsOptional,
+  IsString,
+  IsUUID,
+  ValidateNested,
+} from 'class-validator';
 import { randomUUID } from 'crypto';
 
 class Beneficiary {
@@ -19,6 +25,14 @@ export class CreateBeneficiaryGroupsDto {
   })
   @IsString()
   name: string;
+
+  @ApiProperty({
+    example: '11111111111111',
+    description: 'Project id',
+  })
+  @IsOptional()
+  @IsString()
+  projectId?: string;
 
   @ApiProperty({
     example: [{ uuid: randomUUID().toString() }],

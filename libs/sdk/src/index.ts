@@ -4,6 +4,7 @@ export * from './beneficiary';
 export * from './constants';
 export * as Enums from './enums';
 export * from './grievance';
+export * from './offramp';
 export * from './project';
 export * from './settings/settings.types';
 export * from './types';

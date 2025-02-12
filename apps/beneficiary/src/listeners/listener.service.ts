@@ -14,14 +14,13 @@ export class ListenersService {
     @InjectQueue(BQUEUE.RAHAT_BENEFICIARY) private readonly queue: Queue,
     private readonly benStats: BeneficiaryStatService,
     private emailService: EmailService,
-
-
   ) { }
 
   @OnEvent(BeneficiaryEvents.BENEFICIARY_CREATED)
   @OnEvent(BeneficiaryEvents.BENEFICIARY_UPDATED)
   @OnEvent(BeneficiaryEvents.BENEFICIARY_REMOVED)
   @OnEvent(BeneficiaryEvents.BENEFICIARY_ASSIGNED_TO_PROJECT)
+  @OnEvent(BeneficiaryEvents.VENDORS_CREATED)
   async onBeneficiaryChanged(eventObject) {
     await this.benStats.saveAllStats(eventObject.projectUuid);
   }

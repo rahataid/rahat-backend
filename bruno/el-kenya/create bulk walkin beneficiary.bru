@@ -1,0 +1,68 @@
+meta {
+  name: create bulk walkin beneficiary
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/projects/{{project_id}}/actions
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{access_token}}
+}
+
+body:json {
+  {
+    "action": "rpProject.walkin.createBulk",
+    "payload": {
+      "contractData": {
+        "vendorId": 1,
+        "tokenAddress": "0x7eaea028dDC75E7D3598D1f1f96Ccc6E62145992"
+      },
+      "data": [
+        {
+          "extras": {
+            "name": "Bhakta Ram",
+            "phone": "+9776289822839",
+            "age": "22",
+            "location": "Ktm",
+            "gender": "MALE"
+          },
+          "eyeCheckupStatus": "NOT_CHECKED",
+          "glassStatus": "REQUIRED",
+          "voucherType": "SINGLE_VISION",
+          "voucherStatus": "REDEEMED",
+          "eyePower": "+ve1",
+          "walletAddress": "0xAC6bFaf10e89202c293dD795eCe180BBf1430d7B",
+          "vendorWalletAddress": "0xdef1234567ABC890123456789abcdef123456789",
+          "onboardedAt": "2024-09-25T12:20:13.058Z",
+          "type": "WALK_IN",
+          "isSynced": false
+        },
+        {
+          "extras": {
+            "name": "Rajesh Thapa",
+            "phone": "+9779812345678",
+            "age": "30",
+            "location": "Pokhara",
+            "gender": "MALE"
+          },
+          "eyeCheckupStatus": "CHECKED",
+          "glassStatus": "NOT_REQUIRED",
+          "voucherType": "READING_GLASSES",
+          "voucherStatus": "NOT_REDEEMED",
+          "eyePower": "-1.25",
+          "walletAddress": "0x3ad456d3753BBA798dBCF1073D111A2f12b0feD2",
+          "vendorWalletAddress": "0xabc1234567DEf890123456789abcdef123456789",
+          "onboardedAt": "2024-09-26T10:15:13.058Z",
+          "type": "WALK_IN",
+          "isSynced": false
+        }
+      ]
+    }
+  }
+  
+}

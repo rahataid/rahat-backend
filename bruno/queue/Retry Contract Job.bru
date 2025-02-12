@@ -1,0 +1,23 @@
+
+meta {
+  name: retry-contract-job
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}/queue/contract-jobs/retry/1
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.message: contains 'retried successfully'
+}
+
+tests {
+  test('should confirm contract job retry', async () => {
+    const message = res.getBody().message;
+    expect(message).to.include('retried successfully');
+  });
+}

@@ -1,0 +1,3189 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@rahat-os/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">@rahat-os/source documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content controller">
+                   <div class="content-data">
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Controllers</li>
+  <li class="breadcrumb-item" >BeneficiaryController</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/rahat/src/beneficiary/beneficiary.controller.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Prefix</h3>
+            </p>
+            <p class="comment">
+                <code>beneficiaries</code>
+            </p>
+
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#create" >create</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#createBulk" >createBulk</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#createGroup" >createGroup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#generateVerificationLink" >generateVerificationLink</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getAllGroups" >getAllGroups</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getBeneficiary" >getBeneficiary</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getBeneficiaryByPhone" >getBeneficiaryByPhone</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getBeneficiaryByWallet" >getBeneficiaryByWallet</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getOneGroup" >getOneGroup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getStats" >getStats</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getStatsSource" >getStatsSource</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getTableStats" >getTableStats</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#importBeneficiariesFromTool" >importBeneficiariesFromTool</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#importTempBeneficiaries" >importTempBeneficiaries</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#list" >list</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#listPiiData" >listPiiData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#listTempBenef" >listTempBenef</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#listTempGroups" >listTempGroups</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#referBeneficiary" >referBeneficiary</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#remove" >remove</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#removeGroup" >removeGroup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#update" >update</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateGroup" >updateGroup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#upload" >upload</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#uploadWithQueue" >uploadWithQueue</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#validateWallet" >validateWallet</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#verifySignature" >verifySignature</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="create"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>create</b></span>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>create(dto: <a href="../classes/CreateBeneficiaryDto.html" target="_self">CreateBeneficiaryDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post()<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="150"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:150</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateBeneficiaryDto.html" target="_self" >CreateBeneficiaryDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createBulk"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>createBulk</b></span>
+                        <a href="#createBulk"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createBulk(dto: <a href="../undefineds/Beneficiary.html" target="_self">CreateBeneficiaryDto[]</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Post(&#x27;bulk&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="173"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:173</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#Beneficiary" target="_self" >CreateBeneficiaryDto[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createGroup"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>createGroup</b></span>
+                        <a href="#createGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createGroup(dto: <a href="../classes/CreateBeneficiaryGroupsDto.html" target="_self">CreateBeneficiaryGroupsDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Post(&#x27;groups&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="425"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:425</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateBeneficiaryGroupsDto.html" target="_self" >CreateBeneficiaryGroupsDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>delete(uuid: UUID)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Delete(&#x27;:uuid&#x27;)<br />@ApiParam({name: &#x27;uuid&#x27;, required: true})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="368"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:368</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateVerificationLink"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>generateVerificationLink</b></span>
+                        <a href="#generateVerificationLink"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateVerificationLink(uuid: UUID)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Get(&#x27;verification-link/:uuid&#x27;)<br />@ApiParam({name: &#x27;uuid&#x27;, required: true})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="401"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:401</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllGroups"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getAllGroups</b></span>
+                        <a href="#getAllGroups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAllGroups(dto: <a href="../classes/ListBeneficiaryGroupDto.html" target="_self">ListBeneficiaryGroupDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Get(&#x27;groups/all&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="433"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:433</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../classes/ListBeneficiaryGroupDto.html" target="_self" >ListBeneficiaryGroupDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBeneficiary"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getBeneficiary</b></span>
+                        <a href="#getBeneficiary"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getBeneficiary(uuid: UUID)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Get(&#x27;:uuid&#x27;)<br />@ApiParam({name: &#x27;uuid&#x27;, required: true})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="377"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:377</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBeneficiaryByPhone"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getBeneficiaryByPhone</b></span>
+                        <a href="#getBeneficiaryByPhone"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getBeneficiaryByPhone(phone: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Get(&#x27;phone/:phone&#x27;)<br />@ApiParam({name: &#x27;phone&#x27;, required: true})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="392"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:392</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>phone</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBeneficiaryByWallet"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getBeneficiaryByWallet</b></span>
+                        <a href="#getBeneficiaryByWallet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getBeneficiaryByWallet(wallet: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;wallet/:wallet&#x27;)<br />@ApiParam({name: &#x27;wallet&#x27;, required: true})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="383"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:383</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>wallet</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOneGroup"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getOneGroup</b></span>
+                        <a href="#getOneGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getOneGroup(uuid: UUID)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Get(&#x27;groups/:uuid&#x27;)<br />@ApiParam({name: &#x27;uuid&#x27;, required: true})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="442"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:442</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStats"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getStats</b></span>
+                        <a href="#getStats"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getStats()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;stats&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="127"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:127</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStatsSource"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getStatsSource</b></span>
+                        <a href="#getStatsSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getStatsSource()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;statsSource&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="134"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:134</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTableStats"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getTableStats</b></span>
+                        <a href="#getTableStats"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getTableStats()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@CheckAbilities({actions: undefined, subject: undefined})<br />@Get(&#x27;table-stats&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="142"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:142</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="importBeneficiariesFromTool"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>importBeneficiariesFromTool</b></span>
+                        <a href="#importBeneficiariesFromTool"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>importBeneficiariesFromTool(req: Request)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post(&#x27;import-tools&#x27;)<br />@UseGuards(ExternalAppGuard)<br />@CheckHeaders(&#x27;Signature&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="473"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:473</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>req</td>
+                                            <td>
+                                                        <code>Request</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="importTempBeneficiaries"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>importTempBeneficiaries</b></span>
+                        <a href="#importTempBeneficiaries"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>importTempBeneficiaries(dto: <a href="../classes/ImportTempBenefDto.html" target="_self">ImportTempBenefDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Post(&#x27;import-temp&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="486"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:486</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../classes/ImportTempBenefDto.html" target="_self" >ImportTempBenefDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="list"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>list</b></span>
+                        <a href="#list"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>list(dto: <a href="../classes/ListBeneficiaryDto.html" target="_self">ListBeneficiaryDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Get()<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="88"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../classes/ListBeneficiaryDto.html" target="_self" >ListBeneficiaryDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listPiiData"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>listPiiData</b></span>
+                        <a href="#listPiiData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listPiiData(dto: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Get(&#x27;pii&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="119"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:119</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listTempBenef"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>listTempBenef</b></span>
+                        <a href="#listTempBenef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listTempBenef(uuid: UUID, query: <a href="../classes/ListTempBeneficiariesDto.html" target="_self">ListTempBeneficiariesDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Get(&#x27;temp/:uuid&#x27;)<br />@ApiParam({name: &#x27;uuid&#x27;, required: true})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="97"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:97</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>query</td>
+                                            <td>
+                                                            <code><a href="../classes/ListTempBeneficiariesDto.html" target="_self" >ListTempBeneficiariesDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listTempGroups"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>listTempGroups</b></span>
+                        <a href="#listTempGroups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listTempGroups(query: <a href="../classes/ListTempGroupsDto.html" target="_self">ListTempGroupsDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Get(&#x27;temp-groups&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="111"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:111</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>query</td>
+                                            <td>
+                                                            <code><a href="../classes/ListTempGroupsDto.html" target="_self" >ListTempGroupsDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="referBeneficiary"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>referBeneficiary</b></span>
+                        <a href="#referBeneficiary"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>referBeneficiary(uuid: UUID, dto: <a href="../classes/AddBenToProjectDto.html" target="_self">AddBenToProjectDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@ApiParam({name: &#x27;uuid&#x27;, required: true})<br />@Post(&#x27;projects/:uuid&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="159"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:159</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../classes/AddBenToProjectDto.html" target="_self" >AddBenToProjectDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="remove"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>remove</b></span>
+                        <a href="#remove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>remove(uuid: UUID)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Patch(&#x27;remove/:uuid&#x27;)<br />@ApiParam({name: &#x27;uuid&#x27;, required: true})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="359"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:359</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeGroup"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>removeGroup</b></span>
+                        <a href="#removeGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeGroup(uuid: UUID)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Delete(&#x27;groups/:uuid&#x27;)<br />@ApiParam({name: &#x27;uuid&#x27;, required: true})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="451"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:451</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>update</b></span>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>update(uuid: UUID, dto: <a href="../classes/UpdateBeneficiaryDto.html" target="_self">UpdateBeneficiaryDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Patch(&#x27;:uuid&#x27;)<br />@ApiParam({name: &#x27;uuid&#x27;, required: true})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="350"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:350</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateBeneficiaryDto.html" target="_self" >UpdateBeneficiaryDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateGroup"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updateGroup</b></span>
+                        <a href="#updateGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateGroup(uuid: UUID, dto: <a href="../classes/UpdateBeneficiaryGroupDto.html" target="_self">UpdateBeneficiaryGroupDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Patch(&#x27;groups/:uuid&#x27;)<br />@ApiParam({name: &#x27;uuid&#x27;, required: true})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="460"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:460</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateBeneficiaryGroupDto.html" target="_self" >UpdateBeneficiaryGroupDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="upload"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>upload</b></span>
+                        <a href="#upload"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>upload(file: <a href="../undefineds/TFile.html" target="_self">TFile</a>, req: Request)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Post(&#x27;upload&#x27;)<br />@UseInterceptors(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="193"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:193</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>file</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#TFile" target="_self" >TFile</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>req</td>
+                                            <td>
+                                                        <code>Request</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadWithQueue"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>uploadWithQueue</b></span>
+                        <a href="#uploadWithQueue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>uploadWithQueue(file: <a href="../undefineds/TFile.html" target="_self">TFile</a>, req: Request)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Post(&#x27;upload-queue&#x27;)<br />@UseInterceptors(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="242"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:242</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>file</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#TFile" target="_self" >TFile</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>req</td>
+                                            <td>
+                                                        <code>Request</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateWallet"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>validateWallet</b></span>
+                        <a href="#validateWallet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validateWallet(dto: <a href="../classes/ValidateWalletDto.html" target="_self">ValidateWalletDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Post(&#x27;validate-wallet&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="409"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:409</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../classes/ValidateWalletDto.html" target="_self" >ValidateWalletDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifySignature"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>verifySignature</b></span>
+                        <a href="#verifySignature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>verifySignature(dto: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth(APP.JWT_BEARER)<br />@UseGuards(JwtGuard, AbilitiesGuard)<br />@CheckAbilities({actions: undefined, subject: undefined})<br />@Post(&#x27;verify-signature&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="417"
+                                    class="link-to-prism">apps/rahat/src/beneficiary/beneficiary.controller.ts:417</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { InjectQueue } from &#x27;@nestjs/bull&#x27;;
+import {
+  BadRequestException,
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Inject,
+  Param,
+  Patch,
+  Post,
+  Query,
+  Req,
+  UploadedFile,
+  UseGuards,
+  UseInterceptors,
+} from &#x27;@nestjs/common&#x27;;
+import { ClientProxy, RpcException } from &#x27;@nestjs/microservices&#x27;;
+import { FileInterceptor } from &#x27;@nestjs/platform-express&#x27;;
+import { ApiBearerAuth, ApiParam, ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import {
+  AddBenToProjectDto,
+  CreateBeneficiaryDto,
+  CreateBeneficiaryGroupsDto,
+  ImportTempBenefDto,
+  ListBeneficiaryDto,
+  ListBeneficiaryGroupDto,
+  ListTempBeneficiariesDto,
+  ListTempGroupsDto,
+  UpdateBeneficiaryDto,
+  UpdateBeneficiaryGroupDto,
+  ValidateWalletDto,
+} from &#x27;@rahataid/extensions&#x27;;
+import {
+  APP,
+  BeneficiaryJobs,
+  BQUEUE,
+  Enums,
+  MS_TIMEOUT,
+  TFile,
+} from &#x27;@rahataid/sdk&#x27;;
+import {
+  AbilitiesGuard,
+  ACTIONS,
+  CheckAbilities,
+  JwtGuard,
+  SUBJECTS,
+} from &#x27;@rumsan/user&#x27;;
+import { Queue } from &#x27;bull&#x27;;
+import { UUID } from &#x27;crypto&#x27;;
+import { catchError, throwError, timeout } from &#x27;rxjs&#x27;;
+import { CheckHeaders, ExternalAppGuard } from &#x27;../decorators&#x27;;
+import { removeSpaces } from &#x27;../utils&#x27;;
+import { handleMicroserviceCall } from &#x27;../utils/handleMicroserviceCall&#x27;;
+import { trimNonAlphaNumericValue } from &#x27;../utils/sanitize-data&#x27;;
+import { DocParser } from &#x27;./parser&#x27;;
+
+function getDateInfo(dateString) {
+  try {
+    // const [day, month, year] &#x3D; dateString.split(&quot;/&quot;);
+    const date &#x3D; new Date(dateString);
+    return {
+      date: date.toISOString(),
+      year: date.getFullYear(),
+      month: date.getMonth(),
+      day: date.getDate(),
+      age: new Date().getFullYear() - date.getFullYear(),
+      isAdult: new Date().getFullYear() - date.getFullYear() &gt; 18,
+    };
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
+@Controller(&#x27;beneficiaries&#x27;)
+@ApiTags(&#x27;Beneficiaries&#x27;)
+export class BeneficiaryController {
+  constructor(
+    @Inject(&#x27;BEN_CLIENT&#x27;) private readonly client: ClientProxy,
+    @InjectQueue(BQUEUE.RAHAT) private readonly queue: Queue
+  ) { }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Get()
+  async list(@Query() dto: ListBeneficiaryDto) {
+    return this.client.send({ cmd: BeneficiaryJobs.LIST }, dto);
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Get(&#x27;temp/:uuid&#x27;)
+  @ApiParam({ name: &#x27;uuid&#x27;, required: true })
+  async listTempBenef(
+    @Param(&#x27;uuid&#x27;) uuid: UUID,
+    @Query() query: ListTempBeneficiariesDto
+  ) {
+    return this.client.send(
+      { cmd: BeneficiaryJobs.LIST_TEMP_BENEFICIARY },
+      { uuid, query }
+    );
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Get(&#x27;temp-groups&#x27;)
+  async listTempGroups(@Query() query: ListTempGroupsDto) {
+    return this.client.send({ cmd: BeneficiaryJobs.LIST_TEMP_GROUPS }, query);
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Get(&#x27;pii&#x27;)
+  async listPiiData(@Query() dto: any) {
+    return this.client.send({ cmd: BeneficiaryJobs.LIST_PII }, dto);
+  }
+
+  // @ApiBearerAuth(APP.JWT_BEARER)
+  // @UseGuards(JwtGuard, AbilitiesGuard)
+  // @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Get(&#x27;stats&#x27;)
+  async getStats() {
+    return this.client.send({ cmd: BeneficiaryJobs.STATS }, {});
+  }
+
+  // @ApiBearerAuth(APP.JWT_BEARER)
+  // @UseGuards(JwtGuard, AbilitiesGuard)
+  @Get(&#x27;statsSource&#x27;)
+  async getStatsSource() {
+    return this.client.send({ cmd: BeneficiaryJobs.GET_ALL_STATS }, {});
+  }
+
+  // @ApiBearerAuth(APP.JWT_BEARER)
+  // @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Get(&#x27;table-stats&#x27;)
+  async getTableStats() {
+    return this.client.send({ cmd: BeneficiaryJobs.GET_TABLE_STATS }, {});
+  }
+
+  // @ApiBearerAuth(APP.JWT_BEARER)
+  // @UseGuards(JwtGuard, AbilitiesGuard)
+  // @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Post()
+  async create(@Body() dto: CreateBeneficiaryDto) {
+    return this.client.send({ cmd: BeneficiaryJobs.CREATE }, dto);
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.MANAGE, subject: SUBJECTS.USER })
+  @ApiParam({ name: &#x27;uuid&#x27;, required: true })
+  @Post(&#x27;projects/:uuid&#x27;)
+  async referBeneficiary(
+    @Param(&#x27;uuid&#x27;) uuid: UUID,
+    @Body() dto: AddBenToProjectDto
+  ) {
+    return this.client.send(
+      { cmd: BeneficiaryJobs.ADD_TO_PROJECT },
+      { dto, projectUid: uuid }
+    );
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Post(&#x27;bulk&#x27;)
+  async createBulk(@Body() dto: CreateBeneficiaryDto[]) {
+    const data &#x3D; dto.map((b) &#x3D;&gt; ({
+      ...b,
+      birthDate: b.birthDate ? new Date(b.birthDate).toISOString() : null,
+    }));
+    return this.client
+      .send({ cmd: BeneficiaryJobs.CREATE_BULK }, data)
+      .pipe(
+        catchError((error) &#x3D;&gt;
+          throwError(() &#x3D;&gt; new RpcException(error.response))
+        )
+      )
+      .pipe(timeout(MS_TIMEOUT));
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Post(&#x27;upload&#x27;)
+  @UseInterceptors(FileInterceptor(&#x27;file&#x27;))
+  async upload(@UploadedFile() file: TFile, @Req() req: Request) {
+    const docType: Enums.UploadFileType &#x3D;
+      req.body[&#x27;doctype&#x27;]?.toUpperCase() || Enums.UploadFileType.JSON;
+    const projectId &#x3D; req.body[&#x27;projectId&#x27;];
+    const beneficiaries &#x3D; await DocParser(docType, file.buffer);
+    const beneficiariesMapped &#x3D; beneficiaries.map((b) &#x3D;&gt; ({
+      birthDate: b[&#x27;Birth Date&#x27;]
+        ? new Date(b[&#x27;Birth Date&#x27;]).toISOString()
+        : null,
+      internetStatus: b[&#x27;Internet Status*&#x27;],
+      bankedStatus: b[&#x27;Bank Status*&#x27;],
+      location: b[&#x27;Location&#x27;],
+      phoneStatus: b[&#x27;Phone Status*&#x27;],
+      notes: b[&#x27;Notes&#x27;],
+      gender: b[&#x27;Gender*&#x27;],
+      latitude: b[&#x27;Latitude&#x27;],
+      longitude: b[&#x27;Longitude&#x27;],
+      age: b[&#x27;Age&#x27;] || null,
+      walletAddress: b[&#x27;Wallet Address&#x27;],
+      piiData: {
+        name: b[&#x27;Name*&#x27;] || &#x27;Unknown&#x27;,
+        phone: b[&#x27;Whatsapp Number*&#x27;] || b[&#x27;Phone Number*&#x27;],
+        extras: {
+          isAdult:
+            getDateInfo(b[&#x27;Birth Date&#x27;])?.isAdult || Number(b[&#x27;Age*&#x27;]) &gt; 18,
+          governmentId: b[&#x27;Government ID&#x27;],
+        },
+      },
+    }));
+
+    return this.client
+      .send(
+        { cmd: BeneficiaryJobs.CREATE_BULK },
+        { data: beneficiariesMapped, projectUUID: projectId }
+      )
+      .pipe(
+        catchError((error) &#x3D;&gt; {
+          console.log(&#x27;error&#x27;, error);
+          return throwError(() &#x3D;&gt; new BadRequestException(error.message));
+        })
+      )
+      .pipe(timeout(MS_TIMEOUT));
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Post(&#x27;upload-queue&#x27;)
+  @UseInterceptors(FileInterceptor(&#x27;file&#x27;))
+  async uploadWithQueue(@UploadedFile() file: TFile, @Req() req: Request) {
+    const docType: Enums.UploadFileType &#x3D;
+      req.body[&#x27;doctype&#x27;]?.toUpperCase() || Enums.UploadFileType.JSON;
+    const projectId &#x3D; req.body[&#x27;projectId&#x27;];
+    const automatedGroupOption &#x3D; req.body[&#x27;automatedGroupOption&#x27;];
+    const beneficiaries &#x3D; await DocParser(docType, file.buffer);
+    // Utility function to sanitize input keys by trimming whitespace
+    function sanitizeKey(key: string): string {
+      return key.trim();
+    }
+
+    const beneficiariesWithSanitizedKeys &#x3D; beneficiaries.map((b) &#x3D;&gt; {
+      const sanitizedBeneficiary &#x3D; {};
+      for (const key in b) {
+        sanitizedBeneficiary[sanitizeKey(key)] &#x3D; b[key];
+      }
+      return sanitizedBeneficiary;
+    }
+    );
+
+
+    // Map the beneficiaries to the format expected by the microservice
+
+
+    const beneficiariesMapped &#x3D; beneficiariesWithSanitizedKeys.map((b) &#x3D;&gt; ({
+      birthDate: b[sanitizeKey(&#x27;Birth Date&#x27;)]
+        ? new Date(b[sanitizeKey(&#x27;Birth Date&#x27;)]).toISOString()
+        : null,
+      internetStatus: b[sanitizeKey(&#x27;Internet Status*&#x27;)],
+      bankedStatus: b[sanitizeKey(&#x27;Bank Status*&#x27;)],
+      location: trimNonAlphaNumericValue(b[sanitizeKey(&#x27;Location&#x27;)]),
+      phoneStatus: b[sanitizeKey(&#x27;Phone Status*&#x27;)],
+      notes: b[sanitizeKey(&#x27;Notes&#x27;)],
+      gender: b[sanitizeKey(&#x27;Gender*&#x27;)],
+      latitude: b[sanitizeKey(&#x27;Latitude&#x27;)],
+      longitude: b[sanitizeKey(&#x27;Longitude&#x27;)],
+      age: b[sanitizeKey(&#x27;Age&#x27;)] || null,
+      walletAddress: b[sanitizeKey(&#x27;Wallet Address&#x27;)],
+      piiData: {
+        name: b[sanitizeKey(&#x27;Name*&#x27;)] || &#x27;Unknown&#x27;,
+        phone: removeSpaces(
+          b[sanitizeKey(&#x27;Whatsapp Number*&#x27;)] ||
+          b[sanitizeKey(&#x27;Phone Number*&#x27;)] ||
+          b[sanitizeKey(&#x27;Phone Number&#x27;)] ||
+          b[sanitizeKey(&#x27;Phone number&#x27;)]
+        ),
+        extras: {},
+      },
+    }));
+
+
+
+
+    const uniquePhoneNumberedBeneficiaries &#x3D; beneficiariesMapped.filter(
+      (b, index, self) &#x3D;&gt;
+        index &#x3D;&#x3D;&#x3D;
+        self.findIndex(
+          (t) &#x3D;&gt; t.piiData.phone &#x3D;&#x3D;&#x3D; b.piiData.phone
+        )
+    );
+
+
+    console.log(&#x60;Trying to upload ${beneficiariesMapped.length} beneficiaries through queue. Unique phone numbers: ${uniquePhoneNumberedBeneficiaries.length}, Duplicate phone numbers: ${beneficiariesMapped.length - uniquePhoneNumberedBeneficiaries.length}&#x60;);
+
+    return handleMicroserviceCall({
+      client: this.client.send(
+        { cmd: BeneficiaryJobs.IMPORT_BENEFICIARY_LARGE_QUEUE },
+        {
+          data: uniquePhoneNumberedBeneficiaries,
+          projectUUID: projectId,
+          ignoreExisting: true,
+          automatedGroupOption,
+        }
+      ),
+      onError(error) {
+        console.log(&#x27;error&#x27;, error);
+        return throwError(() &#x3D;&gt; new BadRequestException(error.message));
+      },
+      onSuccess(response) {
+        // console.log(&#x27;response&#x27;, response)
+        return response;
+      },
+    });
+
+    // return this.client
+    //   .send({ cmd: BeneficiaryJobs.IMPORT_BENEFICIARY_LARGE_QUEUE }, {
+    //     data: beneficiariesMapped, projectUUID: projectId,
+
+    //   })
+    //   .pipe(
+    //     catchError((error) &#x3D;&gt; {
+    //       console.log(&#x27;error&#x27;, error);
+    //       return throwError(() &#x3D;&gt; new BadRequestException(error.message));
+    //     })
+    //   )
+    //   .pipe(timeout(MS_TIMEOUT)).toPromise()
+
+    // return {
+    //   success: true,
+    //   message: &#x27;Upload in progress. Will start appearing once completed.&#x27;
+    // }
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Patch(&#x27;:uuid&#x27;)
+  @ApiParam({ name: &#x27;uuid&#x27;, required: true })
+  async update(@Param(&#x27;uuid&#x27;) uuid: UUID, @Body() dto: UpdateBeneficiaryDto) {
+    return this.client.send({ cmd: BeneficiaryJobs.UPDATE }, { uuid, ...dto });
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Patch(&#x27;remove/:uuid&#x27;)
+  @ApiParam({ name: &#x27;uuid&#x27;, required: true })
+  async remove(@Param(&#x27;uuid&#x27;) uuid: UUID) {
+    return this.client.send({ cmd: BeneficiaryJobs.REMOVE }, { uuid });
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Delete(&#x27;:uuid&#x27;)
+  @ApiParam({ name: &#x27;uuid&#x27;, required: true })
+  async delete(@Param(&#x27;uuid&#x27;) uuid: UUID) {
+    return this.client.send({ cmd: BeneficiaryJobs.DELETE }, { uuid });
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Get(&#x27;:uuid&#x27;)
+  @ApiParam({ name: &#x27;uuid&#x27;, required: true })
+  async getBeneficiary(@Param(&#x27;uuid&#x27;) uuid: UUID) {
+    return this.client.send({ cmd: BeneficiaryJobs.GET }, uuid);
+  }
+
+  @Get(&#x27;wallet/:wallet&#x27;)
+  @ApiParam({ name: &#x27;wallet&#x27;, required: true })
+  async getBeneficiaryByWallet(@Param(&#x27;wallet&#x27;) wallet: string) {
+    return this.client.send({ cmd: BeneficiaryJobs.GET_BY_WALLET }, wallet);
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Get(&#x27;phone/:phone&#x27;)
+  @ApiParam({ name: &#x27;phone&#x27;, required: true })
+  async getBeneficiaryByPhone(@Param(&#x27;phone&#x27;) phone: string) {
+    return this.client.send({ cmd: BeneficiaryJobs.GET_BY_PHONE }, phone);
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Get(&#x27;verification-link/:uuid&#x27;)
+  @ApiParam({ name: &#x27;uuid&#x27;, required: true })
+  async generateVerificationLink(@Param(&#x27;uuid&#x27;) uuid: UUID) {
+    return this.client.send({ cmd: BeneficiaryJobs.GENERATE_LINK }, uuid);
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Post(&#x27;validate-wallet&#x27;)
+  async validateWallet(@Body() dto: ValidateWalletDto) {
+    return this.client.send({ cmd: BeneficiaryJobs.VALIDATE_WALLET }, dto);
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Post(&#x27;verify-signature&#x27;)
+  async verifySignature(@Body() dto: any) {
+    return this.client.send({ cmd: BeneficiaryJobs.VERIFY_SIGNATURE }, dto);
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Post(&#x27;groups&#x27;)
+  async createGroup(@Body() dto: CreateBeneficiaryGroupsDto) {
+    return this.client.send({ cmd: BeneficiaryJobs.ADD_GROUP }, dto);
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Get(&#x27;groups/all&#x27;)
+  async getAllGroups(@Query() dto: ListBeneficiaryGroupDto) {
+    return this.client.send({ cmd: BeneficiaryJobs.GET_ALL_GROUPS }, dto);
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Get(&#x27;groups/:uuid&#x27;)
+  @ApiParam({ name: &#x27;uuid&#x27;, required: true })
+  async getOneGroup(@Param(&#x27;uuid&#x27;) uuid: UUID) {
+    return this.client.send({ cmd: BeneficiaryJobs.GET_ONE_GROUP }, uuid);
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Delete(&#x27;groups/:uuid&#x27;)
+  @ApiParam({ name: &#x27;uuid&#x27;, required: true })
+  async removeGroup(@Param(&#x27;uuid&#x27;) uuid: UUID) {
+    return this.client.send({ cmd: BeneficiaryJobs.REMOVE_ONE_GROUP }, uuid);
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Patch(&#x27;groups/:uuid&#x27;)
+  @ApiParam({ name: &#x27;uuid&#x27;, required: true })
+  async updateGroup(
+    @Param(&#x27;uuid&#x27;) uuid: UUID,
+    @Body() dto: UpdateBeneficiaryGroupDto
+  ) {
+    return this.client.send(
+      { cmd: BeneficiaryJobs.UPDATE_GROUP },
+      { uuid, ...dto }
+    );
+  }
+
+  @Post(&#x27;import-tools&#x27;)
+  @UseGuards(ExternalAppGuard)
+  @CheckHeaders(&#x27;Signature&#x27;)
+  async importBeneficiariesFromTool(@Req() req: Request) {
+    return this.client.send(
+      {
+        cmd: BeneficiaryJobs.IMPORT_BENEFICIARIES_FROM_COMMUNITY_TOOL,
+      },
+      req.body
+    );
+  }
+
+  @ApiBearerAuth(APP.JWT_BEARER)
+  @UseGuards(JwtGuard, AbilitiesGuard)
+  @CheckAbilities({ actions: ACTIONS.READ, subject: SUBJECTS.USER })
+  @Post(&#x27;import-temp&#x27;)
+  async importTempBeneficiaries(@Body() dto: ImportTempBenefDto) {
+    return this.client.send(
+      { cmd: BeneficiaryJobs.IMPORT_TEMP_BENEFICIARIES },
+      dto
+    );
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
+            var COMPODOC_CURRENT_PAGE_URL = 'BeneficiaryController-1.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

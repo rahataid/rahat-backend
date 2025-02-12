@@ -1,0 +1,23 @@
+
+meta {
+  name: retry-rahat-beneficiary-job
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{url}}/queue/rahat-beneficiary-jobs/retry/3
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.message: contains 'retried successfully'
+}
+
+tests {
+  test('should confirm rahat beneficiary job retry', async () => {
+    const message = res.getBody().message;
+    expect(message).to.include('retried successfully');
+  });
+}

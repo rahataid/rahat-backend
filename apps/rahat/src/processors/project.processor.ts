@@ -13,7 +13,7 @@ export class ProjectProcessor {
 
   constructor(
     @Inject('DEPLOYMENT_CLIENT') private readonly client: ClientProxy,
-    private readonly configService: ConfigService
+    private readonly configService: ConfigService,
   ) { }
 
   @Process(ProjectJobs.PROJECT_CREATE)

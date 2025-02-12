@@ -3,7 +3,8 @@ export const EVENTS = {
   BENEFICIARY_CREATED: 'beneficiary.created',
   BENEFICIARY_REMOVED: 'beneficiary.removed',
   BENEFICIARY_UPDATED: 'beneficiary.updated',
-  BENEFICIARY_ASSIGNED_TO_PROJECT: 'beneficiary.projectAssigned'
+  BENEFICIARY_ASSIGNED_TO_PROJECT: 'beneficiary.projectAssigned',
+  VENDORS_CREATED: 'vendors.created',
 };
 
 export const JOBS = {
@@ -18,6 +19,7 @@ export const JOBS = {
   GET_BY_PHONE: 'rahat.jobs.beneficiary.get_by_phone',
   GET_TABLE_STATS: 'rahat.jobs.beneficiary.get_from_stats_table',
   LIST: 'rahat.jobs.beneficiary.list',
+  LEAD_CONVERSION_BENEFICIARY: 'rahat.jobs.lead_conversion_beneficiary',
   LIST_PROJECT_PII: 'rahat.jobs.beneficiary.list_project_pii',
   REMOVE: 'rahat.jobs.beneficiary.remove',
   ADD_TO_PROJECT: 'rahat.jobs.beneficiary.add_to_project',
@@ -62,4 +64,7 @@ export const JOBS = {
   REMOVE_ONE_GROUP: 'rahat.jobs.beneficiary.remove_one_group',
   GET_STATS: 'rahat.jobs.projects.get_stats',
   GET_ALL_STATS: 'rahat.jobs.projects.get_all_stats',
+  CALCULATE_STATS: 'rahat.jobs.projects.calculate_stats',
+  IMPORT_BENEFICIARY_LARGE_QUEUE: 'rahat.jobs.beneficiary.import_beneficiary_large_queue',
+  DELETE_BENEFICIARY_AND_PII: 'rahat.jobs.beneficiary.delete_beneficiary_and_pii',
 };

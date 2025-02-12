@@ -1,0 +1,29 @@
+
+meta {
+  name: get-contract-jobs
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/queue/contract-jobs
+  query: {
+    status: failed
+    name: rahat.jobs.beneficiary.bulk_assign_vouchers
+    startDate: 2024-01-01
+    endDate: 2024-12-31
+  }
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body: isJson
+}
+
+tests {
+  test('should return list of contract jobs', async () => {
+    const data = res.getBody();
+    expect(data).to.have.property('data');
+  });
+}

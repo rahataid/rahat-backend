@@ -1,29 +1,28 @@
 {
   "contracts": {
     "RahatAccessManager": {
-      "address": "0x46B526b5a6322C9eC673B07bbe3aa1Bd8eF982d7",
-      "startBlock": 13544810
+      "address": "0xb79d18360B4f0f02182a309Dd3083f859aD2C078",
+      "startBlock": 19287804
     },
     "RahatTreasury": {
-      "address": "0x2a2D901ad73a6A117B263583Ac78Db78d317CF1d",
-      "startBlock": 13544818
+      "address": "0xB39c5B56147a2adf6b36206CFb2F8A4042b73E2f",
+      "startBlock": 19287814
     },
     "RahatToken": {
-      "address": "0x1435A1473b9b12A3392126645710d83f13b9BFC5",
-      "startBlock": 13544823
+      "address": "0xAAdd5c0E95dE7004d61de742EB582ddb65dB1D75",
+      "startBlock": 19287818
     },
     "ERC2771Forwarder": {
-      "address": "0x43D19665fCbc7017F6E4633bA5202177406EE18F",
-      "startBlock": 13544814
+      "address": "0x46614948D9f30f2d31C371749C6eB7293495FF29",
+      "startBlock": 19287810
     }
   },
   "chainSettings": {
-    "rpcUrl": "https://base-sepolia.g.alchemy.com/v2/bnfGi0PVbNMijQJFjFng2De86z-QvOMR",
-    "chainName": "base-sepolia",
+    "rpcUrl": "https://base-sepolia.g.alchemy.com/v2/QDCmOvFT118Of31RIv35kEn79gEi7_tH",
+    "chainName": "Base sepolia",
     "nativeCurrency": {
       "name": "ETH",
       "symbol": "ETH"
     }
-  },
-  "subgraphUrl": "https://api.studio.thegraph.com/query/72688/aa-prod-core-base/version/latest"
+  }
 }

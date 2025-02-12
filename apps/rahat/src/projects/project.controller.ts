@@ -9,7 +9,7 @@ import {
   Post,
   Query,
   Req,
-  UseGuards
+  UseGuards,
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { ApiBearerAuth, ApiParam, ApiTags } from '@nestjs/swagger';
@@ -17,17 +17,28 @@ import {
   CreateProjectDto,
   ListProjectBeneficiaryDto,
   ProjectCommunicationDto,
+  TestKoboImportDto,
   UpdateProjectDto,
-  UpdateProjectStatusDto
+  UpdateProjectStatusDto,
 } from '@rahataid/extensions';
-import { ACTIONS, APP, BeneficiaryJobs, MS_TIMEOUT, ProjectJobs } from '@rahataid/sdk';
+import {
+  ACTIONS,
+  APP,
+  BeneficiaryJobs,
+  MS_TIMEOUT,
+  ProjectJobs,
+} from '@rahataid/sdk';
 import { CreateSettingDto } from '@rumsan/extensions/dtos';
-import { AbilitiesGuard, CheckAbilities, JwtGuard, SUBJECTS } from "@rumsan/user";
+import {
+  AbilitiesGuard,
+  CheckAbilities,
+  JwtGuard,
+  SUBJECTS,
+} from '@rumsan/user';
 import { UUID } from 'crypto';
-import { Request } from "express";
+import { Request } from 'express';
 import { timeout } from 'rxjs/operators';
 import { ProjectService } from './project.service';
-
 
 @Controller('projects')
 @ApiTags('Projects')
@@ -106,7 +117,6 @@ export class ProjectController {
       .pipe(timeout(5000));
   }
 
-
   @ApiBearerAuth(APP.JWT_BEARER)
   @UseGuards(JwtGuard, AbilitiesGuard)
   @CheckAbilities({ actions: ACTIONS.MANAGE, subject: SUBJECTS.ALL })
@@ -131,7 +141,7 @@ export class ProjectController {
     const response = this.projectService.handleProjectActions({
       uuid,
       ...data,
-      user: request.user
+      user: request.user,
     });
     return response;
   }
@@ -180,5 +190,11 @@ export class ProjectController {
   @ApiParam({ name: 'uuid', required: true })
   testMsg(@Param('uuid') uuid: UUID) {
     return this.projectService.sendTestMsg(uuid);
+  }
+
+  @Post('/:uuid/kobo-import-simulate')
+  @ApiParam({ name: 'uuid', required: true })
+  koboImportSimulate(@Param('uuid') uuid: UUID, @Body() dto: TestKoboImportDto) {
+    return this.projectService.importTestBeneficiary(uuid, dto);
   }
 }

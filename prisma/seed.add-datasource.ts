@@ -3,9 +3,7 @@ import { PrismaService } from '@rumsan/prisma';
 import * as readline from 'readline';
 
 const prisma = new PrismaService();
-const prismaClient = new PrismaClient({
-  datasourceUrl: 'postgresql://${username}:${password}@${address}:%{port}/{db_name}?schema=public'
-});;
+const prismaClient = new PrismaClient();
 // Setup readline interface
 const rl = readline.createInterface({
   input: process.stdin,

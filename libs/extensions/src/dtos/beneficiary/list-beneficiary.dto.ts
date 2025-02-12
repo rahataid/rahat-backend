@@ -8,12 +8,12 @@ export class ListBeneficiaryDto {
 
   // override order: 'asc' | 'desc' = 'desc';
 
-  @ApiProperty({ example: 1 })
+  @ApiProperty({ example: 'createdAt' })
   @IsString()
   @IsOptional()
   sort: string;
 
-  @ApiProperty({ example: 1 })
+  @ApiProperty({ example: 'desc' })
   @IsString()
   @IsOptional()
   order: 'asc' | 'desc';
@@ -42,11 +42,11 @@ export class ListBeneficiaryDto {
   type?: string;
 
 
-  @ApiProperty({ example: '2024-06-25T18:15:00.000Z' })
+  @ApiPropertyOptional({ example: '2024-06-25T18:15:00.000Z' })
   @IsOptional()
   startDate?: string;
 
-  @ApiProperty({ example: '2024-06-25T18:15:00.000Z' })
+  @ApiPropertyOptional({ example: '2024-06-25T18:15:00.000Z' })
   @IsOptional()
   endDate?: string;
 }

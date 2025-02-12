@@ -1,6 +1,7 @@
-import { Controller, Inject, Param } from '@nestjs/common';
-import { ClientProxy, MessagePattern, Payload } from '@nestjs/microservices';
+import { Controller, Param } from '@nestjs/common';
+import { MessagePattern, Payload } from '@nestjs/microservices';
 import {
+  addBulkBeneficiaryToProject,
   CreateBeneficiaryDto,
   CreateBeneficiaryGroupsDto,
   ImportTempBenefDto,
@@ -9,23 +10,22 @@ import {
   ListTempGroupsDto,
   UpdateBeneficiaryDto,
   UpdateBeneficiaryGroupDto,
-  addBulkBeneficiaryToProject
 } from '@rahataid/extensions';
 import {
   BeneficiaryJobs,
-  ProjectContants,
-  ValidateWallet,
+  ValidateWallet
 } from '@rahataid/sdk';
 import { UUID } from 'crypto';
 import { BeneficiaryService } from './beneficiary.service';
+import { BeneficiaryUtilsService } from './beneficiary.utils.service';
 import { BeneficiaryStatService } from './beneficiaryStat.service';
 import { VerificationService } from './verification.service';
 
 @Controller()
 export class BeneficiaryController {
   constructor(
-    @Inject(ProjectContants.ELClient) private readonly client: ClientProxy,
     private readonly service: BeneficiaryService,
+    private readonly utilService: BeneficiaryUtilsService,
     private readonly statsService: BeneficiaryStatService,
     private readonly verificationService: VerificationService
   ) { }
@@ -52,12 +52,33 @@ export class BeneficiaryController {
 
   @MessagePattern({ cmd: BeneficiaryJobs.CREATE_BULK })
   createBulk(@Payload() data) {
-    return this.service.createBulk(data);
+    // const payloadData = Array.isArray(data?.data) ? data?.data : data?.payload;
+
+    return this.service.createBulk(
+      data,
+      data?.projectUUID,
+      data?.data?.walkinBulk
+    );
+  }
+
+  @MessagePattern({
+    cmd: BeneficiaryJobs.IMPORT_BENEFICIARY_LARGE_QUEUE,
+  })
+  createBulkWithQueue(@Payload() queueData) {
+    const payloadData = Array.isArray(queueData?.data)
+      ? queueData?.data
+      : queueData?.payload;
+    return this.service.createBulkWithQueue(payloadData, queueData);
   }
 
   @MessagePattern({ cmd: BeneficiaryJobs.LIST })
   async list(dto: ListBeneficiaryDto) {
     return this.service.list(dto);
+  }
+
+  @MessagePattern({ cmd: BeneficiaryJobs.LEAD_CONVERSION_BENEFICIARY })
+  async leadConversions(dto: ListBeneficiaryDto) {
+    return this.service.listBeneficiaryPiiByWalletAddress(dto);
   }
 
   @MessagePattern({ cmd: BeneficiaryJobs.LIST_BY_PROJECT })
@@ -93,10 +114,8 @@ export class BeneficiaryController {
 
   @MessagePattern({ cmd: BeneficiaryJobs.ASSIGN_TO_PROJECT })
   async assignToProject(payload: any) {
-    return this.service.assignBeneficiaryToProject(payload);
+    return this.utilService.assignBeneficiaryToProject(payload);
   }
-
-
 
   @MessagePattern({ cmd: BeneficiaryJobs.BULK_ASSIGN_TO_PROJECT })
   async bulkAssignToProject(payload: any) {
@@ -141,43 +160,46 @@ export class BeneficiaryController {
 
   @MessagePattern({ cmd: BeneficiaryJobs.LIST_BEN_VENDOR_COUNT })
   getTotalCount(data) {
-    return this.service.getTotalCount(data)
+    return this.service.getTotalCount(data);
   }
 
   @MessagePattern({ cmd: BeneficiaryJobs.GET_PROJECT_SPECIFIC })
   getProjectSpecific(data) {
-    return this.service.getProjectSpecificData(data)
+    return this.service.getProjectSpecificData(data);
   }
 
   @MessagePattern({ cmd: BeneficiaryJobs.GET_TABLE_STATS })
   getTableStats() {
-    return this.statsService.getTableStats()
+    return this.statsService.getTableStats();
   }
 
   @MessagePattern({ cmd: BeneficiaryJobs.ADD_GROUP })
   addGroup(payload: CreateBeneficiaryGroupsDto) {
-    return this.service.addGroup(payload)
+    return this.service.addGroup(payload);
   }
 
   @MessagePattern({ cmd: BeneficiaryJobs.GET_ONE_GROUP })
   getGroup(uuid: string) {
-    return this.service.getOneGroup(uuid)
+    return this.service.getOneGroup(uuid);
   }
 
   @MessagePattern({ cmd: BeneficiaryJobs.REMOVE_ONE_GROUP })
   removeGroup(uuid: string) {
-    return this.service.removeOneGroup(uuid)
+    return this.service.removeOneGroup(uuid);
   }
 
   @MessagePattern({ cmd: BeneficiaryJobs.GET_ALL_GROUPS })
   getAllGroups(dto: ListBeneficiaryGroupDto) {
-    return this.service.getAllGroups(dto)
+    return this.service.getAllGroups(dto);
   }
 
   @MessagePattern({ cmd: BeneficiaryJobs.UPDATE_GROUP })
-  updateGroup(@Param('uuid') uuid: UUID, @Payload() dto: UpdateBeneficiaryGroupDto) {
-    const groupUUID = uuid ? uuid : dto?.uuid
-    return this.service.updateGroup(groupUUID, dto)
+  updateGroup(
+    @Param('uuid') uuid: UUID,
+    @Payload() dto: UpdateBeneficiaryGroupDto
+  ) {
+    const groupUUID = uuid ? uuid : dto?.uuid;
+    return this.service.updateGroup(groupUUID, dto);
   }
 
   @MessagePattern({ cmd: BeneficiaryJobs.ASSIGN_GROUP_TO_PROJECT })
@@ -195,14 +217,15 @@ export class BeneficiaryController {
     return this.service.getOneGroupByProject(uuid);
   }
 
-  @MessagePattern({ cmd: BeneficiaryJobs.IMPORT_BENEFICIARIES_FROM_COMMUNITY_TOOL })
+  @MessagePattern({
+    cmd: BeneficiaryJobs.IMPORT_BENEFICIARIES_FROM_COMMUNITY_TOOL,
+  })
   async importBeneficiariesFromTool(data: any) {
     return this.service.importBeneficiariesFromTool(data);
   }
 
   @MessagePattern({ cmd: BeneficiaryJobs.LIST_TEMP_BENEFICIARY })
   async listTempBeneficiaries(data: any) {
-
     return this.service.listTempBeneficiaries(data.uuid, data.query);
   }
 
@@ -224,5 +247,15 @@ export class BeneficiaryController {
   @MessagePattern({ cmd: BeneficiaryJobs.GET_ALL_STATS })
   async getAllStats() {
     return this.service.allDataSource();
+  }
+
+  @MessagePattern({ cmd: BeneficiaryJobs.CALCULATE_STATS })
+  async syncProjectStats(payload) {
+    return this.service.syncProjectStats(payload.projectUUID)
+  }
+
+  @MessagePattern({ cmd: BeneficiaryJobs.DELETE_BENEFICIARY_AND_PII })
+  async deleteBenefAndPii(payload: any) {
+    return this.service.deleteBenefAndPii(payload);
   }
 }

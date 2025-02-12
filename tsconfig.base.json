@@ -16,12 +16,12 @@
     "baseUrl": ".",
     "paths": {
       "@rahat/stats": ["libs/stats/src/index.ts"],
+      "@rahataid/contracts": ["libs/contracts/src/index.ts"],
       "@rahataid/extensions": ["libs/extensions/src/index.ts"],
       "@rahataid/extensions/*": ["libs/extensions/src/*"],
       "@rahataid/sdk": ["libs/sdk/src/index.ts"],
       "@rahataid/sdk/*": ["libs/sdk/src/*"],
-      "@rahataid/subgraph": ["libs/subgraph/src/index.ts"],
-      "@rahataid/contracts": ["libs/contracts/src/index.ts"]
+      "@rahataid/subgraph": ["libs/subgraph/src/index.ts"]
     },
     "types": ["node", "tslib"]
   },

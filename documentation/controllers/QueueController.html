@@ -1,0 +1,1250 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@rahat-os/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">@rahat-os/source documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content controller">
+                   <div class="content-data">
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Controllers</li>
+  <li class="breadcrumb-item" >QueueController</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/rahat/src/queue/queue.controller.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Prefix</h3>
+            </p>
+            <p class="comment">
+                <code>queue</code>
+            </p>
+
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getPendingContractJobs" >getPendingContractJobs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getPendingMetaTxnJobs" >getPendingMetaTxnJobs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getPendingRahatBeneficiaryJobs" >getPendingRahatBeneficiaryJobs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getPendingRahatJobs" >getPendingRahatJobs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#retryContractJob" >retryContractJob</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#retryMetaTxnJob" >retryMetaTxnJob</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#retryRahatBeneficiaryJob" >retryRahatBeneficiaryJob</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#retryRahatJob" >retryRahatJob</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPendingContractJobs"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getPendingContractJobs</b></span>
+                        <a href="#getPendingContractJobs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPendingContractJobs(status?: string[], name?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, startDate?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, endDate?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;contract-jobs&#x27;)<br />@ApiOperation({summary: &#x27;Get Pending Contract Jobs with Filters&#x27;})<br />@ApiResponse({status: 200, description: &#x27;List of filtered contract jobs&#x27;})<br />@ApiQuery({name: &#x27;status&#x27;, required: false, enum: undefined, description: &#x27;Filter by job status&#x27;})<br />@ApiQuery({name: &#x27;name&#x27;, required: false, description: &#x27;Filter by job name (e.g., rahat.jobs.beneficiary.bulk_assign_vouchers)&#x27;})<br />@ApiQuery({name: &#x27;startDate&#x27;, required: false, description: &#x27;Filter by job creation start date (YYYY-MM-DD)&#x27;})<br />@ApiQuery({name: &#x27;endDate&#x27;, required: false, description: &#x27;Filter by job creation end date (YYYY-MM-DD)&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="22"
+                                    class="link-to-prism">apps/rahat/src/queue/queue.controller.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>status</td>
+                                            <td>
+                                                        <code>string[]</code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>name</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>startDate</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>endDate</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPendingMetaTxnJobs"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getPendingMetaTxnJobs</b></span>
+                        <a href="#getPendingMetaTxnJobs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPendingMetaTxnJobs(status?: string[], name?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, startDate?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, endDate?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;meta-txn-jobs&#x27;)<br />@ApiOperation({summary: &#x27;Get Pending Meta Transaction Jobs with Filters&#x27;})<br />@ApiResponse({status: 200, description: &#x27;List of filtered Meta Transaction jobs&#x27;})<br />@ApiQuery({name: &#x27;status&#x27;, required: false, enum: undefined, description: &#x27;Filter by job status&#x27;})<br />@ApiQuery({name: &#x27;name&#x27;, required: false, description: &#x27;Filter by job name&#x27;})<br />@ApiQuery({name: &#x27;startDate&#x27;, required: false, description: &#x27;Filter by job creation start date (YYYY-MM-DD)&#x27;})<br />@ApiQuery({name: &#x27;endDate&#x27;, required: false, description: &#x27;Filter by job creation end date (YYYY-MM-DD)&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="112"
+                                    class="link-to-prism">apps/rahat/src/queue/queue.controller.ts:112</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>status</td>
+                                            <td>
+                                                        <code>string[]</code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>name</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>startDate</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>endDate</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPendingRahatBeneficiaryJobs"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getPendingRahatBeneficiaryJobs</b></span>
+                        <a href="#getPendingRahatBeneficiaryJobs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPendingRahatBeneficiaryJobs(status?: string[], name?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, startDate?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, endDate?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;rahat-beneficiary-jobs&#x27;)<br />@ApiOperation({summary: &#x27;Get Pending Rahat Beneficiary Jobs with Filters&#x27;})<br />@ApiResponse({status: 200, description: &#x27;List of filtered Rahat Beneficiary jobs&#x27;})<br />@ApiQuery({name: &#x27;status&#x27;, required: false, enum: undefined, description: &#x27;Filter by job status&#x27;})<br />@ApiQuery({name: &#x27;name&#x27;, required: false, description: &#x27;Filter by job name&#x27;})<br />@ApiQuery({name: &#x27;startDate&#x27;, required: false, description: &#x27;Filter by job creation start date (YYYY-MM-DD)&#x27;})<br />@ApiQuery({name: &#x27;endDate&#x27;, required: false, description: &#x27;Filter by job creation end date (YYYY-MM-DD)&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="82"
+                                    class="link-to-prism">apps/rahat/src/queue/queue.controller.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>status</td>
+                                            <td>
+                                                        <code>string[]</code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>name</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>startDate</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>endDate</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPendingRahatJobs"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getPendingRahatJobs</b></span>
+                        <a href="#getPendingRahatJobs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPendingRahatJobs(status?: string[], name?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, startDate?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, endDate?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;rahat-jobs&#x27;)<br />@ApiOperation({summary: &#x27;Get Pending Rahat Jobs with Filters&#x27;})<br />@ApiResponse({status: 200, description: &#x27;List of filtered Rahat jobs&#x27;})<br />@ApiQuery({name: &#x27;status&#x27;, required: false, enum: undefined, description: &#x27;Filter by job status&#x27;})<br />@ApiQuery({name: &#x27;name&#x27;, required: false, description: &#x27;Filter by job name&#x27;})<br />@ApiQuery({name: &#x27;startDate&#x27;, required: false, description: &#x27;Filter by job creation start date (YYYY-MM-DD)&#x27;})<br />@ApiQuery({name: &#x27;endDate&#x27;, required: false, description: &#x27;Filter by job creation end date (YYYY-MM-DD)&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="52"
+                                    class="link-to-prism">apps/rahat/src/queue/queue.controller.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>status</td>
+                                            <td>
+                                                        <code>string[]</code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>name</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>startDate</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>endDate</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="retryContractJob"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>retryContractJob</b></span>
+                        <a href="#retryContractJob"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>retryContractJob(jobId: string | number | UUID)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;contract-jobs/retry/:id&#x27;)<br />@ApiOperation({summary: &#x27;Retry a Failed Contract Job&#x27;})<br />@ApiParam({name: &#x27;id&#x27;, description: &#x27;Job ID to retry&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">apps/rahat/src/queue/queue.controller.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>jobId</td>
+                                            <td>
+                                                        <code>string | number | UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="retryMetaTxnJob"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>retryMetaTxnJob</b></span>
+                        <a href="#retryMetaTxnJob"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>retryMetaTxnJob(jobId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;meta-txn-jobs/retry/:id&#x27;)<br />@ApiOperation({summary: &#x27;Retry a Failed Meta Transaction Job&#x27;})<br />@ApiParam({name: &#x27;id&#x27;, description: &#x27;Job ID to retry&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="130"
+                                    class="link-to-prism">apps/rahat/src/queue/queue.controller.ts:130</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>jobId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="retryRahatBeneficiaryJob"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>retryRahatBeneficiaryJob</b></span>
+                        <a href="#retryRahatBeneficiaryJob"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>retryRahatBeneficiaryJob(jobId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;rahat-beneficiary-jobs/retry/:id&#x27;)<br />@ApiOperation({summary: &#x27;Retry a Failed Rahat Beneficiary Job&#x27;})<br />@ApiParam({name: &#x27;id&#x27;, description: &#x27;Job ID to retry&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">apps/rahat/src/queue/queue.controller.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>jobId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="retryRahatJob"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>retryRahatJob</b></span>
+                        <a href="#retryRahatJob"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>retryRahatJob(jobId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;rahat-jobs/retry/:id&#x27;)<br />@ApiOperation({summary: &#x27;Retry a Failed Rahat Job&#x27;})<br />@ApiParam({name: &#x27;id&#x27;, description: &#x27;Job ID to retry&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="70"
+                                    class="link-to-prism">apps/rahat/src/queue/queue.controller.ts:70</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>jobId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Get, Param, ParseIntPipe, Query } from &quot;@nestjs/common&quot;;
+import { ApiOperation, ApiParam, ApiQuery, ApiResponse, ApiTags } from &quot;@nestjs/swagger&quot;;
+import { JobStatus } from &quot;bull&quot;;
+import { UUID } from &quot;crypto&quot;;
+import { QueueService } from &quot;./queue.service&quot;;
+
+@Controller(&#x27;queue&#x27;)
+@ApiTags(&#x27;Queue&#x27;)
+export class QueueController {
+  constructor(
+    private readonly queueService: QueueService
+  ) { }
+
+  // Contract Jobs with Filters
+  @Get(&#x27;contract-jobs&#x27;)
+  @ApiOperation({ summary: &#x27;Get Pending Contract Jobs with Filters&#x27; })
+  @ApiResponse({ status: 200, description: &#x27;List of filtered contract jobs&#x27; })
+  @ApiQuery({ name: &#x27;status&#x27;, required: false, enum: [&#x27;waiting&#x27;, &#x27;active&#x27;, &#x27;completed&#x27;, &#x27;failed&#x27;, &#x27;delayed&#x27;], description: &#x27;Filter by job status&#x27; })
+  @ApiQuery({ name: &#x27;name&#x27;, required: false, description: &#x27;Filter by job name (e.g., rahat.jobs.beneficiary.bulk_assign_vouchers)&#x27; })
+  @ApiQuery({ name: &#x27;startDate&#x27;, required: false, description: &#x27;Filter by job creation start date (YYYY-MM-DD)&#x27; })
+  @ApiQuery({ name: &#x27;endDate&#x27;, required: false, description: &#x27;Filter by job creation end date (YYYY-MM-DD)&#x27; })
+  async getPendingContractJobs(
+    @Query(&#x27;status&#x27;) status?: string[],
+    @Query(&#x27;name&#x27;) name?: string,
+    @Query(&#x27;startDate&#x27;) startDate?: string,
+    @Query(&#x27;endDate&#x27;) endDate?: string
+  ) {
+    const filters &#x3D; {
+      status: status as JobStatus[],
+      name,
+      startDate: startDate ? new Date(startDate) : undefined,
+      endDate: endDate ? new Date(endDate) : undefined,
+    };
+    return this.queueService.getPendingContractJobs(filters);
+  }
+
+  @Get(&#x27;contract-jobs/retry/:id&#x27;)
+  @ApiOperation({ summary: &#x27;Retry a Failed Contract Job&#x27; })
+  @ApiParam({ name: &#x27;id&#x27;, description: &#x27;Job ID to retry&#x27; })
+  async retryContractJob(@Param(&#x27;id&#x27;, ParseIntPipe) jobId: string | number | UUID) {
+    return this.queueService.retryContractJob(jobId);
+  }
+
+  // Rahat Jobs with Filters
+  @Get(&#x27;rahat-jobs&#x27;)
+  @ApiOperation({ summary: &#x27;Get Pending Rahat Jobs with Filters&#x27; })
+  @ApiResponse({ status: 200, description: &#x27;List of filtered Rahat jobs&#x27; })
+  @ApiQuery({ name: &#x27;status&#x27;, required: false, enum: [&#x27;waiting&#x27;, &#x27;active&#x27;, &#x27;completed&#x27;, &#x27;failed&#x27;, &#x27;delayed&#x27;], description: &#x27;Filter by job status&#x27; })
+  @ApiQuery({ name: &#x27;name&#x27;, required: false, description: &#x27;Filter by job name&#x27; })
+  @ApiQuery({ name: &#x27;startDate&#x27;, required: false, description: &#x27;Filter by job creation start date (YYYY-MM-DD)&#x27; })
+  @ApiQuery({ name: &#x27;endDate&#x27;, required: false, description: &#x27;Filter by job creation end date (YYYY-MM-DD)&#x27; })
+  async getPendingRahatJobs(
+    @Query(&#x27;status&#x27;) status?: string[],
+    @Query(&#x27;name&#x27;) name?: string,
+    @Query(&#x27;startDate&#x27;) startDate?: string,
+    @Query(&#x27;endDate&#x27;) endDate?: string
+  ) {
+    const filters &#x3D; {
+      status: status as JobStatus[],
+      name,
+      startDate: startDate ? new Date(startDate) : undefined,
+      endDate: endDate ? new Date(endDate) : undefined,
+    };
+    return this.queueService.getPendingRahatJobs(filters);
+  }
+
+  @Get(&#x27;rahat-jobs/retry/:id&#x27;)
+  @ApiOperation({ summary: &#x27;Retry a Failed Rahat Job&#x27; })
+  @ApiParam({ name: &#x27;id&#x27;, description: &#x27;Job ID to retry&#x27; })
+  async retryRahatJob(@Param(&#x27;id&#x27;, ParseIntPipe) jobId: number) {
+    return this.queueService.retryRahatJob(jobId);
+  }
+
+  // Rahat Beneficiary Jobs with Filters
+  @Get(&#x27;rahat-beneficiary-jobs&#x27;)
+  @ApiOperation({ summary: &#x27;Get Pending Rahat Beneficiary Jobs with Filters&#x27; })
+  @ApiResponse({ status: 200, description: &#x27;List of filtered Rahat Beneficiary jobs&#x27; })
+  @ApiQuery({ name: &#x27;status&#x27;, required: false, enum: [&#x27;waiting&#x27;, &#x27;active&#x27;, &#x27;completed&#x27;, &#x27;failed&#x27;, &#x27;delayed&#x27;], description: &#x27;Filter by job status&#x27; })
+  @ApiQuery({ name: &#x27;name&#x27;, required: false, description: &#x27;Filter by job name&#x27; })
+  @ApiQuery({ name: &#x27;startDate&#x27;, required: false, description: &#x27;Filter by job creation start date (YYYY-MM-DD)&#x27; })
+  @ApiQuery({ name: &#x27;endDate&#x27;, required: false, description: &#x27;Filter by job creation end date (YYYY-MM-DD)&#x27; })
+  async getPendingRahatBeneficiaryJobs(
+    @Query(&#x27;status&#x27;) status?: string[],
+    @Query(&#x27;name&#x27;) name?: string,
+    @Query(&#x27;startDate&#x27;) startDate?: string,
+    @Query(&#x27;endDate&#x27;) endDate?: string
+  ) {
+    const filters &#x3D; {
+      status: status as JobStatus[],
+      name,
+      startDate: startDate ? new Date(startDate) : undefined,
+      endDate: endDate ? new Date(endDate) : undefined,
+    };
+    return this.queueService.getPendingRahatBeneficiaryJobs(filters);
+  }
+
+  @Get(&#x27;rahat-beneficiary-jobs/retry/:id&#x27;)
+  @ApiOperation({ summary: &#x27;Retry a Failed Rahat Beneficiary Job&#x27; })
+  @ApiParam({ name: &#x27;id&#x27;, description: &#x27;Job ID to retry&#x27; })
+  async retryRahatBeneficiaryJob(@Param(&#x27;id&#x27;, ParseIntPipe) jobId: number) {
+    return this.queueService.retryRahatBeneficiaryJob(jobId);
+  }
+
+  // Meta Transaction Jobs with Filters
+  @Get(&#x27;meta-txn-jobs&#x27;)
+  @ApiOperation({ summary: &#x27;Get Pending Meta Transaction Jobs with Filters&#x27; })
+  @ApiResponse({ status: 200, description: &#x27;List of filtered Meta Transaction jobs&#x27; })
+  @ApiQuery({ name: &#x27;status&#x27;, required: false, enum: [&#x27;waiting&#x27;, &#x27;active&#x27;, &#x27;completed&#x27;, &#x27;failed&#x27;, &#x27;delayed&#x27;], description: &#x27;Filter by job status&#x27; })
+  @ApiQuery({ name: &#x27;name&#x27;, required: false, description: &#x27;Filter by job name&#x27; })
+  @ApiQuery({ name: &#x27;startDate&#x27;, required: false, description: &#x27;Filter by job creation start date (YYYY-MM-DD)&#x27; })
+  @ApiQuery({ name: &#x27;endDate&#x27;, required: false, description: &#x27;Filter by job creation end date (YYYY-MM-DD)&#x27; })
+  async getPendingMetaTxnJobs(
+    @Query(&#x27;status&#x27;) status?: string[],
+    @Query(&#x27;name&#x27;) name?: string,
+    @Query(&#x27;startDate&#x27;) startDate?: string,
+    @Query(&#x27;endDate&#x27;) endDate?: string
+  ) {
+    const filters &#x3D; {
+      status: status as JobStatus[],
+      name,
+      startDate: startDate ? new Date(startDate) : undefined,
+      endDate: endDate ? new Date(endDate) : undefined,
+    };
+    return this.queueService.getPendingMetaTxnJobs(filters);
+  }
+
+  @Get(&#x27;meta-txn-jobs/retry/:id&#x27;)
+  @ApiOperation({ summary: &#x27;Retry a Failed Meta Transaction Job&#x27; })
+  @ApiParam({ name: &#x27;id&#x27;, description: &#x27;Job ID to retry&#x27; })
+  async retryMetaTxnJob(@Param(&#x27;id&#x27;, ParseIntPipe) jobId: number) {
+    return this.queueService.retryMetaTxnJob(jobId);
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
+            var COMPODOC_CURRENT_PAGE_URL = 'QueueController.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

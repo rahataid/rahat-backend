@@ -10,7 +10,6 @@ export class StatsService {
     if (data.group !== 'beneficiary') {
       data.name = data.name + '_ID_' + data.group;
     }
-
     return this.prismaService.stats.upsert({
       where: { name: data.name },
       update: data,

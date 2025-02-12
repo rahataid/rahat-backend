@@ -1,0 +1,24 @@
+meta {
+  name: provider-actions
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/offramps/providers/actions
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "uuid":"0fe88e42-fd5b-4b65-bcbb-9039340f4759",
+    "action":"create-customer-mobile-wallet",
+    "payload":{
+      "country_code": "KE",
+      "phone_number": "+254722154745 ",
+      "network": "AIRTEL",
+      "account_name": "rumsan-tester"
+    }
+  }
+}

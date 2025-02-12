@@ -1,0 +1,27 @@
+meta {
+  name: execute-offramp-request
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{url}}/offramps/execute
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "providerUuid":"0fe88e42-fd5b-4b65-bcbb-9039340f4759",
+    "requestUuid":"617faf15-26e2-48b0-9a98-fe264f14e560",
+    "data":{
+      "chain": "CELO",
+      "token": "CUSD",
+      "transaction_hash": "0x3e9c73530c5fa666a6ccf49296cdbaa5e82084695bce935c888e4bc096734b41",
+      "wallet_id": "66f3cdee84e385a32f6fe1b4",
+      "request_id": "670f71a2befa8743b092e79c",
+      "customer_key": "QozR5knCfvkdAezXT7rx"
+  
+  }
+  }
+}

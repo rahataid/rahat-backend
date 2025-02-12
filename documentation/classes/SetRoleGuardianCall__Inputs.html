@@ -1,0 +1,1950 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@rahat-os/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">@rahat-os/source documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >SetRoleGuardianCall__Inputs</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/graph/generated/RahatAccessManager/RahatAccessManager.ts</code>
+        </p>
+
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#_call" >_call</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#roleId" >roleId</a>
+                                </li>
+                                <li>
+                                    <a href="#guardian" >guardian</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(call: <a href="../classes/SetRoleGuardianCall.html" target="_self">SetRoleGuardianCall</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="1393" class="link-to-prism">apps/graph/generated/RahatAccessManager/RahatAccessManager.ts:1393</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>call</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/SetRoleGuardianCall.html" target="_self" >SetRoleGuardianCall</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_call"></a>
+                    <span class="name">
+                        <span ><b>_call</b></span>
+                        <a href="#_call"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/SetRoleGuardianCall.html" target="_self" >SetRoleGuardianCall</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="1393" class="link-to-prism">apps/graph/generated/RahatAccessManager/RahatAccessManager.ts:1393</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+            <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="roleId"></a>
+                        <span class="name"><b>roleId</b><a href="#roleId"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>roleId()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="1399" class="link-to-prism">apps/graph/generated/RahatAccessManager/RahatAccessManager.ts:1399</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="guardian"></a>
+                        <span class="name"><b>guardian</b><a href="#guardian"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>guardian()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="1403" class="link-to-prism">apps/graph/generated/RahatAccessManager/RahatAccessManager.ts:1403</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  ethereum,
+  JSONValue,
+  TypedMap,
+  Entity,
+  Bytes,
+  Address,
+  BigInt,
+} from &quot;@graphprotocol/graph-ts&quot;;
+
+export class OperationCanceled extends ethereum.Event {
+  get params(): OperationCanceled__Params {
+    return new OperationCanceled__Params(this);
+  }
+}
+
+export class OperationCanceled__Params {
+  _event: OperationCanceled;
+
+  constructor(event: OperationCanceled) {
+    this._event &#x3D; event;
+  }
+
+  get operationId(): Bytes {
+    return this._event.parameters[0].value.toBytes();
+  }
+
+  get nonce(): BigInt {
+    return this._event.parameters[1].value.toBigInt();
+  }
+}
+
+export class OperationExecuted extends ethereum.Event {
+  get params(): OperationExecuted__Params {
+    return new OperationExecuted__Params(this);
+  }
+}
+
+export class OperationExecuted__Params {
+  _event: OperationExecuted;
+
+  constructor(event: OperationExecuted) {
+    this._event &#x3D; event;
+  }
+
+  get operationId(): Bytes {
+    return this._event.parameters[0].value.toBytes();
+  }
+
+  get nonce(): BigInt {
+    return this._event.parameters[1].value.toBigInt();
+  }
+}
+
+export class OperationScheduled extends ethereum.Event {
+  get params(): OperationScheduled__Params {
+    return new OperationScheduled__Params(this);
+  }
+}
+
+export class OperationScheduled__Params {
+  _event: OperationScheduled;
+
+  constructor(event: OperationScheduled) {
+    this._event &#x3D; event;
+  }
+
+  get operationId(): Bytes {
+    return this._event.parameters[0].value.toBytes();
+  }
+
+  get nonce(): BigInt {
+    return this._event.parameters[1].value.toBigInt();
+  }
+
+  get schedule(): BigInt {
+    return this._event.parameters[2].value.toBigInt();
+  }
+
+  get caller(): Address {
+    return this._event.parameters[3].value.toAddress();
+  }
+
+  get target(): Address {
+    return this._event.parameters[4].value.toAddress();
+  }
+
+  get data(): Bytes {
+    return this._event.parameters[5].value.toBytes();
+  }
+}
+
+export class RoleAdminChanged extends ethereum.Event {
+  get params(): RoleAdminChanged__Params {
+    return new RoleAdminChanged__Params(this);
+  }
+}
+
+export class RoleAdminChanged__Params {
+  _event: RoleAdminChanged;
+
+  constructor(event: RoleAdminChanged) {
+    this._event &#x3D; event;
+  }
+
+  get roleId(): BigInt {
+    return this._event.parameters[0].value.toBigInt();
+  }
+
+  get admin(): BigInt {
+    return this._event.parameters[1].value.toBigInt();
+  }
+}
+
+export class RoleGrantDelayChanged extends ethereum.Event {
+  get params(): RoleGrantDelayChanged__Params {
+    return new RoleGrantDelayChanged__Params(this);
+  }
+}
+
+export class RoleGrantDelayChanged__Params {
+  _event: RoleGrantDelayChanged;
+
+  constructor(event: RoleGrantDelayChanged) {
+    this._event &#x3D; event;
+  }
+
+  get roleId(): BigInt {
+    return this._event.parameters[0].value.toBigInt();
+  }
+
+  get delay(): BigInt {
+    return this._event.parameters[1].value.toBigInt();
+  }
+
+  get since(): BigInt {
+    return this._event.parameters[2].value.toBigInt();
+  }
+}
+
+export class RoleGranted extends ethereum.Event {
+  get params(): RoleGranted__Params {
+    return new RoleGranted__Params(this);
+  }
+}
+
+export class RoleGranted__Params {
+  _event: RoleGranted;
+
+  constructor(event: RoleGranted) {
+    this._event &#x3D; event;
+  }
+
+  get roleId(): BigInt {
+    return this._event.parameters[0].value.toBigInt();
+  }
+
+  get account(): Address {
+    return this._event.parameters[1].value.toAddress();
+  }
+
+  get delay(): BigInt {
+    return this._event.parameters[2].value.toBigInt();
+  }
+
+  get since(): BigInt {
+    return this._event.parameters[3].value.toBigInt();
+  }
+
+  get newMember(): boolean {
+    return this._event.parameters[4].value.toBoolean();
+  }
+}
+
+export class RoleGuardianChanged extends ethereum.Event {
+  get params(): RoleGuardianChanged__Params {
+    return new RoleGuardianChanged__Params(this);
+  }
+}
+
+export class RoleGuardianChanged__Params {
+  _event: RoleGuardianChanged;
+
+  constructor(event: RoleGuardianChanged) {
+    this._event &#x3D; event;
+  }
+
+  get roleId(): BigInt {
+    return this._event.parameters[0].value.toBigInt();
+  }
+
+  get guardian(): BigInt {
+    return this._event.parameters[1].value.toBigInt();
+  }
+}
+
+export class RoleLabel extends ethereum.Event {
+  get params(): RoleLabel__Params {
+    return new RoleLabel__Params(this);
+  }
+}
+
+export class RoleLabel__Params {
+  _event: RoleLabel;
+
+  constructor(event: RoleLabel) {
+    this._event &#x3D; event;
+  }
+
+  get roleId(): BigInt {
+    return this._event.parameters[0].value.toBigInt();
+  }
+
+  get label(): string {
+    return this._event.parameters[1].value.toString();
+  }
+}
+
+export class RoleRevoked extends ethereum.Event {
+  get params(): RoleRevoked__Params {
+    return new RoleRevoked__Params(this);
+  }
+}
+
+export class RoleRevoked__Params {
+  _event: RoleRevoked;
+
+  constructor(event: RoleRevoked) {
+    this._event &#x3D; event;
+  }
+
+  get roleId(): BigInt {
+    return this._event.parameters[0].value.toBigInt();
+  }
+
+  get account(): Address {
+    return this._event.parameters[1].value.toAddress();
+  }
+}
+
+export class TargetAdminDelayUpdated extends ethereum.Event {
+  get params(): TargetAdminDelayUpdated__Params {
+    return new TargetAdminDelayUpdated__Params(this);
+  }
+}
+
+export class TargetAdminDelayUpdated__Params {
+  _event: TargetAdminDelayUpdated;
+
+  constructor(event: TargetAdminDelayUpdated) {
+    this._event &#x3D; event;
+  }
+
+  get target(): Address {
+    return this._event.parameters[0].value.toAddress();
+  }
+
+  get delay(): BigInt {
+    return this._event.parameters[1].value.toBigInt();
+  }
+
+  get since(): BigInt {
+    return this._event.parameters[2].value.toBigInt();
+  }
+}
+
+export class TargetClosed extends ethereum.Event {
+  get params(): TargetClosed__Params {
+    return new TargetClosed__Params(this);
+  }
+}
+
+export class TargetClosed__Params {
+  _event: TargetClosed;
+
+  constructor(event: TargetClosed) {
+    this._event &#x3D; event;
+  }
+
+  get target(): Address {
+    return this._event.parameters[0].value.toAddress();
+  }
+
+  get closed(): boolean {
+    return this._event.parameters[1].value.toBoolean();
+  }
+}
+
+export class TargetFunctionRoleUpdated extends ethereum.Event {
+  get params(): TargetFunctionRoleUpdated__Params {
+    return new TargetFunctionRoleUpdated__Params(this);
+  }
+}
+
+export class TargetFunctionRoleUpdated__Params {
+  _event: TargetFunctionRoleUpdated;
+
+  constructor(event: TargetFunctionRoleUpdated) {
+    this._event &#x3D; event;
+  }
+
+  get target(): Address {
+    return this._event.parameters[0].value.toAddress();
+  }
+
+  get selector(): Bytes {
+    return this._event.parameters[1].value.toBytes();
+  }
+
+  get roleId(): BigInt {
+    return this._event.parameters[2].value.toBigInt();
+  }
+}
+
+export class RahatAccessManager__canCallResult {
+  value0: boolean;
+  value1: BigInt;
+
+  constructor(value0: boolean, value1: BigInt) {
+    this.value0 &#x3D; value0;
+    this.value1 &#x3D; value1;
+  }
+
+  toMap(): TypedMap&lt;string, ethereum.Value&gt; {
+    let map &#x3D; new TypedMap&lt;string, ethereum.Value&gt;();
+    map.set(&quot;value0&quot;, ethereum.Value.fromBoolean(this.value0));
+    map.set(&quot;value1&quot;, ethereum.Value.fromUnsignedBigInt(this.value1));
+    return map;
+  }
+
+  getImmediate(): boolean {
+    return this.value0;
+  }
+
+  getDelay(): BigInt {
+    return this.value1;
+  }
+}
+
+export class RahatAccessManager__getAccessResult {
+  value0: BigInt;
+  value1: BigInt;
+  value2: BigInt;
+  value3: BigInt;
+
+  constructor(value0: BigInt, value1: BigInt, value2: BigInt, value3: BigInt) {
+    this.value0 &#x3D; value0;
+    this.value1 &#x3D; value1;
+    this.value2 &#x3D; value2;
+    this.value3 &#x3D; value3;
+  }
+
+  toMap(): TypedMap&lt;string, ethereum.Value&gt; {
+    let map &#x3D; new TypedMap&lt;string, ethereum.Value&gt;();
+    map.set(&quot;value0&quot;, ethereum.Value.fromUnsignedBigInt(this.value0));
+    map.set(&quot;value1&quot;, ethereum.Value.fromUnsignedBigInt(this.value1));
+    map.set(&quot;value2&quot;, ethereum.Value.fromUnsignedBigInt(this.value2));
+    map.set(&quot;value3&quot;, ethereum.Value.fromUnsignedBigInt(this.value3));
+    return map;
+  }
+
+  getSince(): BigInt {
+    return this.value0;
+  }
+
+  getCurrentDelay(): BigInt {
+    return this.value1;
+  }
+
+  getPendingDelay(): BigInt {
+    return this.value2;
+  }
+
+  getEffect(): BigInt {
+    return this.value3;
+  }
+}
+
+export class RahatAccessManager__hasRoleResult {
+  value0: boolean;
+  value1: BigInt;
+
+  constructor(value0: boolean, value1: BigInt) {
+    this.value0 &#x3D; value0;
+    this.value1 &#x3D; value1;
+  }
+
+  toMap(): TypedMap&lt;string, ethereum.Value&gt; {
+    let map &#x3D; new TypedMap&lt;string, ethereum.Value&gt;();
+    map.set(&quot;value0&quot;, ethereum.Value.fromBoolean(this.value0));
+    map.set(&quot;value1&quot;, ethereum.Value.fromUnsignedBigInt(this.value1));
+    return map;
+  }
+
+  getIsMember(): boolean {
+    return this.value0;
+  }
+
+  getExecutionDelay(): BigInt {
+    return this.value1;
+  }
+}
+
+export class RahatAccessManager__scheduleResult {
+  value0: Bytes;
+  value1: BigInt;
+
+  constructor(value0: Bytes, value1: BigInt) {
+    this.value0 &#x3D; value0;
+    this.value1 &#x3D; value1;
+  }
+
+  toMap(): TypedMap&lt;string, ethereum.Value&gt; {
+    let map &#x3D; new TypedMap&lt;string, ethereum.Value&gt;();
+    map.set(&quot;value0&quot;, ethereum.Value.fromFixedBytes(this.value0));
+    map.set(&quot;value1&quot;, ethereum.Value.fromUnsignedBigInt(this.value1));
+    return map;
+  }
+
+  getOperationId(): Bytes {
+    return this.value0;
+  }
+
+  getNonce(): BigInt {
+    return this.value1;
+  }
+}
+
+export class RahatAccessManager extends ethereum.SmartContract {
+  static bind(address: Address): RahatAccessManager {
+    return new RahatAccessManager(&quot;RahatAccessManager&quot;, address);
+  }
+
+  ADMIN_ROLE(): BigInt {
+    let result &#x3D; super.call(&quot;ADMIN_ROLE&quot;, &quot;ADMIN_ROLE():(uint64)&quot;, []);
+
+    return result[0].toBigInt();
+  }
+
+  try_ADMIN_ROLE(): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(&quot;ADMIN_ROLE&quot;, &quot;ADMIN_ROLE():(uint64)&quot;, []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  PUBLIC_ROLE(): BigInt {
+    let result &#x3D; super.call(&quot;PUBLIC_ROLE&quot;, &quot;PUBLIC_ROLE():(uint64)&quot;, []);
+
+    return result[0].toBigInt();
+  }
+
+  try_PUBLIC_ROLE(): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(&quot;PUBLIC_ROLE&quot;, &quot;PUBLIC_ROLE():(uint64)&quot;, []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  canCall(
+    caller: Address,
+    target: Address,
+    selector: Bytes,
+  ): RahatAccessManager__canCallResult {
+    let result &#x3D; super.call(
+      &quot;canCall&quot;,
+      &quot;canCall(address,address,bytes4):(bool,uint32)&quot;,
+      [
+        ethereum.Value.fromAddress(caller),
+        ethereum.Value.fromAddress(target),
+        ethereum.Value.fromFixedBytes(selector),
+      ],
+    );
+
+    return new RahatAccessManager__canCallResult(
+      result[0].toBoolean(),
+      result[1].toBigInt(),
+    );
+  }
+
+  try_canCall(
+    caller: Address,
+    target: Address,
+    selector: Bytes,
+  ): ethereum.CallResult&lt;RahatAccessManager__canCallResult&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;canCall&quot;,
+      &quot;canCall(address,address,bytes4):(bool,uint32)&quot;,
+      [
+        ethereum.Value.fromAddress(caller),
+        ethereum.Value.fromAddress(target),
+        ethereum.Value.fromFixedBytes(selector),
+      ],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(
+      new RahatAccessManager__canCallResult(
+        value[0].toBoolean(),
+        value[1].toBigInt(),
+      ),
+    );
+  }
+
+  cancel(caller: Address, target: Address, data: Bytes): BigInt {
+    let result &#x3D; super.call(
+      &quot;cancel&quot;,
+      &quot;cancel(address,address,bytes):(uint32)&quot;,
+      [
+        ethereum.Value.fromAddress(caller),
+        ethereum.Value.fromAddress(target),
+        ethereum.Value.fromBytes(data),
+      ],
+    );
+
+    return result[0].toBigInt();
+  }
+
+  try_cancel(
+    caller: Address,
+    target: Address,
+    data: Bytes,
+  ): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;cancel&quot;,
+      &quot;cancel(address,address,bytes):(uint32)&quot;,
+      [
+        ethereum.Value.fromAddress(caller),
+        ethereum.Value.fromAddress(target),
+        ethereum.Value.fromBytes(data),
+      ],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  expiration(): BigInt {
+    let result &#x3D; super.call(&quot;expiration&quot;, &quot;expiration():(uint32)&quot;, []);
+
+    return result[0].toBigInt();
+  }
+
+  try_expiration(): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(&quot;expiration&quot;, &quot;expiration():(uint32)&quot;, []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  getAccess(
+    roleId: BigInt,
+    account: Address,
+  ): RahatAccessManager__getAccessResult {
+    let result &#x3D; super.call(
+      &quot;getAccess&quot;,
+      &quot;getAccess(uint64,address):(uint48,uint32,uint32,uint48)&quot;,
+      [
+        ethereum.Value.fromUnsignedBigInt(roleId),
+        ethereum.Value.fromAddress(account),
+      ],
+    );
+
+    return new RahatAccessManager__getAccessResult(
+      result[0].toBigInt(),
+      result[1].toBigInt(),
+      result[2].toBigInt(),
+      result[3].toBigInt(),
+    );
+  }
+
+  try_getAccess(
+    roleId: BigInt,
+    account: Address,
+  ): ethereum.CallResult&lt;RahatAccessManager__getAccessResult&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;getAccess&quot;,
+      &quot;getAccess(uint64,address):(uint48,uint32,uint32,uint48)&quot;,
+      [
+        ethereum.Value.fromUnsignedBigInt(roleId),
+        ethereum.Value.fromAddress(account),
+      ],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(
+      new RahatAccessManager__getAccessResult(
+        value[0].toBigInt(),
+        value[1].toBigInt(),
+        value[2].toBigInt(),
+        value[3].toBigInt(),
+      ),
+    );
+  }
+
+  getNonce(id: Bytes): BigInt {
+    let result &#x3D; super.call(&quot;getNonce&quot;, &quot;getNonce(bytes32):(uint32)&quot;, [
+      ethereum.Value.fromFixedBytes(id),
+    ]);
+
+    return result[0].toBigInt();
+  }
+
+  try_getNonce(id: Bytes): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(&quot;getNonce&quot;, &quot;getNonce(bytes32):(uint32)&quot;, [
+      ethereum.Value.fromFixedBytes(id),
+    ]);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  getRoleAdmin(roleId: BigInt): BigInt {
+    let result &#x3D; super.call(&quot;getRoleAdmin&quot;, &quot;getRoleAdmin(uint64):(uint64)&quot;, [
+      ethereum.Value.fromUnsignedBigInt(roleId),
+    ]);
+
+    return result[0].toBigInt();
+  }
+
+  try_getRoleAdmin(roleId: BigInt): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;getRoleAdmin&quot;,
+      &quot;getRoleAdmin(uint64):(uint64)&quot;,
+      [ethereum.Value.fromUnsignedBigInt(roleId)],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  getRoleGrantDelay(roleId: BigInt): BigInt {
+    let result &#x3D; super.call(
+      &quot;getRoleGrantDelay&quot;,
+      &quot;getRoleGrantDelay(uint64):(uint32)&quot;,
+      [ethereum.Value.fromUnsignedBigInt(roleId)],
+    );
+
+    return result[0].toBigInt();
+  }
+
+  try_getRoleGrantDelay(roleId: BigInt): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;getRoleGrantDelay&quot;,
+      &quot;getRoleGrantDelay(uint64):(uint32)&quot;,
+      [ethereum.Value.fromUnsignedBigInt(roleId)],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  getRoleGuardian(roleId: BigInt): BigInt {
+    let result &#x3D; super.call(
+      &quot;getRoleGuardian&quot;,
+      &quot;getRoleGuardian(uint64):(uint64)&quot;,
+      [ethereum.Value.fromUnsignedBigInt(roleId)],
+    );
+
+    return result[0].toBigInt();
+  }
+
+  try_getRoleGuardian(roleId: BigInt): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;getRoleGuardian&quot;,
+      &quot;getRoleGuardian(uint64):(uint64)&quot;,
+      [ethereum.Value.fromUnsignedBigInt(roleId)],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  getSchedule(id: Bytes): BigInt {
+    let result &#x3D; super.call(&quot;getSchedule&quot;, &quot;getSchedule(bytes32):(uint48)&quot;, [
+      ethereum.Value.fromFixedBytes(id),
+    ]);
+
+    return result[0].toBigInt();
+  }
+
+  try_getSchedule(id: Bytes): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(&quot;getSchedule&quot;, &quot;getSchedule(bytes32):(uint48)&quot;, [
+      ethereum.Value.fromFixedBytes(id),
+    ]);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  getTargetAdminDelay(target: Address): BigInt {
+    let result &#x3D; super.call(
+      &quot;getTargetAdminDelay&quot;,
+      &quot;getTargetAdminDelay(address):(uint32)&quot;,
+      [ethereum.Value.fromAddress(target)],
+    );
+
+    return result[0].toBigInt();
+  }
+
+  try_getTargetAdminDelay(target: Address): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;getTargetAdminDelay&quot;,
+      &quot;getTargetAdminDelay(address):(uint32)&quot;,
+      [ethereum.Value.fromAddress(target)],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  getTargetFunctionRole(target: Address, selector: Bytes): BigInt {
+    let result &#x3D; super.call(
+      &quot;getTargetFunctionRole&quot;,
+      &quot;getTargetFunctionRole(address,bytes4):(uint64)&quot;,
+      [
+        ethereum.Value.fromAddress(target),
+        ethereum.Value.fromFixedBytes(selector),
+      ],
+    );
+
+    return result[0].toBigInt();
+  }
+
+  try_getTargetFunctionRole(
+    target: Address,
+    selector: Bytes,
+  ): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;getTargetFunctionRole&quot;,
+      &quot;getTargetFunctionRole(address,bytes4):(uint64)&quot;,
+      [
+        ethereum.Value.fromAddress(target),
+        ethereum.Value.fromFixedBytes(selector),
+      ],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  hasRole(roleId: BigInt, account: Address): RahatAccessManager__hasRoleResult {
+    let result &#x3D; super.call(
+      &quot;hasRole&quot;,
+      &quot;hasRole(uint64,address):(bool,uint32)&quot;,
+      [
+        ethereum.Value.fromUnsignedBigInt(roleId),
+        ethereum.Value.fromAddress(account),
+      ],
+    );
+
+    return new RahatAccessManager__hasRoleResult(
+      result[0].toBoolean(),
+      result[1].toBigInt(),
+    );
+  }
+
+  try_hasRole(
+    roleId: BigInt,
+    account: Address,
+  ): ethereum.CallResult&lt;RahatAccessManager__hasRoleResult&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;hasRole&quot;,
+      &quot;hasRole(uint64,address):(bool,uint32)&quot;,
+      [
+        ethereum.Value.fromUnsignedBigInt(roleId),
+        ethereum.Value.fromAddress(account),
+      ],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(
+      new RahatAccessManager__hasRoleResult(
+        value[0].toBoolean(),
+        value[1].toBigInt(),
+      ),
+    );
+  }
+
+  hashOperation(caller: Address, target: Address, data: Bytes): Bytes {
+    let result &#x3D; super.call(
+      &quot;hashOperation&quot;,
+      &quot;hashOperation(address,address,bytes):(bytes32)&quot;,
+      [
+        ethereum.Value.fromAddress(caller),
+        ethereum.Value.fromAddress(target),
+        ethereum.Value.fromBytes(data),
+      ],
+    );
+
+    return result[0].toBytes();
+  }
+
+  try_hashOperation(
+    caller: Address,
+    target: Address,
+    data: Bytes,
+  ): ethereum.CallResult&lt;Bytes&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;hashOperation&quot;,
+      &quot;hashOperation(address,address,bytes):(bytes32)&quot;,
+      [
+        ethereum.Value.fromAddress(caller),
+        ethereum.Value.fromAddress(target),
+        ethereum.Value.fromBytes(data),
+      ],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBytes());
+  }
+
+  isTargetClosed(target: Address): boolean {
+    let result &#x3D; super.call(
+      &quot;isTargetClosed&quot;,
+      &quot;isTargetClosed(address):(bool)&quot;,
+      [ethereum.Value.fromAddress(target)],
+    );
+
+    return result[0].toBoolean();
+  }
+
+  try_isTargetClosed(target: Address): ethereum.CallResult&lt;boolean&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;isTargetClosed&quot;,
+      &quot;isTargetClosed(address):(bool)&quot;,
+      [ethereum.Value.fromAddress(target)],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBoolean());
+  }
+
+  minSetback(): BigInt {
+    let result &#x3D; super.call(&quot;minSetback&quot;, &quot;minSetback():(uint32)&quot;, []);
+
+    return result[0].toBigInt();
+  }
+
+  try_minSetback(): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(&quot;minSetback&quot;, &quot;minSetback():(uint32)&quot;, []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  multicall(data: Array&lt;Bytes&gt;): Array&lt;Bytes&gt; {
+    let result &#x3D; super.call(&quot;multicall&quot;, &quot;multicall(bytes[]):(bytes[])&quot;, [
+      ethereum.Value.fromBytesArray(data),
+    ]);
+
+    return result[0].toBytesArray();
+  }
+
+  try_multicall(data: Array&lt;Bytes&gt;): ethereum.CallResult&lt;Array&lt;Bytes&gt;&gt; {
+    let result &#x3D; super.tryCall(&quot;multicall&quot;, &quot;multicall(bytes[]):(bytes[])&quot;, [
+      ethereum.Value.fromBytesArray(data),
+    ]);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBytesArray());
+  }
+
+  schedule(
+    target: Address,
+    data: Bytes,
+    when: BigInt,
+  ): RahatAccessManager__scheduleResult {
+    let result &#x3D; super.call(
+      &quot;schedule&quot;,
+      &quot;schedule(address,bytes,uint48):(bytes32,uint32)&quot;,
+      [
+        ethereum.Value.fromAddress(target),
+        ethereum.Value.fromBytes(data),
+        ethereum.Value.fromUnsignedBigInt(when),
+      ],
+    );
+
+    return new RahatAccessManager__scheduleResult(
+      result[0].toBytes(),
+      result[1].toBigInt(),
+    );
+  }
+
+  try_schedule(
+    target: Address,
+    data: Bytes,
+    when: BigInt,
+  ): ethereum.CallResult&lt;RahatAccessManager__scheduleResult&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;schedule&quot;,
+      &quot;schedule(address,bytes,uint48):(bytes32,uint32)&quot;,
+      [
+        ethereum.Value.fromAddress(target),
+        ethereum.Value.fromBytes(data),
+        ethereum.Value.fromUnsignedBigInt(when),
+      ],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(
+      new RahatAccessManager__scheduleResult(
+        value[0].toBytes(),
+        value[1].toBigInt(),
+      ),
+    );
+  }
+}
+
+export class ConstructorCall extends ethereum.Call {
+  get inputs(): ConstructorCall__Inputs {
+    return new ConstructorCall__Inputs(this);
+  }
+
+  get outputs(): ConstructorCall__Outputs {
+    return new ConstructorCall__Outputs(this);
+  }
+}
+
+export class ConstructorCall__Inputs {
+  _call: ConstructorCall;
+
+  constructor(call: ConstructorCall) {
+    this._call &#x3D; call;
+  }
+
+  get _manager(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+}
+
+export class ConstructorCall__Outputs {
+  _call: ConstructorCall;
+
+  constructor(call: ConstructorCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class CancelCall extends ethereum.Call {
+  get inputs(): CancelCall__Inputs {
+    return new CancelCall__Inputs(this);
+  }
+
+  get outputs(): CancelCall__Outputs {
+    return new CancelCall__Outputs(this);
+  }
+}
+
+export class CancelCall__Inputs {
+  _call: CancelCall;
+
+  constructor(call: CancelCall) {
+    this._call &#x3D; call;
+  }
+
+  get caller(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get target(): Address {
+    return this._call.inputValues[1].value.toAddress();
+  }
+
+  get data(): Bytes {
+    return this._call.inputValues[2].value.toBytes();
+  }
+}
+
+export class CancelCall__Outputs {
+  _call: CancelCall;
+
+  constructor(call: CancelCall) {
+    this._call &#x3D; call;
+  }
+
+  get value0(): BigInt {
+    return this._call.outputValues[0].value.toBigInt();
+  }
+}
+
+export class ConsumeScheduledOpCall extends ethereum.Call {
+  get inputs(): ConsumeScheduledOpCall__Inputs {
+    return new ConsumeScheduledOpCall__Inputs(this);
+  }
+
+  get outputs(): ConsumeScheduledOpCall__Outputs {
+    return new ConsumeScheduledOpCall__Outputs(this);
+  }
+}
+
+export class ConsumeScheduledOpCall__Inputs {
+  _call: ConsumeScheduledOpCall;
+
+  constructor(call: ConsumeScheduledOpCall) {
+    this._call &#x3D; call;
+  }
+
+  get caller(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get data(): Bytes {
+    return this._call.inputValues[1].value.toBytes();
+  }
+}
+
+export class ConsumeScheduledOpCall__Outputs {
+  _call: ConsumeScheduledOpCall;
+
+  constructor(call: ConsumeScheduledOpCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class ExecuteCall extends ethereum.Call {
+  get inputs(): ExecuteCall__Inputs {
+    return new ExecuteCall__Inputs(this);
+  }
+
+  get outputs(): ExecuteCall__Outputs {
+    return new ExecuteCall__Outputs(this);
+  }
+}
+
+export class ExecuteCall__Inputs {
+  _call: ExecuteCall;
+
+  constructor(call: ExecuteCall) {
+    this._call &#x3D; call;
+  }
+
+  get target(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get data(): Bytes {
+    return this._call.inputValues[1].value.toBytes();
+  }
+}
+
+export class ExecuteCall__Outputs {
+  _call: ExecuteCall;
+
+  constructor(call: ExecuteCall) {
+    this._call &#x3D; call;
+  }
+
+  get value0(): BigInt {
+    return this._call.outputValues[0].value.toBigInt();
+  }
+}
+
+export class GrantRoleCall extends ethereum.Call {
+  get inputs(): GrantRoleCall__Inputs {
+    return new GrantRoleCall__Inputs(this);
+  }
+
+  get outputs(): GrantRoleCall__Outputs {
+    return new GrantRoleCall__Outputs(this);
+  }
+}
+
+export class GrantRoleCall__Inputs {
+  _call: GrantRoleCall;
+
+  constructor(call: GrantRoleCall) {
+    this._call &#x3D; call;
+  }
+
+  get roleId(): BigInt {
+    return this._call.inputValues[0].value.toBigInt();
+  }
+
+  get account(): Address {
+    return this._call.inputValues[1].value.toAddress();
+  }
+
+  get executionDelay(): BigInt {
+    return this._call.inputValues[2].value.toBigInt();
+  }
+}
+
+export class GrantRoleCall__Outputs {
+  _call: GrantRoleCall;
+
+  constructor(call: GrantRoleCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class LabelRoleCall extends ethereum.Call {
+  get inputs(): LabelRoleCall__Inputs {
+    return new LabelRoleCall__Inputs(this);
+  }
+
+  get outputs(): LabelRoleCall__Outputs {
+    return new LabelRoleCall__Outputs(this);
+  }
+}
+
+export class LabelRoleCall__Inputs {
+  _call: LabelRoleCall;
+
+  constructor(call: LabelRoleCall) {
+    this._call &#x3D; call;
+  }
+
+  get roleId(): BigInt {
+    return this._call.inputValues[0].value.toBigInt();
+  }
+
+  get label(): string {
+    return this._call.inputValues[1].value.toString();
+  }
+}
+
+export class LabelRoleCall__Outputs {
+  _call: LabelRoleCall;
+
+  constructor(call: LabelRoleCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class MulticallCall extends ethereum.Call {
+  get inputs(): MulticallCall__Inputs {
+    return new MulticallCall__Inputs(this);
+  }
+
+  get outputs(): MulticallCall__Outputs {
+    return new MulticallCall__Outputs(this);
+  }
+}
+
+export class MulticallCall__Inputs {
+  _call: MulticallCall;
+
+  constructor(call: MulticallCall) {
+    this._call &#x3D; call;
+  }
+
+  get data(): Array&lt;Bytes&gt; {
+    return this._call.inputValues[0].value.toBytesArray();
+  }
+}
+
+export class MulticallCall__Outputs {
+  _call: MulticallCall;
+
+  constructor(call: MulticallCall) {
+    this._call &#x3D; call;
+  }
+
+  get results(): Array&lt;Bytes&gt; {
+    return this._call.outputValues[0].value.toBytesArray();
+  }
+}
+
+export class RenounceRoleCall extends ethereum.Call {
+  get inputs(): RenounceRoleCall__Inputs {
+    return new RenounceRoleCall__Inputs(this);
+  }
+
+  get outputs(): RenounceRoleCall__Outputs {
+    return new RenounceRoleCall__Outputs(this);
+  }
+}
+
+export class RenounceRoleCall__Inputs {
+  _call: RenounceRoleCall;
+
+  constructor(call: RenounceRoleCall) {
+    this._call &#x3D; call;
+  }
+
+  get roleId(): BigInt {
+    return this._call.inputValues[0].value.toBigInt();
+  }
+
+  get callerConfirmation(): Address {
+    return this._call.inputValues[1].value.toAddress();
+  }
+}
+
+export class RenounceRoleCall__Outputs {
+  _call: RenounceRoleCall;
+
+  constructor(call: RenounceRoleCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class RevokeRoleCall extends ethereum.Call {
+  get inputs(): RevokeRoleCall__Inputs {
+    return new RevokeRoleCall__Inputs(this);
+  }
+
+  get outputs(): RevokeRoleCall__Outputs {
+    return new RevokeRoleCall__Outputs(this);
+  }
+}
+
+export class RevokeRoleCall__Inputs {
+  _call: RevokeRoleCall;
+
+  constructor(call: RevokeRoleCall) {
+    this._call &#x3D; call;
+  }
+
+  get roleId(): BigInt {
+    return this._call.inputValues[0].value.toBigInt();
+  }
+
+  get account(): Address {
+    return this._call.inputValues[1].value.toAddress();
+  }
+}
+
+export class RevokeRoleCall__Outputs {
+  _call: RevokeRoleCall;
+
+  constructor(call: RevokeRoleCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class ScheduleCall extends ethereum.Call {
+  get inputs(): ScheduleCall__Inputs {
+    return new ScheduleCall__Inputs(this);
+  }
+
+  get outputs(): ScheduleCall__Outputs {
+    return new ScheduleCall__Outputs(this);
+  }
+}
+
+export class ScheduleCall__Inputs {
+  _call: ScheduleCall;
+
+  constructor(call: ScheduleCall) {
+    this._call &#x3D; call;
+  }
+
+  get target(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get data(): Bytes {
+    return this._call.inputValues[1].value.toBytes();
+  }
+
+  get when(): BigInt {
+    return this._call.inputValues[2].value.toBigInt();
+  }
+}
+
+export class ScheduleCall__Outputs {
+  _call: ScheduleCall;
+
+  constructor(call: ScheduleCall) {
+    this._call &#x3D; call;
+  }
+
+  get operationId(): Bytes {
+    return this._call.outputValues[0].value.toBytes();
+  }
+
+  get nonce(): BigInt {
+    return this._call.outputValues[1].value.toBigInt();
+  }
+}
+
+export class SetGrantDelayCall extends ethereum.Call {
+  get inputs(): SetGrantDelayCall__Inputs {
+    return new SetGrantDelayCall__Inputs(this);
+  }
+
+  get outputs(): SetGrantDelayCall__Outputs {
+    return new SetGrantDelayCall__Outputs(this);
+  }
+}
+
+export class SetGrantDelayCall__Inputs {
+  _call: SetGrantDelayCall;
+
+  constructor(call: SetGrantDelayCall) {
+    this._call &#x3D; call;
+  }
+
+  get roleId(): BigInt {
+    return this._call.inputValues[0].value.toBigInt();
+  }
+
+  get newDelay(): BigInt {
+    return this._call.inputValues[1].value.toBigInt();
+  }
+}
+
+export class SetGrantDelayCall__Outputs {
+  _call: SetGrantDelayCall;
+
+  constructor(call: SetGrantDelayCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class SetRoleAdminCall extends ethereum.Call {
+  get inputs(): SetRoleAdminCall__Inputs {
+    return new SetRoleAdminCall__Inputs(this);
+  }
+
+  get outputs(): SetRoleAdminCall__Outputs {
+    return new SetRoleAdminCall__Outputs(this);
+  }
+}
+
+export class SetRoleAdminCall__Inputs {
+  _call: SetRoleAdminCall;
+
+  constructor(call: SetRoleAdminCall) {
+    this._call &#x3D; call;
+  }
+
+  get roleId(): BigInt {
+    return this._call.inputValues[0].value.toBigInt();
+  }
+
+  get admin(): BigInt {
+    return this._call.inputValues[1].value.toBigInt();
+  }
+}
+
+export class SetRoleAdminCall__Outputs {
+  _call: SetRoleAdminCall;
+
+  constructor(call: SetRoleAdminCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class SetRoleGuardianCall extends ethereum.Call {
+  get inputs(): SetRoleGuardianCall__Inputs {
+    return new SetRoleGuardianCall__Inputs(this);
+  }
+
+  get outputs(): SetRoleGuardianCall__Outputs {
+    return new SetRoleGuardianCall__Outputs(this);
+  }
+}
+
+export class SetRoleGuardianCall__Inputs {
+  _call: SetRoleGuardianCall;
+
+  constructor(call: SetRoleGuardianCall) {
+    this._call &#x3D; call;
+  }
+
+  get roleId(): BigInt {
+    return this._call.inputValues[0].value.toBigInt();
+  }
+
+  get guardian(): BigInt {
+    return this._call.inputValues[1].value.toBigInt();
+  }
+}
+
+export class SetRoleGuardianCall__Outputs {
+  _call: SetRoleGuardianCall;
+
+  constructor(call: SetRoleGuardianCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class SetTargetAdminDelayCall extends ethereum.Call {
+  get inputs(): SetTargetAdminDelayCall__Inputs {
+    return new SetTargetAdminDelayCall__Inputs(this);
+  }
+
+  get outputs(): SetTargetAdminDelayCall__Outputs {
+    return new SetTargetAdminDelayCall__Outputs(this);
+  }
+}
+
+export class SetTargetAdminDelayCall__Inputs {
+  _call: SetTargetAdminDelayCall;
+
+  constructor(call: SetTargetAdminDelayCall) {
+    this._call &#x3D; call;
+  }
+
+  get target(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get newDelay(): BigInt {
+    return this._call.inputValues[1].value.toBigInt();
+  }
+}
+
+export class SetTargetAdminDelayCall__Outputs {
+  _call: SetTargetAdminDelayCall;
+
+  constructor(call: SetTargetAdminDelayCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class SetTargetClosedCall extends ethereum.Call {
+  get inputs(): SetTargetClosedCall__Inputs {
+    return new SetTargetClosedCall__Inputs(this);
+  }
+
+  get outputs(): SetTargetClosedCall__Outputs {
+    return new SetTargetClosedCall__Outputs(this);
+  }
+}
+
+export class SetTargetClosedCall__Inputs {
+  _call: SetTargetClosedCall;
+
+  constructor(call: SetTargetClosedCall) {
+    this._call &#x3D; call;
+  }
+
+  get target(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get closed(): boolean {
+    return this._call.inputValues[1].value.toBoolean();
+  }
+}
+
+export class SetTargetClosedCall__Outputs {
+  _call: SetTargetClosedCall;
+
+  constructor(call: SetTargetClosedCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class SetTargetFunctionRoleCall extends ethereum.Call {
+  get inputs(): SetTargetFunctionRoleCall__Inputs {
+    return new SetTargetFunctionRoleCall__Inputs(this);
+  }
+
+  get outputs(): SetTargetFunctionRoleCall__Outputs {
+    return new SetTargetFunctionRoleCall__Outputs(this);
+  }
+}
+
+export class SetTargetFunctionRoleCall__Inputs {
+  _call: SetTargetFunctionRoleCall;
+
+  constructor(call: SetTargetFunctionRoleCall) {
+    this._call &#x3D; call;
+  }
+
+  get target(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get selectors(): Array&lt;Bytes&gt; {
+    return this._call.inputValues[1].value.toBytesArray();
+  }
+
+  get roleId(): BigInt {
+    return this._call.inputValues[2].value.toBigInt();
+  }
+}
+
+export class SetTargetFunctionRoleCall__Outputs {
+  _call: SetTargetFunctionRoleCall;
+
+  constructor(call: SetTargetFunctionRoleCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class UpdateAuthorityCall extends ethereum.Call {
+  get inputs(): UpdateAuthorityCall__Inputs {
+    return new UpdateAuthorityCall__Inputs(this);
+  }
+
+  get outputs(): UpdateAuthorityCall__Outputs {
+    return new UpdateAuthorityCall__Outputs(this);
+  }
+}
+
+export class UpdateAuthorityCall__Inputs {
+  _call: UpdateAuthorityCall;
+
+  constructor(call: UpdateAuthorityCall) {
+    this._call &#x3D; call;
+  }
+
+  get target(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get newAuthority(): Address {
+    return this._call.inputValues[1].value.toAddress();
+  }
+}
+
+export class UpdateAuthorityCall__Outputs {
+  _call: UpdateAuthorityCall;
+
+  constructor(call: UpdateAuthorityCall) {
+    this._call &#x3D; call;
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'SetRoleGuardianCall__Inputs.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

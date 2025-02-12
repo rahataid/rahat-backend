@@ -26,7 +26,7 @@ export class GlobalCustomExceptionFilter
     const error = await validate(object);
     if (error?.length > 0) {
       const messages = this.getErrorMessage(error);
-
+      console.log({ messages });
       throw new BadRequestException({
         message: 'Validation Failed',
         errors: messages,

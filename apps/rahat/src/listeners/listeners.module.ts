@@ -9,6 +9,7 @@ import { DevService } from '../utils/develop.service';
 import { EmailService } from './email.service';
 import { ListenersService } from './listeners.service';
 import { MessageSenderService } from './messageSender.service';
+import { MetaTxnService } from './metatxn.service';
 
 @Module({
   imports: [
@@ -23,6 +24,9 @@ import { MessageSenderService } from './messageSender.service';
     BullModule.registerQueue({
       name: BQUEUE.HOST,
     }),
+    BullModule.registerQueue({
+      name: BQUEUE.META_TXN
+    }),
     ClientsModule.registerAsync([
       {
         name: 'RAHAT_CLIENT',
@@ -36,8 +40,8 @@ import { MessageSenderService } from './messageSender.service';
         }),
         inject: [ConfigService],
       },
-    ]),
+    ])
   ],
-  providers: [ListenersService, DevService, EmailService, MessageSenderService],
+  providers: [ListenersService, DevService, EmailService, MessageSenderService, MetaTxnService],
 })
 export class ListenersModule { }

@@ -17,4 +17,5 @@ export class RahatProcessor {
     //   `<h1>OTP for login</h1><p>${job.data.otp}</p>`
     // );
   }
+
 }

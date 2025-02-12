@@ -26,6 +26,10 @@ export class ListGrievanceDTO {
   @IsOptional()
   projectId?: string;
 
+  @ApiPropertyOptional({ example: 'title' })
+  @IsString()
+  @IsOptional()
+  title?: string;
 
 
 }

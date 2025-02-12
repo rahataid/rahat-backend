@@ -94,3 +94,7 @@ Before you begin, ensure your system has the following dependencies installed:
    You can explore the API documentation at: [http://localhost:5501/swagger](http://localhost:5501/swagger)
 
 Explore the functionalities provided by the Rahat Platform locally. If you encounter any issues, refer to the troubleshooting section within the documentation or contact the project maintainers for assistance.
+
+# Production deployment
+
+Refer to [deployment](docs/deployments.md) file for deployment steps.

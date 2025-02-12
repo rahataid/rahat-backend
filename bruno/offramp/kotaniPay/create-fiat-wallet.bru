@@ -1,0 +1,22 @@
+meta {
+  name: create-fiat-wallet
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/offramps/providers/actions
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "uuid":"0fe88e42-fd5b-4b65-bcbb-9039340f4759",
+    "action":"create-fiat-wallet",
+    "payload":{
+      "currency":"KES",
+      "name":"rahat2"
+    }
+  }
+}

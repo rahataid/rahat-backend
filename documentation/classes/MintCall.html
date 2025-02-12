@@ -1,0 +1,1192 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@rahat-os/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">@rahat-os/source documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >MintCall</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/graph/generated/templates/RahatToken/RahatToken.ts</code>
+        </p>
+
+
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code>ethereum.Call</code>
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#inputs" >inputs</a>
+                                </li>
+                                <li>
+                                    <a href="#outputs" >outputs</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+            <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="inputs"></a>
+                        <span class="name"><b>inputs</b><a href="#inputs"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>inputs()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="671" class="link-to-prism">apps/graph/generated/templates/RahatToken/RahatToken.ts:671</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="outputs"></a>
+                        <span class="name"><b>outputs</b><a href="#outputs"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>outputs()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="675" class="link-to-prism">apps/graph/generated/templates/RahatToken/RahatToken.ts:675</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  ethereum,
+  JSONValue,
+  TypedMap,
+  Entity,
+  Bytes,
+  Address,
+  BigInt,
+} from &quot;@graphprotocol/graph-ts&quot;;
+
+export class Approval extends ethereum.Event {
+  get params(): Approval__Params {
+    return new Approval__Params(this);
+  }
+}
+
+export class Approval__Params {
+  _event: Approval;
+
+  constructor(event: Approval) {
+    this._event &#x3D; event;
+  }
+
+  get owner(): Address {
+    return this._event.parameters[0].value.toAddress();
+  }
+
+  get spender(): Address {
+    return this._event.parameters[1].value.toAddress();
+  }
+
+  get value(): BigInt {
+    return this._event.parameters[2].value.toBigInt();
+  }
+}
+
+export class AuthorityUpdated extends ethereum.Event {
+  get params(): AuthorityUpdated__Params {
+    return new AuthorityUpdated__Params(this);
+  }
+}
+
+export class AuthorityUpdated__Params {
+  _event: AuthorityUpdated;
+
+  constructor(event: AuthorityUpdated) {
+    this._event &#x3D; event;
+  }
+
+  get authority(): Address {
+    return this._event.parameters[0].value.toAddress();
+  }
+}
+
+export class OwnerAdded extends ethereum.Event {
+  get params(): OwnerAdded__Params {
+    return new OwnerAdded__Params(this);
+  }
+}
+
+export class OwnerAdded__Params {
+  _event: OwnerAdded;
+
+  constructor(event: OwnerAdded) {
+    this._event &#x3D; event;
+  }
+
+  get param0(): Address {
+    return this._event.parameters[0].value.toAddress();
+  }
+}
+
+export class OwnerRemoved extends ethereum.Event {
+  get params(): OwnerRemoved__Params {
+    return new OwnerRemoved__Params(this);
+  }
+}
+
+export class OwnerRemoved__Params {
+  _event: OwnerRemoved;
+
+  constructor(event: OwnerRemoved) {
+    this._event &#x3D; event;
+  }
+
+  get param0(): Address {
+    return this._event.parameters[0].value.toAddress();
+  }
+}
+
+export class Transfer extends ethereum.Event {
+  get params(): Transfer__Params {
+    return new Transfer__Params(this);
+  }
+}
+
+export class Transfer__Params {
+  _event: Transfer;
+
+  constructor(event: Transfer) {
+    this._event &#x3D; event;
+  }
+
+  get from(): Address {
+    return this._event.parameters[0].value.toAddress();
+  }
+
+  get to(): Address {
+    return this._event.parameters[1].value.toAddress();
+  }
+
+  get value(): BigInt {
+    return this._event.parameters[2].value.toBigInt();
+  }
+}
+
+export class RahatToken extends ethereum.SmartContract {
+  static bind(address: Address): RahatToken {
+    return new RahatToken(&quot;RahatToken&quot;, address);
+  }
+
+  addOwner(_address: Address): boolean {
+    let result &#x3D; super.call(&quot;addOwner&quot;, &quot;addOwner(address):(bool)&quot;, [
+      ethereum.Value.fromAddress(_address),
+    ]);
+
+    return result[0].toBoolean();
+  }
+
+  try_addOwner(_address: Address): ethereum.CallResult&lt;boolean&gt; {
+    let result &#x3D; super.tryCall(&quot;addOwner&quot;, &quot;addOwner(address):(bool)&quot;, [
+      ethereum.Value.fromAddress(_address),
+    ]);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBoolean());
+  }
+
+  allowance(owner: Address, spender: Address): BigInt {
+    let result &#x3D; super.call(
+      &quot;allowance&quot;,
+      &quot;allowance(address,address):(uint256)&quot;,
+      [ethereum.Value.fromAddress(owner), ethereum.Value.fromAddress(spender)],
+    );
+
+    return result[0].toBigInt();
+  }
+
+  try_allowance(owner: Address, spender: Address): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;allowance&quot;,
+      &quot;allowance(address,address):(uint256)&quot;,
+      [ethereum.Value.fromAddress(owner), ethereum.Value.fromAddress(spender)],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  approve(spender: Address, value: BigInt): boolean {
+    let result &#x3D; super.call(&quot;approve&quot;, &quot;approve(address,uint256):(bool)&quot;, [
+      ethereum.Value.fromAddress(spender),
+      ethereum.Value.fromUnsignedBigInt(value),
+    ]);
+
+    return result[0].toBoolean();
+  }
+
+  try_approve(spender: Address, value: BigInt): ethereum.CallResult&lt;boolean&gt; {
+    let result &#x3D; super.tryCall(&quot;approve&quot;, &quot;approve(address,uint256):(bool)&quot;, [
+      ethereum.Value.fromAddress(spender),
+      ethereum.Value.fromUnsignedBigInt(value),
+    ]);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBoolean());
+  }
+
+  authority(): Address {
+    let result &#x3D; super.call(&quot;authority&quot;, &quot;authority():(address)&quot;, []);
+
+    return result[0].toAddress();
+  }
+
+  try_authority(): ethereum.CallResult&lt;Address&gt; {
+    let result &#x3D; super.tryCall(&quot;authority&quot;, &quot;authority():(address)&quot;, []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toAddress());
+  }
+
+  balanceOf(account: Address): BigInt {
+    let result &#x3D; super.call(&quot;balanceOf&quot;, &quot;balanceOf(address):(uint256)&quot;, [
+      ethereum.Value.fromAddress(account),
+    ]);
+
+    return result[0].toBigInt();
+  }
+
+  try_balanceOf(account: Address): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(&quot;balanceOf&quot;, &quot;balanceOf(address):(uint256)&quot;, [
+      ethereum.Value.fromAddress(account),
+    ]);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  decimals(): i32 {
+    let result &#x3D; super.call(&quot;decimals&quot;, &quot;decimals():(uint8)&quot;, []);
+
+    return result[0].toI32();
+  }
+
+  try_decimals(): ethereum.CallResult&lt;i32&gt; {
+    let result &#x3D; super.tryCall(&quot;decimals&quot;, &quot;decimals():(uint8)&quot;, []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toI32());
+  }
+
+  description(): string {
+    let result &#x3D; super.call(&quot;description&quot;, &quot;description():(string)&quot;, []);
+
+    return result[0].toString();
+  }
+
+  try_description(): ethereum.CallResult&lt;string&gt; {
+    let result &#x3D; super.tryCall(&quot;description&quot;, &quot;description():(string)&quot;, []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toString());
+  }
+
+  isConsumingScheduledOp(): Bytes {
+    let result &#x3D; super.call(
+      &quot;isConsumingScheduledOp&quot;,
+      &quot;isConsumingScheduledOp():(bytes4)&quot;,
+      [],
+    );
+
+    return result[0].toBytes();
+  }
+
+  try_isConsumingScheduledOp(): ethereum.CallResult&lt;Bytes&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;isConsumingScheduledOp&quot;,
+      &quot;isConsumingScheduledOp():(bytes4)&quot;,
+      [],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBytes());
+  }
+
+  isOwner(_address: Address): boolean {
+    let result &#x3D; super.call(&quot;isOwner&quot;, &quot;isOwner(address):(bool)&quot;, [
+      ethereum.Value.fromAddress(_address),
+    ]);
+
+    return result[0].toBoolean();
+  }
+
+  try_isOwner(_address: Address): ethereum.CallResult&lt;boolean&gt; {
+    let result &#x3D; super.tryCall(&quot;isOwner&quot;, &quot;isOwner(address):(bool)&quot;, [
+      ethereum.Value.fromAddress(_address),
+    ]);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBoolean());
+  }
+
+  listOwners(): Array&lt;Address&gt; {
+    let result &#x3D; super.call(&quot;listOwners&quot;, &quot;listOwners():(address[])&quot;, []);
+
+    return result[0].toAddressArray();
+  }
+
+  try_listOwners(): ethereum.CallResult&lt;Array&lt;Address&gt;&gt; {
+    let result &#x3D; super.tryCall(&quot;listOwners&quot;, &quot;listOwners():(address[])&quot;, []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toAddressArray());
+  }
+
+  mint(_address: Address, _amount: BigInt): BigInt {
+    let result &#x3D; super.call(&quot;mint&quot;, &quot;mint(address,uint256):(uint256)&quot;, [
+      ethereum.Value.fromAddress(_address),
+      ethereum.Value.fromUnsignedBigInt(_amount),
+    ]);
+
+    return result[0].toBigInt();
+  }
+
+  try_mint(_address: Address, _amount: BigInt): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(&quot;mint&quot;, &quot;mint(address,uint256):(uint256)&quot;, [
+      ethereum.Value.fromAddress(_address),
+      ethereum.Value.fromUnsignedBigInt(_amount),
+    ]);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  multicall(data: Array&lt;Bytes&gt;): Array&lt;Bytes&gt; {
+    let result &#x3D; super.call(&quot;multicall&quot;, &quot;multicall(bytes[]):(bytes[])&quot;, [
+      ethereum.Value.fromBytesArray(data),
+    ]);
+
+    return result[0].toBytesArray();
+  }
+
+  try_multicall(data: Array&lt;Bytes&gt;): ethereum.CallResult&lt;Array&lt;Bytes&gt;&gt; {
+    let result &#x3D; super.tryCall(&quot;multicall&quot;, &quot;multicall(bytes[]):(bytes[])&quot;, [
+      ethereum.Value.fromBytesArray(data),
+    ]);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBytesArray());
+  }
+
+  name(): string {
+    let result &#x3D; super.call(&quot;name&quot;, &quot;name():(string)&quot;, []);
+
+    return result[0].toString();
+  }
+
+  try_name(): ethereum.CallResult&lt;string&gt; {
+    let result &#x3D; super.tryCall(&quot;name&quot;, &quot;name():(string)&quot;, []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toString());
+  }
+
+  ownerCount(): BigInt {
+    let result &#x3D; super.call(&quot;ownerCount&quot;, &quot;ownerCount():(uint256)&quot;, []);
+
+    return result[0].toBigInt();
+  }
+
+  try_ownerCount(): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(&quot;ownerCount&quot;, &quot;ownerCount():(uint256)&quot;, []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  removeOwner(_address: Address): boolean {
+    let result &#x3D; super.call(&quot;removeOwner&quot;, &quot;removeOwner(address):(bool)&quot;, [
+      ethereum.Value.fromAddress(_address),
+    ]);
+
+    return result[0].toBoolean();
+  }
+
+  try_removeOwner(_address: Address): ethereum.CallResult&lt;boolean&gt; {
+    let result &#x3D; super.tryCall(&quot;removeOwner&quot;, &quot;removeOwner(address):(bool)&quot;, [
+      ethereum.Value.fromAddress(_address),
+    ]);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBoolean());
+  }
+
+  symbol(): string {
+    let result &#x3D; super.call(&quot;symbol&quot;, &quot;symbol():(string)&quot;, []);
+
+    return result[0].toString();
+  }
+
+  try_symbol(): ethereum.CallResult&lt;string&gt; {
+    let result &#x3D; super.tryCall(&quot;symbol&quot;, &quot;symbol():(string)&quot;, []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toString());
+  }
+
+  totalSupply(): BigInt {
+    let result &#x3D; super.call(&quot;totalSupply&quot;, &quot;totalSupply():(uint256)&quot;, []);
+
+    return result[0].toBigInt();
+  }
+
+  try_totalSupply(): ethereum.CallResult&lt;BigInt&gt; {
+    let result &#x3D; super.tryCall(&quot;totalSupply&quot;, &quot;totalSupply():(uint256)&quot;, []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  transfer(to: Address, value: BigInt): boolean {
+    let result &#x3D; super.call(&quot;transfer&quot;, &quot;transfer(address,uint256):(bool)&quot;, [
+      ethereum.Value.fromAddress(to),
+      ethereum.Value.fromUnsignedBigInt(value),
+    ]);
+
+    return result[0].toBoolean();
+  }
+
+  try_transfer(to: Address, value: BigInt): ethereum.CallResult&lt;boolean&gt; {
+    let result &#x3D; super.tryCall(&quot;transfer&quot;, &quot;transfer(address,uint256):(bool)&quot;, [
+      ethereum.Value.fromAddress(to),
+      ethereum.Value.fromUnsignedBigInt(value),
+    ]);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBoolean());
+  }
+
+  transferFrom(from: Address, to: Address, value: BigInt): boolean {
+    let result &#x3D; super.call(
+      &quot;transferFrom&quot;,
+      &quot;transferFrom(address,address,uint256):(bool)&quot;,
+      [
+        ethereum.Value.fromAddress(from),
+        ethereum.Value.fromAddress(to),
+        ethereum.Value.fromUnsignedBigInt(value),
+      ],
+    );
+
+    return result[0].toBoolean();
+  }
+
+  try_transferFrom(
+    from: Address,
+    to: Address,
+    value: BigInt,
+  ): ethereum.CallResult&lt;boolean&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;transferFrom&quot;,
+      &quot;transferFrom(address,address,uint256):(bool)&quot;,
+      [
+        ethereum.Value.fromAddress(from),
+        ethereum.Value.fromAddress(to),
+        ethereum.Value.fromUnsignedBigInt(value),
+      ],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBoolean());
+  }
+}
+
+export class ConstructorCall extends ethereum.Call {
+  get inputs(): ConstructorCall__Inputs {
+    return new ConstructorCall__Inputs(this);
+  }
+
+  get outputs(): ConstructorCall__Outputs {
+    return new ConstructorCall__Outputs(this);
+  }
+}
+
+export class ConstructorCall__Inputs {
+  _call: ConstructorCall;
+
+  constructor(call: ConstructorCall) {
+    this._call &#x3D; call;
+  }
+
+  get _name(): string {
+    return this._call.inputValues[0].value.toString();
+  }
+
+  get _symbol(): string {
+    return this._call.inputValues[1].value.toString();
+  }
+
+  get _description(): string {
+    return this._call.inputValues[2].value.toString();
+  }
+
+  get _admin(): Address {
+    return this._call.inputValues[3].value.toAddress();
+  }
+
+  get _decimals(): i32 {
+    return this._call.inputValues[4].value.toI32();
+  }
+
+  get _manager(): Address {
+    return this._call.inputValues[5].value.toAddress();
+  }
+}
+
+export class ConstructorCall__Outputs {
+  _call: ConstructorCall;
+
+  constructor(call: ConstructorCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class AddOwnerCall extends ethereum.Call {
+  get inputs(): AddOwnerCall__Inputs {
+    return new AddOwnerCall__Inputs(this);
+  }
+
+  get outputs(): AddOwnerCall__Outputs {
+    return new AddOwnerCall__Outputs(this);
+  }
+}
+
+export class AddOwnerCall__Inputs {
+  _call: AddOwnerCall;
+
+  constructor(call: AddOwnerCall) {
+    this._call &#x3D; call;
+  }
+
+  get _address(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+}
+
+export class AddOwnerCall__Outputs {
+  _call: AddOwnerCall;
+
+  constructor(call: AddOwnerCall) {
+    this._call &#x3D; call;
+  }
+
+  get success(): boolean {
+    return this._call.outputValues[0].value.toBoolean();
+  }
+}
+
+export class ApproveCall extends ethereum.Call {
+  get inputs(): ApproveCall__Inputs {
+    return new ApproveCall__Inputs(this);
+  }
+
+  get outputs(): ApproveCall__Outputs {
+    return new ApproveCall__Outputs(this);
+  }
+}
+
+export class ApproveCall__Inputs {
+  _call: ApproveCall;
+
+  constructor(call: ApproveCall) {
+    this._call &#x3D; call;
+  }
+
+  get spender(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get value(): BigInt {
+    return this._call.inputValues[1].value.toBigInt();
+  }
+}
+
+export class ApproveCall__Outputs {
+  _call: ApproveCall;
+
+  constructor(call: ApproveCall) {
+    this._call &#x3D; call;
+  }
+
+  get value0(): boolean {
+    return this._call.outputValues[0].value.toBoolean();
+  }
+}
+
+export class BurnCall extends ethereum.Call {
+  get inputs(): BurnCall__Inputs {
+    return new BurnCall__Inputs(this);
+  }
+
+  get outputs(): BurnCall__Outputs {
+    return new BurnCall__Outputs(this);
+  }
+}
+
+export class BurnCall__Inputs {
+  _call: BurnCall;
+
+  constructor(call: BurnCall) {
+    this._call &#x3D; call;
+  }
+
+  get value(): BigInt {
+    return this._call.inputValues[0].value.toBigInt();
+  }
+}
+
+export class BurnCall__Outputs {
+  _call: BurnCall;
+
+  constructor(call: BurnCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class BurnFromCall extends ethereum.Call {
+  get inputs(): BurnFromCall__Inputs {
+    return new BurnFromCall__Inputs(this);
+  }
+
+  get outputs(): BurnFromCall__Outputs {
+    return new BurnFromCall__Outputs(this);
+  }
+}
+
+export class BurnFromCall__Inputs {
+  _call: BurnFromCall;
+
+  constructor(call: BurnFromCall) {
+    this._call &#x3D; call;
+  }
+
+  get account(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get value(): BigInt {
+    return this._call.inputValues[1].value.toBigInt();
+  }
+}
+
+export class BurnFromCall__Outputs {
+  _call: BurnFromCall;
+
+  constructor(call: BurnFromCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class MintCall extends ethereum.Call {
+  get inputs(): MintCall__Inputs {
+    return new MintCall__Inputs(this);
+  }
+
+  get outputs(): MintCall__Outputs {
+    return new MintCall__Outputs(this);
+  }
+}
+
+export class MintCall__Inputs {
+  _call: MintCall;
+
+  constructor(call: MintCall) {
+    this._call &#x3D; call;
+  }
+
+  get _address(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get _amount(): BigInt {
+    return this._call.inputValues[1].value.toBigInt();
+  }
+}
+
+export class MintCall__Outputs {
+  _call: MintCall;
+
+  constructor(call: MintCall) {
+    this._call &#x3D; call;
+  }
+
+  get value0(): BigInt {
+    return this._call.outputValues[0].value.toBigInt();
+  }
+}
+
+export class MulticallCall extends ethereum.Call {
+  get inputs(): MulticallCall__Inputs {
+    return new MulticallCall__Inputs(this);
+  }
+
+  get outputs(): MulticallCall__Outputs {
+    return new MulticallCall__Outputs(this);
+  }
+}
+
+export class MulticallCall__Inputs {
+  _call: MulticallCall;
+
+  constructor(call: MulticallCall) {
+    this._call &#x3D; call;
+  }
+
+  get data(): Array&lt;Bytes&gt; {
+    return this._call.inputValues[0].value.toBytesArray();
+  }
+}
+
+export class MulticallCall__Outputs {
+  _call: MulticallCall;
+
+  constructor(call: MulticallCall) {
+    this._call &#x3D; call;
+  }
+
+  get results(): Array&lt;Bytes&gt; {
+    return this._call.outputValues[0].value.toBytesArray();
+  }
+}
+
+export class RemoveOwnerCall extends ethereum.Call {
+  get inputs(): RemoveOwnerCall__Inputs {
+    return new RemoveOwnerCall__Inputs(this);
+  }
+
+  get outputs(): RemoveOwnerCall__Outputs {
+    return new RemoveOwnerCall__Outputs(this);
+  }
+}
+
+export class RemoveOwnerCall__Inputs {
+  _call: RemoveOwnerCall;
+
+  constructor(call: RemoveOwnerCall) {
+    this._call &#x3D; call;
+  }
+
+  get _address(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+}
+
+export class RemoveOwnerCall__Outputs {
+  _call: RemoveOwnerCall;
+
+  constructor(call: RemoveOwnerCall) {
+    this._call &#x3D; call;
+  }
+
+  get success(): boolean {
+    return this._call.outputValues[0].value.toBoolean();
+  }
+}
+
+export class SetAuthorityCall extends ethereum.Call {
+  get inputs(): SetAuthorityCall__Inputs {
+    return new SetAuthorityCall__Inputs(this);
+  }
+
+  get outputs(): SetAuthorityCall__Outputs {
+    return new SetAuthorityCall__Outputs(this);
+  }
+}
+
+export class SetAuthorityCall__Inputs {
+  _call: SetAuthorityCall;
+
+  constructor(call: SetAuthorityCall) {
+    this._call &#x3D; call;
+  }
+
+  get newAuthority(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+}
+
+export class SetAuthorityCall__Outputs {
+  _call: SetAuthorityCall;
+
+  constructor(call: SetAuthorityCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class TransferCall extends ethereum.Call {
+  get inputs(): TransferCall__Inputs {
+    return new TransferCall__Inputs(this);
+  }
+
+  get outputs(): TransferCall__Outputs {
+    return new TransferCall__Outputs(this);
+  }
+}
+
+export class TransferCall__Inputs {
+  _call: TransferCall;
+
+  constructor(call: TransferCall) {
+    this._call &#x3D; call;
+  }
+
+  get to(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get value(): BigInt {
+    return this._call.inputValues[1].value.toBigInt();
+  }
+}
+
+export class TransferCall__Outputs {
+  _call: TransferCall;
+
+  constructor(call: TransferCall) {
+    this._call &#x3D; call;
+  }
+
+  get value0(): boolean {
+    return this._call.outputValues[0].value.toBoolean();
+  }
+}
+
+export class TransferFromCall extends ethereum.Call {
+  get inputs(): TransferFromCall__Inputs {
+    return new TransferFromCall__Inputs(this);
+  }
+
+  get outputs(): TransferFromCall__Outputs {
+    return new TransferFromCall__Outputs(this);
+  }
+}
+
+export class TransferFromCall__Inputs {
+  _call: TransferFromCall;
+
+  constructor(call: TransferFromCall) {
+    this._call &#x3D; call;
+  }
+
+  get from(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get to(): Address {
+    return this._call.inputValues[1].value.toAddress();
+  }
+
+  get value(): BigInt {
+    return this._call.inputValues[2].value.toBigInt();
+  }
+}
+
+export class TransferFromCall__Outputs {
+  _call: TransferFromCall;
+
+  constructor(call: TransferFromCall) {
+    this._call &#x3D; call;
+  }
+
+  get value0(): boolean {
+    return this._call.outputValues[0].value.toBoolean();
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'MintCall.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

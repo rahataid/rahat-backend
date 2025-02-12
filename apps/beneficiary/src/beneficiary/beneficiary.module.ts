@@ -10,6 +10,7 @@ import { PrismaModule } from '@rumsan/prisma';
 import { BeneficiaryConsumer } from '../consumers/beneficiary.consumer';
 import { BeneficiaryController } from './beneficiary.controller';
 import { BeneficiaryService } from './beneficiary.service';
+import { BeneficiaryUtilsService } from './beneficiary.utils.service';
 import { BeneficiaryStatService } from './beneficiaryStat.service';
 import { VerificationService } from './verification.service';
 @Module({
@@ -58,6 +59,7 @@ import { VerificationService } from './verification.service';
     BeneficiaryStatService,
     VerificationService,
     BeneficiaryConsumer,
+    BeneficiaryUtilsService
   ],
 })
 export class BeneficiaryModule { }

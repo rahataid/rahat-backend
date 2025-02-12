@@ -1,0 +1,997 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@rahat-os/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">@rahat-os/source documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >ApproveTokenCall</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/graph/generated/RahatTreasury/RahatTreasury.ts</code>
+        </p>
+
+
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code>ethereum.Call</code>
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#inputs" >inputs</a>
+                                </li>
+                                <li>
+                                    <a href="#outputs" >outputs</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+            <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="inputs"></a>
+                        <span class="name"><b>inputs</b><a href="#inputs"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>inputs()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="346" class="link-to-prism">apps/graph/generated/RahatTreasury/RahatTreasury.ts:346</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="outputs"></a>
+                        <span class="name"><b>outputs</b><a href="#outputs"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>outputs()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="350" class="link-to-prism">apps/graph/generated/RahatTreasury/RahatTreasury.ts:350</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  ethereum,
+  JSONValue,
+  TypedMap,
+  Entity,
+  Bytes,
+  Address,
+  BigInt,
+} from &quot;@graphprotocol/graph-ts&quot;;
+
+export class AuthorityUpdated extends ethereum.Event {
+  get params(): AuthorityUpdated__Params {
+    return new AuthorityUpdated__Params(this);
+  }
+}
+
+export class AuthorityUpdated__Params {
+  _event: AuthorityUpdated;
+
+  constructor(event: AuthorityUpdated) {
+    this._event &#x3D; event;
+  }
+
+  get authority(): Address {
+    return this._event.parameters[0].value.toAddress();
+  }
+}
+
+export class TokenCreated extends ethereum.Event {
+  get params(): TokenCreated__Params {
+    return new TokenCreated__Params(this);
+  }
+}
+
+export class TokenCreated__Params {
+  _event: TokenCreated;
+
+  constructor(event: TokenCreated) {
+    this._event &#x3D; event;
+  }
+
+  get tokenAddress(): Address {
+    return this._event.parameters[0].value.toAddress();
+  }
+}
+
+export class TokenMintedAndApproved extends ethereum.Event {
+  get params(): TokenMintedAndApproved__Params {
+    return new TokenMintedAndApproved__Params(this);
+  }
+}
+
+export class TokenMintedAndApproved__Params {
+  _event: TokenMintedAndApproved;
+
+  constructor(event: TokenMintedAndApproved) {
+    this._event &#x3D; event;
+  }
+
+  get tokenAddress(): Address {
+    return this._event.parameters[0].value.toAddress();
+  }
+
+  get approveAddress(): Address {
+    return this._event.parameters[1].value.toAddress();
+  }
+
+  get amount(): BigInt {
+    return this._event.parameters[2].value.toBigInt();
+  }
+}
+
+export class TokenMintedAndSent extends ethereum.Event {
+  get params(): TokenMintedAndSent__Params {
+    return new TokenMintedAndSent__Params(this);
+  }
+}
+
+export class TokenMintedAndSent__Params {
+  _event: TokenMintedAndSent;
+
+  constructor(event: TokenMintedAndSent) {
+    this._event &#x3D; event;
+  }
+
+  get tokenAddress(): Address {
+    return this._event.parameters[0].value.toAddress();
+  }
+
+  get receiverAddress(): Address {
+    return this._event.parameters[1].value.toAddress();
+  }
+
+  get amount(): BigInt {
+    return this._event.parameters[2].value.toBigInt();
+  }
+}
+
+export class RahatTreasury__getAllowanceAndBalanceResult {
+  value0: BigInt;
+  value1: BigInt;
+
+  constructor(value0: BigInt, value1: BigInt) {
+    this.value0 &#x3D; value0;
+    this.value1 &#x3D; value1;
+  }
+
+  toMap(): TypedMap&lt;string, ethereum.Value&gt; {
+    let map &#x3D; new TypedMap&lt;string, ethereum.Value&gt;();
+    map.set(&quot;value0&quot;, ethereum.Value.fromUnsignedBigInt(this.value0));
+    map.set(&quot;value1&quot;, ethereum.Value.fromUnsignedBigInt(this.value1));
+    return map;
+  }
+
+  getAllowance(): BigInt {
+    return this.value0;
+  }
+
+  getBalance(): BigInt {
+    return this.value1;
+  }
+}
+
+export class RahatTreasury extends ethereum.SmartContract {
+  static bind(address: Address): RahatTreasury {
+    return new RahatTreasury(&quot;RahatTreasury&quot;, address);
+  }
+
+  IID_RAHAT_TREASURY(): Bytes {
+    let result &#x3D; super.call(
+      &quot;IID_RAHAT_TREASURY&quot;,
+      &quot;IID_RAHAT_TREASURY():(bytes4)&quot;,
+      [],
+    );
+
+    return result[0].toBytes();
+  }
+
+  try_IID_RAHAT_TREASURY(): ethereum.CallResult&lt;Bytes&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;IID_RAHAT_TREASURY&quot;,
+      &quot;IID_RAHAT_TREASURY():(bytes4)&quot;,
+      [],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBytes());
+  }
+
+  authority(): Address {
+    let result &#x3D; super.call(&quot;authority&quot;, &quot;authority():(address)&quot;, []);
+
+    return result[0].toAddress();
+  }
+
+  try_authority(): ethereum.CallResult&lt;Address&gt; {
+    let result &#x3D; super.tryCall(&quot;authority&quot;, &quot;authority():(address)&quot;, []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toAddress());
+  }
+
+  createToken(
+    _name: string,
+    _symbol: string,
+    _description: string,
+    decimals: i32,
+    _manager: Address,
+  ): Address {
+    let result &#x3D; super.call(
+      &quot;createToken&quot;,
+      &quot;createToken(string,string,string,uint8,address):(address)&quot;,
+      [
+        ethereum.Value.fromString(_name),
+        ethereum.Value.fromString(_symbol),
+        ethereum.Value.fromString(_description),
+        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(decimals)),
+        ethereum.Value.fromAddress(_manager),
+      ],
+    );
+
+    return result[0].toAddress();
+  }
+
+  try_createToken(
+    _name: string,
+    _symbol: string,
+    _description: string,
+    decimals: i32,
+    _manager: Address,
+  ): ethereum.CallResult&lt;Address&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;createToken&quot;,
+      &quot;createToken(string,string,string,uint8,address):(address)&quot;,
+      [
+        ethereum.Value.fromString(_name),
+        ethereum.Value.fromString(_symbol),
+        ethereum.Value.fromString(_description),
+        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(decimals)),
+        ethereum.Value.fromAddress(_manager),
+      ],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toAddress());
+  }
+
+  getAllowanceAndBalance(
+    _token: Address,
+    _from: Address,
+  ): RahatTreasury__getAllowanceAndBalanceResult {
+    let result &#x3D; super.call(
+      &quot;getAllowanceAndBalance&quot;,
+      &quot;getAllowanceAndBalance(address,address):(uint256,uint256)&quot;,
+      [ethereum.Value.fromAddress(_token), ethereum.Value.fromAddress(_from)],
+    );
+
+    return new RahatTreasury__getAllowanceAndBalanceResult(
+      result[0].toBigInt(),
+      result[1].toBigInt(),
+    );
+  }
+
+  try_getAllowanceAndBalance(
+    _token: Address,
+    _from: Address,
+  ): ethereum.CallResult&lt;RahatTreasury__getAllowanceAndBalanceResult&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;getAllowanceAndBalance&quot;,
+      &quot;getAllowanceAndBalance(address,address):(uint256,uint256)&quot;,
+      [ethereum.Value.fromAddress(_token), ethereum.Value.fromAddress(_from)],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(
+      new RahatTreasury__getAllowanceAndBalanceResult(
+        value[0].toBigInt(),
+        value[1].toBigInt(),
+      ),
+    );
+  }
+
+  getTokens(): Array&lt;Address&gt; {
+    let result &#x3D; super.call(&quot;getTokens&quot;, &quot;getTokens():(address[])&quot;, []);
+
+    return result[0].toAddressArray();
+  }
+
+  try_getTokens(): ethereum.CallResult&lt;Array&lt;Address&gt;&gt; {
+    let result &#x3D; super.tryCall(&quot;getTokens&quot;, &quot;getTokens():(address[])&quot;, []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toAddressArray());
+  }
+
+  isConsumingScheduledOp(): Bytes {
+    let result &#x3D; super.call(
+      &quot;isConsumingScheduledOp&quot;,
+      &quot;isConsumingScheduledOp():(bytes4)&quot;,
+      [],
+    );
+
+    return result[0].toBytes();
+  }
+
+  try_isConsumingScheduledOp(): ethereum.CallResult&lt;Bytes&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;isConsumingScheduledOp&quot;,
+      &quot;isConsumingScheduledOp():(bytes4)&quot;,
+      [],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBytes());
+  }
+
+  supportsInterface(interfaceId: Bytes): boolean {
+    let result &#x3D; super.call(
+      &quot;supportsInterface&quot;,
+      &quot;supportsInterface(bytes4):(bool)&quot;,
+      [ethereum.Value.fromFixedBytes(interfaceId)],
+    );
+
+    return result[0].toBoolean();
+  }
+
+  try_supportsInterface(interfaceId: Bytes): ethereum.CallResult&lt;boolean&gt; {
+    let result &#x3D; super.tryCall(
+      &quot;supportsInterface&quot;,
+      &quot;supportsInterface(bytes4):(bool)&quot;,
+      [ethereum.Value.fromFixedBytes(interfaceId)],
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value &#x3D; result.value;
+    return ethereum.CallResult.fromValue(value[0].toBoolean());
+  }
+}
+
+export class ConstructorCall extends ethereum.Call {
+  get inputs(): ConstructorCall__Inputs {
+    return new ConstructorCall__Inputs(this);
+  }
+
+  get outputs(): ConstructorCall__Outputs {
+    return new ConstructorCall__Outputs(this);
+  }
+}
+
+export class ConstructorCall__Inputs {
+  _call: ConstructorCall;
+
+  constructor(call: ConstructorCall) {
+    this._call &#x3D; call;
+  }
+
+  get _manager(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+}
+
+export class ConstructorCall__Outputs {
+  _call: ConstructorCall;
+
+  constructor(call: ConstructorCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class ApproveTokenCall extends ethereum.Call {
+  get inputs(): ApproveTokenCall__Inputs {
+    return new ApproveTokenCall__Inputs(this);
+  }
+
+  get outputs(): ApproveTokenCall__Outputs {
+    return new ApproveTokenCall__Outputs(this);
+  }
+}
+
+export class ApproveTokenCall__Inputs {
+  _call: ApproveTokenCall;
+
+  constructor(call: ApproveTokenCall) {
+    this._call &#x3D; call;
+  }
+
+  get _token(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get _spender(): Address {
+    return this._call.inputValues[1].value.toAddress();
+  }
+
+  get _amount(): BigInt {
+    return this._call.inputValues[2].value.toBigInt();
+  }
+}
+
+export class ApproveTokenCall__Outputs {
+  _call: ApproveTokenCall;
+
+  constructor(call: ApproveTokenCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class ClaimTokenCall extends ethereum.Call {
+  get inputs(): ClaimTokenCall__Inputs {
+    return new ClaimTokenCall__Inputs(this);
+  }
+
+  get outputs(): ClaimTokenCall__Outputs {
+    return new ClaimTokenCall__Outputs(this);
+  }
+}
+
+export class ClaimTokenCall__Inputs {
+  _call: ClaimTokenCall;
+
+  constructor(call: ClaimTokenCall) {
+    this._call &#x3D; call;
+  }
+
+  get _token(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get _from(): Address {
+    return this._call.inputValues[1].value.toAddress();
+  }
+
+  get _amount(): BigInt {
+    return this._call.inputValues[2].value.toBigInt();
+  }
+}
+
+export class ClaimTokenCall__Outputs {
+  _call: ClaimTokenCall;
+
+  constructor(call: ClaimTokenCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class CreateTokenCall extends ethereum.Call {
+  get inputs(): CreateTokenCall__Inputs {
+    return new CreateTokenCall__Inputs(this);
+  }
+
+  get outputs(): CreateTokenCall__Outputs {
+    return new CreateTokenCall__Outputs(this);
+  }
+}
+
+export class CreateTokenCall__Inputs {
+  _call: CreateTokenCall;
+
+  constructor(call: CreateTokenCall) {
+    this._call &#x3D; call;
+  }
+
+  get _name(): string {
+    return this._call.inputValues[0].value.toString();
+  }
+
+  get _symbol(): string {
+    return this._call.inputValues[1].value.toString();
+  }
+
+  get _description(): string {
+    return this._call.inputValues[2].value.toString();
+  }
+
+  get decimals(): i32 {
+    return this._call.inputValues[3].value.toI32();
+  }
+
+  get _manager(): Address {
+    return this._call.inputValues[4].value.toAddress();
+  }
+}
+
+export class CreateTokenCall__Outputs {
+  _call: CreateTokenCall;
+
+  constructor(call: CreateTokenCall) {
+    this._call &#x3D; call;
+  }
+
+  get value0(): Address {
+    return this._call.outputValues[0].value.toAddress();
+  }
+}
+
+export class MintTokenCall extends ethereum.Call {
+  get inputs(): MintTokenCall__Inputs {
+    return new MintTokenCall__Inputs(this);
+  }
+
+  get outputs(): MintTokenCall__Outputs {
+    return new MintTokenCall__Outputs(this);
+  }
+}
+
+export class MintTokenCall__Inputs {
+  _call: MintTokenCall;
+
+  constructor(call: MintTokenCall) {
+    this._call &#x3D; call;
+  }
+
+  get _token(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get _amount(): BigInt {
+    return this._call.inputValues[1].value.toBigInt();
+  }
+}
+
+export class MintTokenCall__Outputs {
+  _call: MintTokenCall;
+
+  constructor(call: MintTokenCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class MintTokenAndApproveCall extends ethereum.Call {
+  get inputs(): MintTokenAndApproveCall__Inputs {
+    return new MintTokenAndApproveCall__Inputs(this);
+  }
+
+  get outputs(): MintTokenAndApproveCall__Outputs {
+    return new MintTokenAndApproveCall__Outputs(this);
+  }
+}
+
+export class MintTokenAndApproveCall__Inputs {
+  _call: MintTokenAndApproveCall;
+
+  constructor(call: MintTokenAndApproveCall) {
+    this._call &#x3D; call;
+  }
+
+  get _token(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get _approveAddress(): Address {
+    return this._call.inputValues[1].value.toAddress();
+  }
+
+  get _amount(): BigInt {
+    return this._call.inputValues[2].value.toBigInt();
+  }
+}
+
+export class MintTokenAndApproveCall__Outputs {
+  _call: MintTokenAndApproveCall;
+
+  constructor(call: MintTokenAndApproveCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class MintTokenAndSendCall extends ethereum.Call {
+  get inputs(): MintTokenAndSendCall__Inputs {
+    return new MintTokenAndSendCall__Inputs(this);
+  }
+
+  get outputs(): MintTokenAndSendCall__Outputs {
+    return new MintTokenAndSendCall__Outputs(this);
+  }
+}
+
+export class MintTokenAndSendCall__Inputs {
+  _call: MintTokenAndSendCall;
+
+  constructor(call: MintTokenAndSendCall) {
+    this._call &#x3D; call;
+  }
+
+  get _token(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get _receiver(): Address {
+    return this._call.inputValues[1].value.toAddress();
+  }
+
+  get _amount(): BigInt {
+    return this._call.inputValues[2].value.toBigInt();
+  }
+}
+
+export class MintTokenAndSendCall__Outputs {
+  _call: MintTokenAndSendCall;
+
+  constructor(call: MintTokenAndSendCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class SetAuthorityCall extends ethereum.Call {
+  get inputs(): SetAuthorityCall__Inputs {
+    return new SetAuthorityCall__Inputs(this);
+  }
+
+  get outputs(): SetAuthorityCall__Outputs {
+    return new SetAuthorityCall__Outputs(this);
+  }
+}
+
+export class SetAuthorityCall__Inputs {
+  _call: SetAuthorityCall;
+
+  constructor(call: SetAuthorityCall) {
+    this._call &#x3D; call;
+  }
+
+  get newAuthority(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+}
+
+export class SetAuthorityCall__Outputs {
+  _call: SetAuthorityCall;
+
+  constructor(call: SetAuthorityCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class TransferFromTokenCall extends ethereum.Call {
+  get inputs(): TransferFromTokenCall__Inputs {
+    return new TransferFromTokenCall__Inputs(this);
+  }
+
+  get outputs(): TransferFromTokenCall__Outputs {
+    return new TransferFromTokenCall__Outputs(this);
+  }
+}
+
+export class TransferFromTokenCall__Inputs {
+  _call: TransferFromTokenCall;
+
+  constructor(call: TransferFromTokenCall) {
+    this._call &#x3D; call;
+  }
+
+  get _token(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get _from(): Address {
+    return this._call.inputValues[1].value.toAddress();
+  }
+
+  get _to(): Address {
+    return this._call.inputValues[2].value.toAddress();
+  }
+
+  get _amount(): BigInt {
+    return this._call.inputValues[3].value.toBigInt();
+  }
+}
+
+export class TransferFromTokenCall__Outputs {
+  _call: TransferFromTokenCall;
+
+  constructor(call: TransferFromTokenCall) {
+    this._call &#x3D; call;
+  }
+}
+
+export class TransferTokenCall extends ethereum.Call {
+  get inputs(): TransferTokenCall__Inputs {
+    return new TransferTokenCall__Inputs(this);
+  }
+
+  get outputs(): TransferTokenCall__Outputs {
+    return new TransferTokenCall__Outputs(this);
+  }
+}
+
+export class TransferTokenCall__Inputs {
+  _call: TransferTokenCall;
+
+  constructor(call: TransferTokenCall) {
+    this._call &#x3D; call;
+  }
+
+  get _token(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+
+  get _to(): Address {
+    return this._call.inputValues[1].value.toAddress();
+  }
+
+  get _amount(): BigInt {
+    return this._call.inputValues[2].value.toBigInt();
+  }
+}
+
+export class TransferTokenCall__Outputs {
+  _call: TransferTokenCall;
+
+  constructor(call: TransferTokenCall) {
+    this._call &#x3D; call;
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'ApproveTokenCall.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

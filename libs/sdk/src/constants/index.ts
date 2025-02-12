@@ -1,3 +1,5 @@
+import { RabbitMQModuleOptions } from '@rumsan/rabbitmq';
+
 export const APP_JOBS = {
   EMAIL: 'email',
   SLACK: 'slack',
@@ -11,6 +13,7 @@ export const BQUEUE = {
   RAHAT_PROJECT: 'RAHAT.PROJECT',
   RAHAT_BENEFICIARY: 'RAHAT.BENEFICIARY',
   HOST: 'RAHAT.HOST',
+  META_TXN: 'RAHAT.META_TXN'
 };
 
 export const UserRoles = {
@@ -32,7 +35,7 @@ export const SUBJECTS = {
   BENEFICIARY: 'beneficiary',
   PROJECT: 'project',
   VENDOR: 'vendor',
-  PUBLIC: 'public'
+  PUBLIC: 'public',
 };
 
 export const APP = {
@@ -40,14 +43,63 @@ export const APP = {
 };
 
 export const MS_ACTIONS = {
-  CHW: {
-    CREATE: 'cambodia.chw.create',
-    LIST: 'cambodia.chw.list',
-    GET: 'cambodia.chw.get',
-    UPDATE: 'cambodia.chw.update',
+  GROUP: {
+    CREATE: 'group.create',
+    LIST: 'group.list',
+    GET: 'group.get'
   },
+  BENEFICIARY_GROUP: {
+    BULK_ASSIGN: 'beneficiary_group.bulk_assign',
+    LIST: 'beneficiary_group.list',
+    LIST_BY_GROUP: 'beneficiary_group.list_by_group',
+  }
+  ,
+  CAMBODIA: {
+    APP: { STATS: 'cambodia.app.stats', LINE_STATS: 'cambodia.app.line_stats', BROAD_CAST_STATUS_COUNT: 'cambodia.app.broadcast_status_count', PROJECT_SETTINGS: 'cambodia.app.project_settings', TRIGGER_COMMUNICATION: 'cambodia.app.trigger_communication', },
+    BENEFICIARY: {
+      VALIDATE_CONVERSION: 'cambodia.beneficiary.validate_conversion',
+      STATS: 'cambodia.beneficiary.stats',
+      LEAD_CONVERSION: 'cambodia.beneficiary.lead_conversion',
+      CREATE: 'cambodia.beneficiary.create',
+      LIST: 'cambodia.beneficiary.list',
+      LIST_DISCARDED: 'cambodia.beneficiary.list_discarded',
+      GET: 'cambodia.beneficiary.get',
+      DELETE: 'cambodia.beneficiary.delete',
+      ADD_TO_PROJECT: 'cambodia.beneficiary.add_to_project',
+    },
+    CHW: {
+      STATS: 'cambodia.chw.stats',
+      CREATE: 'cambodia.chw.create',
+      LIST: 'cambodia.chw.list',
+      GET: 'cambodia.chw.get',
+      UPDATE: 'cambodia.chw.update',
+      DELETE: 'cambodia.chw.delete',
+      LIST_BY_VENDOR: 'cambodia.chw.list_by_vendor',
+      VALIDATE_HEALTH_WORKER: 'cambodia.chw.validate_health_worker',
+    },
+    COMMISISION_SCHEME: {
+      CREATE: 'cambodia.commission_scheme.create',
+      LIST: 'cambodia.commission_scheme.list',
+      GET_CURRENT: 'cambodia.commission_scheme.get_current',
+    },
+    VENDOR: {
+      STATS: 'cambodia.vendor.stats',
+      HEALTH_WORKERS: 'cambodia.vendor.health_workers',
+      LEAD_CONVERSIONS: 'cambodia.vendor.lead_conversions',
+      LIST: 'cambodia.vendor.list',
+      GET: 'cambodia.vendor.get',
+      UPDATE_IS_VERIFIED: 'cambodia.vendor.update_is_verified',
+      ASSIGN_TO_PROJECT: 'cambodia.vendor.assign_to_project',
+    },
+
+    COMMUNICATION: {
+      LIST: 'cambodia.communication.list',
+    }
+  },
+
   PROJECT: {
     SETUP: 'project.setup',
+    REFRESH_REPORTING_STATS: 'project.refresh_reporting_stats',
   },
   BENEFICIARY: {
     CREATE: 'beneficiary.create',
@@ -66,6 +118,9 @@ export const MS_ACTIONS = {
     REGISTER: 'vendor.register',
     ASSIGN_TO_PROJECT: 'vendor.assign_to_project',
     LIST_BY_PROJECT: 'vendor.list_by_project',
+    UPDATE_IS_VERIFIED: 'vendor.update_is_verified',
+    LIST: 'vendor.list',
+    GET_BY_UUID: 'vendor.get_by_uuid',
   },
   USER: {},
   ELPROJECT: {
@@ -117,8 +172,8 @@ export const MS_ACTIONS = {
         TRIGGER: 'aaProject.activities.communication.trigger',
         SESSION_LOGS: 'aa.activities.communication.sessionLogs',
         RETRY_FAILED: 'aa.activities.communication.retryFailed',
-        GET_STATS: 'aa.activities.communication.getStats'
-      }
+        GET_STATS: 'aa.activities.communication.getStats',
+      },
     },
     ACTIVITY_CATEGORIES: {
       GET_ALL: 'aaProject.activityCategories.getAll',
@@ -183,6 +238,9 @@ export const MS_ACTIONS = {
     GET_DISBURSEMENT_TRANSACTIONS: 'c2cProject.disbursement.transactions.get',
     GET_DISBURESEMENT_APPROVALS: 'c2cProject.disbursement.approvals.get',
     UPDATE_DISBURSEMENT: 'c2cProject.disbursement.update',
+    ADD_GROUP: 'c2cProject.beneficiary.addGroup',
+    GET_ALL_GROUPS: 'c2cProject.beneficiary.getAllGroups',
+    GET_ONE_GROUP: 'c2cProject.beneficiary.getOneGroup',
     //TEMP SOLUTION
     CREATE_SAFE_TRANSACTION: 'c2cProject.createSafeTransaction',
     GET_SAFE_TRANSACTION: 'c2cProject.getSafeTransaction',
@@ -191,11 +249,13 @@ export const MS_ACTIONS = {
     CREATE_AUDIENCE: 'c2cProject.campaign.create_audience',
     GET_ALL_CAMPAIGN: 'c2cProject.campaign.get',
     GET_CAMPAIGN: 'c2cProject.campaign.getOne',
+    GET_CAMPAIGN_LOG: 'c2cProject.campaign.log',
     GET_ALL_TRANSPORT: 'c2cProject.campaign.get_transport',
     GET_ALL_AUDIENCE: 'c2cProject.campaign.get_audience',
     TRIGGER_CAMPAIGN: 'c2cProject.campaign.trigger',
     GET_ALL_COMMUNICATION_LOGS: 'c2cProject.campaign.communication_logs',
     GET_ALL_COMMUNICATION_STATS: 'c2cProject.campaign.communication_stats',
+    LIST_REPORTING: 'c2cProject.reporting.list',
   },
   CVAProject: {
     UPDATE_STATUS: 'cvaProject.updateStatus',
@@ -226,6 +286,7 @@ export const MS_ACTIONS = {
     UPDATE_DISBURSEMENT_PLAN: 'rpProject.disbursementPlan.update',
     CREATE_BULK_DISBURSEMENT: 'rpProject.disbursement.bulkCreate',
     CREATE_CAMPAIGN: 'rpProject.campaign.create',
+    UPDATE_CAMPAIGN: 'rpProject.campaign.update',
     CREATE_AUDIENCE: 'rpProject.campaign.create_audience',
     CREATE_BULK_AUDIENCE: 'rpProject.campaign.create_bulk_audience',
     GET_ALL_CAMPAIGN: 'rpProject.campaign.get',
@@ -240,16 +301,60 @@ export const MS_ACTIONS = {
     UPDATE_REDEMPTION: 'rpProject.updateRedemption',
     LIST_REDEMPTION: 'rpProject.listRedemption',
     GET_VENDOR_REDEMPTION: 'rpProject.vendorRedemption',
+    GET_REDEMPTION: 'rpProject.getRedemption',
     GENERATE_OTP_HASH: 'rpProject.generateOtpHash',
-    GET_OFFLINE_BENEFICIARIES: "rpProject.getOfflineBeneficiaries",
-    SYNC_OFFLINE_BENEFICIARIES: "rpProject.syncOfflineBeneficiaries",
-    GET_OFFLINE_VENDORS: "rpProject.getOfflineVendors",
-    GET_OFFLINE_SINGLE_VENDOR: "rpProject.getOfflineSingleVendor",
-    SAVE_SYNCED_BENEFICIARIES_TO_VENDOR: "rpProject.saveSyncedBeneficiariesToVendor",
+    GET_OFFLINE_BENEFICIARIES: 'rpProject.getOfflineBeneficiaries',
+    SYNC_OFFLINE_BENEFICIARIES: 'rpProject.syncOfflineBeneficiaries',
+    GET_OFFLINE_VENDORS: 'rpProject.getOfflineVendors',
+    GET_OFFLINE_SINGLE_VENDOR: 'rpProject.getOfflineSingleVendor',
+    SAVE_SYNCED_BENEFICIARIES_TO_VENDOR:
+      'rpProject.saveSyncedBeneficiariesToVendor',
     ADD_GROUP: 'rpProject.beneficiary.addGroup',
     GET_ALL_GROUPS: 'rpProject.beneficiary.getAllGroups',
     GET_ONE_GROUP: 'rpProject.beneficiary.getOneGroup',
     GET_BENEFICIARIES_DISBURSEMENTS: 'rpProject.beneficiaries.getDisbursements',
     UPDATE_OFFLINE: 'rpProject.offlineBeneficiaries.update',
-  }
+    GET_UNSYNCED_BENEFICIARIES: 'rpProject.beneficiaries.getUnsynced',
+    GET_UNSYNCED_BENEFICIARY_GROUP: 'rpProject.beneficiary.group.get_unsynced',
+    // TODO: move to kenya specific actions
+    CREATE_WALKIN: 'rpProject.walkin.create',
+    GET_WALKIN: 'rpProject.walkin.get',
+    GET_ALL_WALKIN: 'rpProject.walkin.getAll',
+    CREATE_BULK_WALKIN_BENEFICIARIES: 'rpProject.walkin.createBulk',
+    LIST_REPORTING: 'rpProject.reporting.list',
+    UPDATE_BENEFICIARY: 'rpProject.beneficiary.update',
+    LIST_BENEFICIARY_REIMBURSEMENTS: 'rpProject.beneficiary.listReimbursements',
+    SYNC_OFFLINE_TRANSACTIONS: 'rpProject.syncOfflineTransactions'
+
+  },
+  COMMS: {
+    CREATE_CAMPAIGN: 'comms.campaign.create',
+    UPDATE_CAMPAIGN: 'comms.campaign.update',
+    CREATE_AUDIENCE: 'comms.campaign.create_audience',
+    CREATE_BULK_AUDIENCE: 'comms.campaign.create_bulk_audience',
+    GET_ALL_CAMPAIGN: 'comms.campaign.get',
+    GET_CAMPAIGN: 'comms.campaign.getOne',
+    GET_ALL_TRANSPORT: 'comms.campaign.get_transport',
+    GET_ALL_AUDIENCE: 'comms.campaign.get_audience',
+    TRIGGER_CAMPAIGN: 'comms.campaign.trigger',
+    GET_ALL_COMMUNICATION_LOGS: 'comms.campaign.communication_logs',
+    GET_ALL_COMMUNICATION_STATS: 'comms.campaign.communication_stats',
+    GET_CAMPAIGN_LOG: 'comms.campaign.log',
+    ADD_GROUP: 'comms.beneficiary.addGroup',
+    GET_ALL_GROUPS: 'comms.beneficiary.getAllGroups',
+    GET_ONE_GROUP: 'comms.beneficiary.getOneGroup',
+  },
+}
+
+
+export const RABBIT_MQ = {
+  AMQP_CONNECTION: 'AMQP_CONNECTION',
+  CT_BENEFICIARY_EXPORT: 'CT_BENEFICIARY_EXPORT',
 };
+export const queueOptions: RabbitMQModuleOptions['queues'] = [
+  {
+    name: RABBIT_MQ.CT_BENEFICIARY_EXPORT,
+    durable: true,
+    options: {},
+  },
+];

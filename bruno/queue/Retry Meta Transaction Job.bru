@@ -1,0 +1,23 @@
+
+meta {
+  name: retry-meta-txn-job
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{url}}/queue/meta-txn-jobs/retry/4
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.message: contains 'retried successfully'
+}
+
+tests {
+  test('should confirm meta transaction job retry', async () => {
+    const message = res.getBody().message;
+    expect(message).to.include('retried successfully');
+  });
+}

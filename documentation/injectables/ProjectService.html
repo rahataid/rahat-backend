@@ -1,0 +1,2310 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@rahat-os/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">@rahat-os/source documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >ProjectService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/rahat/src/projects/project.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#addToProjectAndUpdate" >addToProjectAndUpdate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#checkPiiPhone" >checkPiiPhone</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#create" >create</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#executeMetaTxRequest" >executeMetaTxRequest</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#findOne" >findOne</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#handleProjectActions" >handleProjectActions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#importKoboBeneficiary" >importKoboBeneficiary</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#importTestBeneficiary" >importTestBeneficiary</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#list" >list</a>
+                            </li>
+                            <li>
+                                <a href="#mapKoboFields" >mapKoboFields</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#remove" >remove</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#saveToDiscarded" >saveToDiscarded</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendCommand" >sendCommand</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendSucessMessage" >sendSucessMessage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendTestMsg" >sendTestMsg</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendWhatsAppMsg" >sendWhatsAppMsg</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#update" >update</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateImportStatus" >updateImportStatus</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateStatus" >updateStatus</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(prisma: PrismaService, eventEmitter: EventEmitter2, requestContextService: <a href="../injectables/RequestContextService.html" target="_self">RequestContextService</a>, client: <a href="../strings/Client.html" target="_self">ClientProxy</a>, metaTransactionQueue: Queue)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">apps/rahat/src/projects/project.service.ts:48</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>prisma</td>
+                                                  
+                                                        <td>
+                                                                    <code>PrismaService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>eventEmitter</td>
+                                                  
+                                                        <td>
+                                                                    <code>EventEmitter2</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>requestContextService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RequestContextService.html" target="_self" >RequestContextService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>client</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../miscellaneous/variables.html#Client" target="_self" >ClientProxy</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>metaTransactionQueue</td>
+                                                  
+                                                        <td>
+                                                                    <code>Queue</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addToProjectAndUpdate"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>addToProjectAndUpdate</b></span>
+                        <a href="#addToProjectAndUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addToProjectAndUpdate(undefined)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="387"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:387</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkPiiPhone"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>checkPiiPhone</b></span>
+                        <a href="#checkPiiPhone"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkPiiPhone(phone: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="408"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:408</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>phone</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="create"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>create</b></span>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>create(data: <a href="../classes/CreateProjectDto.html" target="_self">CreateProjectDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="57"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateProjectDto.html" target="_self" >CreateProjectDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="executeMetaTxRequest"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>executeMetaTxRequest</b></span>
+                        <a href="#executeMetaTxRequest"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>executeMetaTxRequest(params: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, uuid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, trigger?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="179"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:179</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>params</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>trigger</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findOne"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>findOne</b></span>
+                        <a href="#findOne"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findOne(uuid: UUID)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="86"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleProjectActions"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>handleProjectActions</b></span>
+                        <a href="#handleProjectActions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleProjectActions(undefined)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="201"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:201</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="importKoboBeneficiary"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>importKoboBeneficiary</b></span>
+                        <a href="#importKoboBeneficiary"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>importKoboBeneficiary(uuid: UUID, data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="295"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:295</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="importTestBeneficiary"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>importTestBeneficiary</b></span>
+                        <a href="#importTestBeneficiary"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>importTestBeneficiary(uuid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dto: <a href="../classes/TestKoboImportDto.html" target="_self">TestKoboImportDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="240"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:240</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../classes/TestKoboImportDto.html" target="_self" >TestKoboImportDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="list"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>list</b></span>
+                        <a href="#list"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>list()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="82"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapKoboFields"></a>
+                    <span class="name">
+                        <span ><b>mapKoboFields</b></span>
+                        <a href="#mapKoboFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mapKoboFields(payload: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="416"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:416</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>{ meta: {}; }</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="remove"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>remove</b></span>
+                        <a href="#remove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>remove(uuid: UUID)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="112"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:112</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveToDiscarded"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>saveToDiscarded</b></span>
+                        <a href="#saveToDiscarded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveToDiscarded(uuid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, discardedPayload: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="378"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:378</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>discardedPayload</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendCommand"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sendCommand</b></span>
+                        <a href="#sendCommand"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendCommand(cmd, payload, timeoutValue, client: <a href="../strings/Client.html" target="_self">ClientProxy</a>, action: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, user: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="147"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:147</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>cmd</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>timeoutValue</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>MS_TIMEOUT</code>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/variables.html#Client" target="_self" >ClientProxy</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>action</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendSucessMessage"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sendSucessMessage</b></span>
+                        <a href="#sendSucessMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendSucessMessage(uuid, payload)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="192"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:192</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>payload</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendTestMsg"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sendTestMsg</b></span>
+                        <a href="#sendTestMsg"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendTestMsg(uuid: UUID)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="430"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:430</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendWhatsAppMsg"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sendWhatsAppMsg</b></span>
+                        <a href="#sendWhatsAppMsg"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendWhatsAppMsg(response, cmd, payload)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="120"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:120</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>response</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>cmd</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>payload</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>update</b></span>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>update(uuid: UUID, data: <a href="../classes/UpdateProjectDto.html" target="_self">UpdateProjectDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateProjectDto.html" target="_self" >UpdateProjectDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateImportStatus"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateImportStatus</b></span>
+                        <a href="#updateImportStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateImportStatus(uuid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, status: <a href="../undefineds/KoboBeneficiaryStatus.html" target="_self">KoboBeneficiaryStatus</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="397"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:397</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>status</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/enumerations.html#KoboBeneficiaryStatus" target="_self" >KoboBeneficiaryStatus</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateStatus"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateStatus</b></span>
+                        <a href="#updateStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateStatus(uuid: UUID, data: <a href="../classes/UpdateProjectStatusDto.html" target="_self">UpdateProjectStatusDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="103"
+                                    class="link-to-prism">apps/rahat/src/projects/project.service.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                        <code>UUID</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateProjectStatusDto.html" target="_self" >UpdateProjectStatusDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { InjectQueue } from &#x27;@nestjs/bull&#x27;;
+import { Inject, Injectable } from &#x27;@nestjs/common&#x27;;
+import { EventEmitter2 } from &#x27;@nestjs/event-emitter&#x27;;
+import { ClientProxy } from &#x27;@nestjs/microservices&#x27;;
+import {
+  CreateProjectDto,
+  TestKoboImportDto,
+  UpdateProjectDto,
+  UpdateProjectStatusDto,
+} from &#x27;@rahataid/extensions&#x27;;
+import {
+  BeneficiaryJobs,
+  BQUEUE,
+  genRandomPhone,
+  MS_ACTIONS,
+  MS_TIMEOUT,
+  ProjectEvents,
+  ProjectJobs,
+} from &#x27;@rahataid/sdk&#x27;;
+import { BeneficiaryType, KoboBeneficiaryStatus } from &#x27;@rahataid/sdk/enums&#x27;;
+import { JOBS } from &#x27;@rahataid/sdk/project/project.events&#x27;;
+import { PrismaService } from &#x27;@rumsan/prisma&#x27;;
+import { Queue } from &#x27;bull&#x27;;
+import { UUID } from &#x27;crypto&#x27;;
+import { switchMap, tap, timeout } from &#x27;rxjs&#x27;;
+import { RequestContextService } from &#x27;../request-context/request-context.service&#x27;;
+import { createExtrasAndPIIData } from &#x27;../utils&#x27;;
+import { KOBO_FIELD_MAPPINGS } from &#x27;../utils/fieldMappings&#x27;;
+import {
+  aaActions,
+  beneficiaryActions,
+  c2cActions,
+  cambodiaActions,
+  cvaActions,
+  elActions,
+  projectActions,
+  settingActions,
+  vendorActions,
+} from &#x27;./actions&#x27;;
+import { CAMBODIA_JOBS } from &#x27;./actions/cambodia.action&#x27;;
+import { rpActions } from &#x27;./actions/rp.action&#x27;;
+import { userRequiredActions } from &#x27;./actions/user-required.action&#x27;;
+
+const NODE_ENV &#x3D; process.env.NODE_ENV || &#x27;development&#x27;;
+const CAMBODIA_COUNTRY_CODE &#x3D; &#x27;+855&#x27;;
+
+@Injectable()
+export class ProjectService {
+  constructor(
+    private prisma: PrismaService,
+    private eventEmitter: EventEmitter2,
+    private requestContextService: RequestContextService,
+    @Inject(&#x27;RAHAT_CLIENT&#x27;) private readonly client: ClientProxy,
+    @InjectQueue(BQUEUE.META_TXN) private readonly metaTransactionQueue: Queue
+  ) { }
+
+  async create(data: CreateProjectDto) {
+    // TODO: refactor to proper validator
+    // switch (data.type) {
+    //   case &#x27;AA&#x27;:
+    //     SettingsService.get(&#x27;AA&#x27;)
+    //     break;
+    //   case &#x27;CVA&#x27;:
+    //     SettingsService.get(&#x27;CVA&#x27;)
+    //     break;
+    //   case &#x27;EL&#x27;:
+    //     SettingsService.get(&#x27;EL&#x27;)
+    //     break;
+    //   default:
+    //     throw new Error(&#x27;Invalid project type.&#x27;)
+    // }
+
+    const project &#x3D; await this.prisma.project.create({
+      data,
+    });
+
+    this.eventEmitter.emit(ProjectEvents.PROJECT_CREATED, project);
+
+    return project;
+  }
+
+  async list() {
+    return this.prisma.project.findMany();
+  }
+
+  async findOne(uuid: UUID) {
+    return this.prisma.project.findUnique({
+      where: {
+        uuid,
+      },
+    });
+  }
+
+  async update(uuid: UUID, data: UpdateProjectDto) {
+    return this.prisma.project.update({
+      where: {
+        uuid,
+      },
+      data,
+    });
+  }
+
+  async updateStatus(uuid: UUID, data: UpdateProjectStatusDto) {
+    return this.prisma.project.update({
+      where: {
+        uuid,
+      },
+      data,
+    });
+  }
+
+  async remove(uuid: UUID) {
+    return this.prisma.project.delete({
+      where: {
+        uuid,
+      },
+    });
+  }
+
+  async sendWhatsAppMsg(response, cmd, payload) {
+    // send whatsapp message after added referal beneficiary to project
+    if (
+      response?.insertedData?.some((res) &#x3D;&gt; res?.walletAddress) &amp;&amp;
+      response?.cmd &#x3D;&#x3D;&#x3D; BeneficiaryJobs.BULK_REFER_TO_PROJECT &amp;&amp;
+      payload?.dto?.type &#x3D;&#x3D;&#x3D; BeneficiaryType.REFERRED
+    ) {
+      this.eventEmitter.emit(
+        ProjectEvents.BENEFICIARY_ADDED_TO_PROJECT,
+        payload.dto
+      );
+    }
+    //send message to all admin
+    if (response?.id &amp;&amp; cmd?.cmd &#x3D;&#x3D;&#x3D; ProjectJobs.REQUEST_REDEMPTION) {
+      this.eventEmitter.emit(ProjectEvents.REQUEST_REDEMPTION);
+    }
+    if (
+      response?.vendordata?.length &gt; 0 &amp;&amp;
+      cmd?.cmd &#x3D;&#x3D;&#x3D; ProjectJobs.UPDATE_REDEMPTION
+    ) {
+      this.eventEmitter.emit(
+        ProjectEvents.UPDATE_REDEMPTION,
+        response.vendordata
+      );
+    }
+  }
+
+  async sendCommand(
+    cmd,
+    payload,
+    timeoutValue &#x3D; MS_TIMEOUT,
+    client: ClientProxy,
+    action: string,
+    user: any
+  ) {
+    try {
+      console.log(&quot;CMD&quot;, cmd);
+      const requiresUser &#x3D; userRequiredActions.has(action);
+      console.log({ requiresUser });
+      console.log(&quot;Payload&quot;, payload);
+      console.log(&quot;User&quot;, user);
+
+      return client
+        .send(cmd, {
+          ...payload,
+          ...(requiresUser &amp;&amp; { user }),
+        })
+        .pipe(
+          timeout(timeoutValue),
+          tap((response) &#x3D;&gt; {
+            this.sendWhatsAppMsg(response, cmd, payload);
+          })
+        );
+
+    } catch (err) {
+      console.log(&#x27;Err&#x27;, err);
+    }
+  }
+
+  async executeMetaTxRequest(params: any, uuid: string, trigger?: any) {
+    const payload: any &#x3D; { params, uuid };
+
+    if (trigger) payload.trigger &#x3D; trigger;
+
+    const res &#x3D; await this.metaTransactionQueue.add(
+      JOBS.META_TRANSACTION.ADD_QUEUE,
+      payload
+    );
+
+    return { txHash: res.data.hash, status: res.data.status };
+  }
+
+  async sendSucessMessage(uuid, payload) {
+    const { benId } &#x3D; payload;
+
+    this.eventEmitter.emit(ProjectEvents.REDEEM_VOUCHER, benId);
+    return this.client
+      .send({ cmd: &#x27;rahat.jobs.project.voucher_claim&#x27;, uuid }, {})
+      .pipe(timeout(MS_TIMEOUT));
+  }
+
+  async handleProjectActions({ uuid, action, payload, trigger, user }) {
+    //Note: This is a temporary solution to handle metaTx actions
+    const metaTxActions &#x3D; {
+      [MS_ACTIONS.ELPROJECT.REDEEM_VOUCHER]: async () &#x3D;&gt;
+        await this.executeMetaTxRequest(payload, uuid, trigger),
+      [MS_ACTIONS.ELPROJECT.PROCESS_OTP]: async () &#x3D;&gt;
+        await this.executeMetaTxRequest(payload, uuid, trigger),
+      [MS_ACTIONS.ELPROJECT.SEND_SUCCESS_MESSAGE]: async () &#x3D;&gt;
+        await this.sendSucessMessage(uuid, payload),
+      [MS_ACTIONS.ELPROJECT.ASSIGN_DISCOUNT_VOUCHER]: async () &#x3D;&gt;
+        await this.executeMetaTxRequest(payload, uuid, trigger),
+      [MS_ACTIONS.ELPROJECT.REQUEST_REDEMPTION]: async () &#x3D;&gt;
+        await this.executeMetaTxRequest(payload, uuid, trigger),
+    };
+
+    const actions &#x3D; {
+      ...cambodiaActions,
+      ...projectActions,
+      ...elActions,
+      ...aaActions,
+      ...beneficiaryActions,
+      ...vendorActions,
+      ...settingActions,
+      ...metaTxActions,
+      ...c2cActions,
+      ...cvaActions,
+      ...rpActions,
+    };
+
+    const actionFunc &#x3D; actions[action];
+    if (!actionFunc) {
+      throw new Error(&#x27;Please provide a valid action!&#x27;);
+    }
+    return await actionFunc(uuid, payload, (...args) &#x3D;&gt;
+      this.sendCommand(args[0], args[1], args[2], this.client, action, user)
+    );
+  }
+
+  // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;Only for testing&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+  async importTestBeneficiary(uuid: string, dto: TestKoboImportDto) {
+    dto.phone &#x3D; &#x60;+${dto.phone}&#x60;;
+    const { piiData, type, ...rest } &#x3D; createExtrasAndPIIData(dto);
+    const extrasPayload &#x3D; {
+      meta: dto.meta,
+      province: dto.province,
+      district: dto.district,
+      wardNo: dto.wardNo
+    }
+    const piiExist &#x3D; await this.checkPiiPhone(dto.phone);
+    if (piiExist) throw new Error(&#x27;Phone number already exists!&#x27;);
+    const koboPayload &#x3D; {
+      name: piiData.name,
+      phone: piiData.phone,
+      gender: dto.gender,
+      age: dto.age,
+      type: dto.type,
+      leadInterests: dto.leadInterests,
+      extras: extrasPayload
+    }
+    const row &#x3D; await this.prisma.koboBeneficiary.create({
+      data: koboPayload,
+    });
+
+    return this.client.send({ cmd: BeneficiaryJobs.CREATE }, { piiData, ...rest }).pipe(
+      timeout(MS_TIMEOUT),
+      switchMap((response) &#x3D;&gt; {
+        const cambodiaPayload &#x3D; {
+          uuid: response.uuid,
+          phone: dto.phone,
+          walletAddress: response.walletAddress,
+          type: dto?.type || &#x27;UNKNOWN&#x27;,
+          leadInterests: dto?.leadInterests || [],
+          extras: extrasPayload,
+        };
+        // 3. Send to project MS
+        return this.client
+          .send({ cmd: CAMBODIA_JOBS.BENEFICIARY.CREATE, uuid }, cambodiaPayload)
+          .pipe(
+            timeout(MS_TIMEOUT),
+            tap((response) &#x3D;&gt; {
+              // 4. Update status and addToProject
+              return this.addToProjectAndUpdate({
+                projectId: uuid,
+                beneficiaryId: response.uuid,
+                importId: row.uuid,
+              });
+            })
+          );
+      })
+    );
+  }
+
+
+  // TODO: fix cambodia specific country code
+  async importKoboBeneficiary(uuid: UUID, data: any) {
+    const benef: any &#x3D; this.mapKoboFields(data);
+    if (benef.type) benef.type &#x3D; benef.type.toUpperCase();
+    if (benef.type !&#x3D;&#x3D; &#x27;LEAD&#x27;) benef.phone &#x3D; genRandomPhone(&#x27;88&#x27;);
+    if (!benef.phone) throw new Error(&#x27;Phone number is required!&#x27;);
+
+    if (benef.gender) benef.gender &#x3D; benef.gender.toUpperCase();
+    if (benef.age) benef.age &#x3D; parseInt(benef.age);
+    if (benef.leadInterests) {
+      benef.leadInterests &#x3D; benef.leadInterests
+        .split(&#x27; &#x27;)
+        .map((item: string) &#x3D;&gt; item.trim().toUpperCase());
+    }
+    console.log({ NODE_ENV })
+    if (NODE_ENV &#x3D;&#x3D;&#x3D; &#x27;production&#x27;) {
+      benef.phone &#x3D; &#x60;${CAMBODIA_COUNTRY_CODE}${benef.phone}&#x60;;
+    } else benef.phone &#x3D; &#x60;+${benef.phone}&#x60;;
+    console.log(&quot;Beneficiary Phone&quot;, benef.phone);
+
+    const { piiData, type, ...rest } &#x3D; createExtrasAndPIIData(benef);
+    const extrasPayload &#x3D; {
+      meta: benef.meta,
+      occupation: benef.occupation || &#x27;UNKNOWN&#x27;,
+      province: benef.province || &#x27;UNKNOWN&#x27;,
+      district: benef.district || &#x27;UNKNOWN&#x27;,
+      commune: benef.commune || &#x27;UNKNOWN&#x27;,
+      village: benef.village || &#x27;UNKNOWN&#x27;,
+    }
+
+    const koboPayload &#x3D; {
+      name: piiData.name,
+      phone: piiData.phone,
+      gender: benef.gender,
+      age: benef.age,
+      type: benef.type,
+      leadInterests: benef.leadInterests,
+      extras: extrasPayload
+    }
+    // 1. Save to Kobo Import Logs
+    const row &#x3D; await this.prisma.koboBeneficiary.create({
+      data: koboPayload,
+    });
+    const piiExist &#x3D; await this.checkPiiPhone(benef.phone);
+    console.log({ piiExist });
+    if (piiExist) {
+      const discardedPayload &#x3D; {
+        ...piiData,
+        age: benef.age,
+        gender: benef.gender,
+        extras: { ...extrasPayload, type: benef.type, leadInterests: benef.leadInterests },
+      }
+      return this.saveToDiscarded(uuid, discardedPayload);
+    }
+    // 2. Save to Beneficiary and PII
+    return this.client.send({ cmd: BeneficiaryJobs.CREATE }, { piiData, ...rest }).pipe(
+      timeout(MS_TIMEOUT),
+      switchMap((response) &#x3D;&gt; {
+        const cambodiaPayload &#x3D; {
+          uuid: response.uuid,
+          phone: benef.phone,
+          walletAddress: response.walletAddress,
+          type: benef?.type || &#x27;UNKNOWN&#x27;,
+          leadInterests: benef?.leadInterests || [],
+          extras: extrasPayload,
+        };
+        // 3. Send to project MS
+        return this.client
+          .send({ cmd: CAMBODIA_JOBS.BENEFICIARY.CREATE, uuid }, cambodiaPayload)
+          .pipe(
+            timeout(MS_TIMEOUT),
+            tap((response) &#x3D;&gt; {
+              // 4. Update status and addToProject
+              return this.addToProjectAndUpdate({
+                projectId: uuid,
+                beneficiaryId: response.uuid,
+                importId: row.uuid,
+              });
+            })
+          );
+      })
+    );
+  }
+
+  async saveToDiscarded(uuid: string, discardedPayload: any) {
+    return this.client
+      .send(
+        { cmd: CAMBODIA_JOBS.BENEFICIARY.CREATE_DISCARDED, uuid },
+        discardedPayload
+      )
+      .pipe(timeout(MS_TIMEOUT));
+  }
+
+  async addToProjectAndUpdate({ projectId, beneficiaryId, importId }) {
+    await this.updateImportStatus(importId, KoboBeneficiaryStatus.SUCCESS);
+    return this.prisma.beneficiaryProject.create({
+      data: {
+        beneficiaryId: beneficiaryId,
+        projectId: projectId,
+      },
+    });
+  }
+
+  async updateImportStatus(uuid: string, status: KoboBeneficiaryStatus) {
+    return this.prisma.koboBeneficiary.update({
+      where: {
+        uuid: uuid,
+      },
+      data: {
+        status,
+      },
+    });
+  }
+
+  async checkPiiPhone(phone: string) {
+    return this.prisma.beneficiaryPii.findUnique({
+      where: {
+        phone,
+      },
+    });
+  }
+
+  mapKoboFields(payload: any) {
+    const mappedPayload &#x3D; {};
+    const meta &#x3D; {};
+
+    for (const key in payload) {
+      if (KOBO_FIELD_MAPPINGS[key]) {
+        mappedPayload[KOBO_FIELD_MAPPINGS[key]] &#x3D; payload[key];
+      } else {
+        meta[key] &#x3D; payload[key];
+      }
+    }
+    return { ...mappedPayload, meta };
+  }
+
+  async sendTestMsg(uuid: UUID) {
+    console.log({ uuid });
+    return this.client
+      .send({ cmd: &#x27;rahat.jobs.test&#x27;, uuid }, { msg: &#x27;This is test msg!&#x27; })
+      .pipe(timeout(MS_TIMEOUT));
+  }
+}</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProjectService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

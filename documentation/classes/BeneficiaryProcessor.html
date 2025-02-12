@@ -1,0 +1,1247 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@rahat-os/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">@rahat-os/source documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >BeneficiaryProcessor</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/beneficiary/src/processors/beneficiary.processor.ts</code>
+        </p>
+
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#logger" >logger</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#generateLink" >generateLink</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#importBeneficiaryLargeQueue" >importBeneficiaryLargeQueue</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#importTempBeneficiary" >importTempBeneficiary</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#sample" >sample</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(mailerService: MailerService, prisma: PrismaService, client: <a href="../strings/Client.html" target="_self">ClientProxy</a>, eventEmitter: EventEmitter2)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">apps/beneficiary/src/processors/beneficiary.processor.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>mailerService</td>
+                                                  
+                                                        <td>
+                                                                    <code>MailerService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>prisma</td>
+                                                  
+                                                        <td>
+                                                                    <code>PrismaService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>client</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../miscellaneous/variables.html#Client" target="_self" >ClientProxy</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>eventEmitter</td>
+                                                  
+                                                        <td>
+                                                                    <code>EventEmitter2</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logger"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>logger</b></span>
+                        <a href="#logger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Logger(BeneficiaryProcessor.name)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">apps/beneficiary/src/processors/beneficiary.processor.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateLink"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>generateLink</b></span>
+                        <a href="#generateLink"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateLink(job: Job<any>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Process(BeneficiaryJobs.GENERATE_LINK)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">apps/beneficiary/src/processors/beneficiary.processor.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>job</td>
+                                            <td>
+                                                        <code>Job&lt;any&gt;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="importBeneficiaryLargeQueue"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>importBeneficiaryLargeQueue</b></span>
+                        <a href="#importBeneficiaryLargeQueue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>importBeneficiaryLargeQueue(job: <a href="../undefineds/type.html" target="_self">Job&lt;literal type&gt;</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Process({name: undefined, concurrency: 1})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="115"
+                                    class="link-to-prism">apps/beneficiary/src/processors/beneficiary.processor.ts:115</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>job</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#type" target="_self" >Job&lt;literal type&gt;</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="importTempBeneficiary"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>importTempBeneficiary</b></span>
+                        <a href="#importTempBeneficiary"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>importTempBeneficiary(job: Job<any>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Process(BeneficiaryJobs.IMPORT_TEMP_BENEFICIARIES)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">apps/beneficiary/src/processors/beneficiary.processor.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>job</td>
+                                            <td>
+                                                        <code>Job&lt;any&gt;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sample"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>sample</b></span>
+                        <a href="#sample"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sample(job: Job<any>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Process(BeneficiaryJobs.UPDATE_STATS)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="39"
+                                    class="link-to-prism">apps/beneficiary/src/processors/beneficiary.processor.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>job</td>
+                                            <td>
+                                                        <code>Job&lt;any&gt;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { MailerService } from &#x27;@nestjs-modules/mailer&#x27;;
+import { Process, Processor } from &#x27;@nestjs/bull&#x27;;
+import { BadRequestException, Inject, Logger } from &#x27;@nestjs/common&#x27;;
+import { EventEmitter2 } from &#x27;@nestjs/event-emitter&#x27;;
+import { ClientProxy, RpcException } from &#x27;@nestjs/microservices&#x27;;
+import { CreateBeneficiaryDto } from &#x27;@rahataid/extensions&#x27;;
+import {
+  BeneficiaryEvents,
+  BeneficiaryJobs,
+  BQUEUE,
+  generateRandomWallet,
+  ProjectContants
+} from &#x27;@rahataid/sdk&#x27;;
+import { PrismaService } from &#x27;@rumsan/prisma&#x27;;
+import { Job } from &#x27;bull&#x27;;
+import { randomUUID, UUID } from &#x27;crypto&#x27;;
+import { splitBeneficiaryPII } from &#x27;../beneficiary/helpers&#x27;;
+import { handleMicroserviceCall } from &#x27;../utils/handleMicroserviceCall&#x27;;
+import { trimNonAlphaNumericValue } from &#x27;../utils/sanitize-data&#x27;;
+import {
+  findTempBenefGroups,
+  validateDupicatePhone,
+  validateDupicateWallet,
+} from &#x27;./processor.utils&#x27;;
+
+const BATCH_SIZE &#x3D; 500;
+
+@Processor(BQUEUE.RAHAT_BENEFICIARY)
+export class BeneficiaryProcessor {
+  private readonly logger &#x3D; new Logger(BeneficiaryProcessor.name);
+  constructor(
+    private readonly mailerService: MailerService,
+    private readonly prisma: PrismaService,
+    @Inject(ProjectContants.ELClient) private readonly client: ClientProxy,
+    private eventEmitter: EventEmitter2
+  ) { }
+
+  @Process(BeneficiaryJobs.UPDATE_STATS)
+  async sample(job: Job&lt;any&gt;) {
+    console.log(&#x27;sample&#x27;, job.data);
+  }
+
+  @Process(BeneficiaryJobs.IMPORT_TEMP_BENEFICIARIES)
+  async importTempBeneficiary(job: Job&lt;any&gt;) {
+    try {
+      const { groupUUID } &#x3D; job.data;
+      const tempGroup &#x3D; await this.prisma.tempGroup.findUnique({
+        where: { uuid: groupUUID },
+      });
+      const groups &#x3D; await findTempBenefGroups(this.prisma, groupUUID);
+      if (!groups.length) return;
+      const beneficiaries &#x3D; groups.map((f) &#x3D;&gt; f.tempBeneficiary);
+      if (!beneficiaries.length) return;
+
+      // Validate duplicate phones and wallets
+      const dupliPhones &#x3D; await validateDupicatePhone(
+        this.prisma,
+        beneficiaries
+      );
+      if (dupliPhones.length)
+        throw new Error(&#x60;Duplicate phones found: ${dupliPhones.toString()}&#x60;);
+      const dupliWallets &#x3D; await validateDupicateWallet(
+        this.prisma,
+        beneficiaries
+      );
+      if (dupliWallets.length)
+        throw new Error(
+          &#x60;Duplicate walletAddress found: ${dupliWallets.toString()}&#x60;
+        );
+
+      // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;Txn start&#x3D;&#x3D;&#x3D;&#x3D;
+      for (let i &#x3D; 0; i &lt; beneficiaries.length; i +&#x3D; BATCH_SIZE) {
+        console.log(&#x27;Batch&#x3D;&gt;&#x27;, i);
+        const batch &#x3D; beneficiaries.slice(i, i + BATCH_SIZE);
+        await this.prisma.$transaction(
+          async (txn) &#x3D;&gt; {
+            await importAndAddToGroup({ txn, beneficiaries: batch, tempGroup });
+          },
+          {
+            maxWait: 5000,
+            timeout: 25000,
+          }
+        );
+      }
+      // &#x3D;&#x3D;&#x3D;&#x3D;Txn start end&#x3D;&#x3D;&#x3D;
+      await removeTempGroup(this.prisma, tempGroup.uuid);
+    } catch (err) {
+      console.log(&#x27;Import Error&#x3D;&gt;&#x27;, err.message);
+      throw err;
+    }
+  }
+
+  @Process(BeneficiaryJobs.GENERATE_LINK)
+  async generateLink(job: Job&lt;any&gt;) {
+    console.log(job.data);
+    if (job.data) {
+      await this.mailerService.sendMail({
+        to: job.data.email,
+        from: &#x27;raghav.kattel@rumsan.net&#x27;,
+        subject: &#x27;Wallet Verification Link&#x27;,
+        template: &#x27;./wallet-verification&#x27;,
+        context: { encryptedData: job.data.encrypted, name: job.data.name },
+      });
+      console.log(&#x27;Email sent to&#x27;, job.data.email);
+      return true;
+    }
+
+    throw new BadRequestException();
+  }
+
+  @Process({
+    name: BeneficiaryJobs.IMPORT_BENEFICIARY_LARGE_QUEUE,
+    concurrency: 1,
+  })
+  async importBeneficiaryLargeQueue(
+    job: Job&lt;{
+      data: CreateBeneficiaryDto[];
+      projectUUID: UUID;
+      batchNumber: number;
+      ignoreExisting: boolean;
+      totalBatches: number;
+      automatedGroupOption: {
+        groupKey: string;
+      };
+    }&gt;
+  ) {
+    const {
+      data: beneficiaries,
+      projectUUID,
+      ignoreExisting,
+      batchNumber,
+      totalBatches,
+      automatedGroupOption,
+    } &#x3D; job.data;
+    // const canProceed &#x3D; await canProcessJob(job, this.logger);
+    // if (!canProceed) {
+    //   return; // Stop processing if the queue is busy
+    // }
+    // console.log(&#x60;Processing batch ${batchNumber} of ${totalBatches}&#x60;);
+
+    // Helper function to validate phone numbers and wallet addresses
+    const validateBeneficiaries &#x3D; async (
+      batch: CreateBeneficiaryDto[],
+      prisma: PrismaService
+    ) &#x3D;&gt; {
+      const phoneNumbers &#x3D; batch.map(
+        (beneficiary) &#x3D;&gt; beneficiary.piiData.phone
+      );
+      const walletAddresses &#x3D; batch
+        .map((beneficiary) &#x3D;&gt; beneficiary.walletAddress)
+        .filter(Boolean);
+
+      // Find duplicate phone numbers
+      const duplicatePhones &#x3D; await checkPhoneNumber(batch, prisma);
+      // Find duplicate wallet addresses if provided
+      const duplicateWallets &#x3D;
+        walletAddresses.length &gt; 0
+          ? await checkWalletAddress(batch, prisma)
+          : [];
+
+      if (!ignoreExisting) {
+        if (duplicatePhones.length &gt; 0) {
+          throw new RpcException(
+            &#x60;Duplicate phone numbers: ${duplicatePhones.join(&#x27;, &#x27;)}&#x60;
+          );
+        }
+
+        if (duplicateWallets.length &gt; 0) {
+          throw new RpcException(
+            &#x60;Duplicate wallet addresses: ${duplicateWallets.join(&#x27;, &#x27;)}&#x60;
+          );
+        }
+      } else {
+        // Filter out duplicates if &#x60;ignoreExisting&#x60; is true
+        return batch.filter(
+          (beneficiary) &#x3D;&gt;
+            !duplicatePhones.includes(beneficiary.piiData.phone) &amp;&amp;
+            !duplicateWallets.includes(beneficiary.walletAddress)
+        );
+      }
+
+      return batch;
+    };
+
+    // Log the size of the current batch being processed
+    console.log(
+      &#x60;Batch ${batchNumber} contains ${beneficiaries.length} beneficiaries.&#x60;
+    );
+
+    await this.prisma
+      .$transaction(
+        async (txn) &#x3D;&gt; {
+          // Validate and possibly filter out duplicates
+          const filteredBatch &#x3D; await validateBeneficiaries(
+            beneficiaries,
+            this.prisma
+          );
+          if (filteredBatch.length &#x3D;&#x3D;&#x3D; 0) {
+            console.log(
+              &#x60;Batch ${batchNumber} skipped, no new beneficiaries after filtering.&#x60;
+            );
+            return; // Skip the batch if there are no valid beneficiaries to process
+          }
+
+          // Pre-generate UUIDs and wallet addresses if necessary
+          filteredBatch.forEach((beneficiary) &#x3D;&gt; {
+            beneficiary.uuid &#x3D; beneficiary.uuid || randomUUID();
+            beneficiary.walletAddress &#x3D;
+              beneficiary.walletAddress || generateRandomWallet().address;
+          });
+
+          // Separate PII data and beneficiary data
+          const beneficiariesData &#x3D; filteredBatch.map(
+            ({ piiData, ...data }) &#x3D;&gt; data
+          );
+          const piiDataList &#x3D; filteredBatch.map(({ uuid, piiData }) &#x3D;&gt; ({
+            ...piiData,
+            uuid,
+          }));
+
+          // Insert beneficiaries in bulk
+          const insertedBeneficiaries &#x3D;
+            await txn.beneficiary.createManyAndReturn({
+              data: beneficiariesData,
+            }).catch((error) &#x3D;&gt; {
+              console.error(
+                &#x60;Failed to insert beneficiaries: ${error.message}&#x60;
+              );
+              throw new RpcException(
+                &#x60;Failed to insert beneficiaries: ${error.message}&#x60;
+              );
+            });
+
+          // // Retrieve inserted beneficiaries for linking PII data
+          // const insertedBeneficiaries &#x3D; await txn.beneficiary.findMany({
+          //   where: {
+          //     uuid: { in: filteredBatch.map((beneficiary) &#x3D;&gt; beneficiary.uuid) },
+          //   },
+          // });
+
+          // Map PII data with correct beneficiary IDs
+          const piiBulkInsertData &#x3D; piiDataList.map((piiData) &#x3D;&gt; {
+            const beneficiary &#x3D; insertedBeneficiaries.find(
+              (b) &#x3D;&gt; b.uuid &#x3D;&#x3D;&#x3D; piiData.uuid
+            );
+            return {
+              beneficiaryId: beneficiary.id,
+              ...piiData,
+              uuid: undefined,
+            }; // Remove temporary UUID
+          });
+
+          // Insert PII data in bulk
+          if (piiBulkInsertData.length &gt; 0) {
+            await txn.beneficiaryPii.createMany({ data: piiBulkInsertData });
+          }
+
+          // for automated grouping
+          let createdBenGroups;
+          if (automatedGroupOption.groupKey) {
+            const uniqueGroup &#x3D; [
+              ...new Set(
+                beneficiaries.map(
+                  (b) &#x3D;&gt; b[trimNonAlphaNumericValue(automatedGroupOption?.groupKey).toLowerCase()]
+                )
+              ),
+            ];
+
+
+            const groups &#x3D; await txn.beneficiaryGroup.findMany({
+              where: {
+                name: {
+                  in: uniqueGroup,
+                },
+              },
+            });
+            console.log(&#x27;groups&#x27;, groups)
+
+            const beneficiaryGroupData &#x3D; insertedBeneficiaries.map((b) &#x3D;&gt; {
+              const beneficiaryId &#x3D; b.uuid;
+              const beneficiaryGroupId &#x3D; groups.find(
+                (g) &#x3D;&gt;
+                  g.name &#x3D;&#x3D;&#x3D; b[trimNonAlphaNumericValue(automatedGroupOption?.groupKey).toLowerCase()]
+              ).uuid;
+              return {
+                beneficiaryId,
+                beneficiaryGroupId,
+              };
+            });
+
+            createdBenGroups &#x3D;
+              await txn.groupedBeneficiaries.createManyAndReturn({
+                data: beneficiaryGroupData,
+                skipDuplicates: true,
+                select: {
+                  Beneficiary: true,
+                  beneficiaryGroup: true,
+                  uuid: true,
+                },
+              }).catch((error) &#x3D;&gt; {
+                console.error(
+                  &#x60;Failed to insert beneficiaries: ${error.message}&#x60;
+                );
+                throw new RpcException(
+                  &#x60;Failed to insert beneficiaries: ${error.message}&#x60;
+                );
+              });
+          }
+
+          // Assign beneficiaries to the project if projectUUID is provided
+          if (projectUUID) {
+            // if (projectUUID &amp;&amp; !automatedGroupOption.groupKey) {
+            await txn.beneficiaryProject.createMany({
+              data: insertedBeneficiaries.map(({ uuid }) &#x3D;&gt; ({
+                beneficiaryId: uuid,
+                projectId: projectUUID,
+              })),
+            }).catch((error) &#x3D;&gt; {
+              console.error(
+                &#x60;Failed to assign beneficiaries to project: ${error.message}&#x60;
+              );
+              throw new RpcException(
+                &#x60;Failed to assign beneficiaries to project: ${error.message}&#x60;
+              );
+            });
+
+
+            const assignPromises &#x3D; insertedBeneficiaries.map((b) &#x3D;&gt; {
+              const projectPayload &#x3D; {
+                uuid: b.uuid,
+                walletAddress: b.walletAddress,
+                extras: {
+                  location: b?.location,
+                  ...(typeof b.extras &#x3D;&#x3D;&#x3D; &#x27;object&#x27; ? b.extras : {}),
+                },
+
+                isVerified: b?.isVerified,
+              };
+              return handleMicroserviceCall({
+                client: this.client.send(
+                  { cmd: BeneficiaryJobs.ADD_TO_PROJECT, uuid: projectUUID },
+                  projectPayload
+                ),
+                onSuccess: (response) &#x3D;&gt; {
+                  this.logger.log(
+                    &#x60;Successfully assigned beneficiary ${b.uuid} to project ${projectUUID}&#x60;
+                  );
+                  return response;
+                },
+                onError(error) {
+                  console.log(
+                    &#x27;Error assiging Beneficiaries to project.&#x27;,
+                    error
+                  );
+                  throw new RpcException(error.message);
+                },
+              });
+            });
+
+            await Promise.all(assignPromises);
+          }
+
+          // if (automatedGroupOption.groupKey &amp;&amp; projectUUID) {
+          //   // console.log(&#x27;createdGroups&#x27;, createdBenGroups);
+          //   const assignedGroupsToProject &#x3D; createdBenGroups.map((bg) &#x3D;&gt; {
+          //     const payload &#x3D; {
+          //       beneficiaryGroupId: bg.beneficiaryGroup.uuid,
+          //       projectId: projectUUID,
+          //     };
+          //     console.log(&#x27;payload&#x27;, payload);
+          //     return handleMicroserviceCall({
+          //       client: this.client.send(
+          //         {
+          //           cmd: BeneficiaryJobs.ASSIGN_GROUP_TO_PROJECT,
+          //           uuid: projectUUID,
+          //         },
+          //         payload
+          //       ),
+          //       onSuccess(response) {
+          //         console.log(&#x27;response&#x27;, response);
+          //         return response;
+          //       },
+          //       onError(error) {
+          //         console.log(&#x27;Error assiging Groups to project.&#x27;, error);
+          //         throw new RpcException(error.message);
+          //       },
+          //     });
+          //   });
+          //   await Promise.all(assignedGroupsToProject);
+          // }
+          console.log(&#x60;Successfully processed batch ${batchNumber}&#x60;);
+        },
+        {
+          timeout: 25000,
+        }
+      )
+      .catch((error) &#x3D;&gt; {
+        console.log(&#x27;Error importing Beneficiaries&#x27;, error)
+        console.error(
+          &#x60;Failed to process batch ${batchNumber}: ${error.message}&#x60;
+        );
+        throw new RpcException(&#x60;Batch ${batchNumber} failed: ${error.message}&#x60;);
+      });
+
+    this.eventEmitter.emit(
+      BeneficiaryEvents.BENEFICIARY_ASSIGNED_TO_PROJECT,
+      {
+        projectUuid: projectUUID,
+      }
+    );
+
+    return {
+      success: true,
+      message: &#x60;Batch ${batchNumber} of ${totalBatches} processed successfully.&#x60;,
+    };
+  }
+}
+
+// Helper functions to check for duplicates
+
+async function checkPhoneNumber(
+  beneficiaries: CreateBeneficiaryDto[],
+  prisma: PrismaService
+): Promise&lt;string[]&gt; {
+  const phoneNumbers &#x3D; beneficiaries.map(
+    (beneficiary) &#x3D;&gt; beneficiary.piiData.phone
+  );
+  const duplicates &#x3D; await prisma.beneficiaryPii.findMany({
+    where: { phone: { in: phoneNumbers } },
+    select: { phone: true },
+  });
+  return duplicates.map((dup) &#x3D;&gt; dup.phone);
+}
+
+async function checkWalletAddress(
+  beneficiaries: CreateBeneficiaryDto[],
+  prisma: PrismaService
+): Promise&lt;string[]&gt; {
+  const walletAddresses &#x3D; beneficiaries.map(
+    (beneficiary) &#x3D;&gt; beneficiary.walletAddress
+  );
+  const duplicates &#x3D; await prisma.beneficiary.findMany({
+    where: { walletAddress: { in: walletAddresses } },
+    select: { walletAddress: true },
+  });
+  return duplicates.map((dup) &#x3D;&gt; dup.walletAddress);
+}
+
+// Mock function to generate random wallet address
+
+//&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;Import helper txns&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+async function importAndAddToGroup({ txn, beneficiaries, tempGroup }) {
+  const { name, uuid: tempGUID } &#x3D; tempGroup;
+  const group &#x3D; await upsertGroup(txn, name);
+  for (const benef of beneficiaries) {
+    const { uuid, ...rest } &#x3D; benef;
+    const { piiData, nonPii } &#x3D; splitBeneficiaryPII(rest);
+    const newBenef &#x3D; await upsertBeneficiary(txn, nonPii);
+    const piiDataPayload &#x3D; { ...piiData, beneficiaryId: newBenef.id };
+    await upsertPiiData(txn, piiDataPayload);
+    await addBenefToGroup(txn, group.uuid, newBenef.uuid);
+    const removed &#x3D; await removeFromTempBenefGroup(txn, uuid, tempGUID);
+    await removeTempBeneficiary(txn, removed.tempBenefUID);
+  }
+}
+
+async function upsertBeneficiary(txn: any, data: any) {
+  return txn.beneficiary.upsert({
+    where: { walletAddress: data.walletAddress },
+    update: data,
+    create: data,
+  });
+}
+
+async function upsertPiiData(txn: any, data: any) {
+  return txn.beneficiaryPii.upsert({
+    where: { phone: data.phone },
+    update: data,
+    create: data,
+  });
+}
+
+async function addBenefToGroup(txn: any, groupUID: UUID, benefUID: UUID) {
+  const payload &#x3D; {
+    beneficiaryGroupId: groupUID,
+    beneficiaryId: benefUID,
+  };
+  return txn.groupedBeneficiaries.upsert({
+    where: {
+      beneficiaryGroupIdentifier: payload,
+    },
+    update: payload,
+    create: payload,
+  });
+}
+
+async function removeTempBeneficiary(txn: any, uuid: UUID) {
+  const rows &#x3D; await txn.tempBeneficiaryGroup.findMany({
+    where: { tempBenefUID: uuid },
+  });
+  if (rows.length) return;
+  return txn.tempBeneficiary.delete({ where: { uuid } });
+}
+
+async function upsertGroup(txn: any, name: string) {
+  return txn.beneficiaryGroup.upsert({
+    where: { name },
+    update: { name },
+    create: { name },
+  });
+}
+
+async function removeFromTempBenefGroup(
+  txn: any,
+  benefUID: UUID,
+  groupUUID: UUID
+) {
+  return txn.tempBeneficiaryGroup.delete({
+    where: {
+      tempBeneficiaryGroupIdentifier: {
+        tempBenefUID: benefUID,
+        tempGroupUID: groupUUID,
+      },
+    },
+  });
+}
+
+async function removeTempGroup(prisma: any, tempGroupUID: string) {
+  return prisma.tempGroup.delete({ where: { uuid: tempGroupUID } });
+}
+
+//&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; // End Import helper txns&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'BeneficiaryProcessor.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

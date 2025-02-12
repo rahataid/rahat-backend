@@ -53,7 +53,7 @@ class SeedProject extends commonLib {
     const deployerAccount = this.getDeployerWallet();
 
 
-    console.log('----------Depolying Rahat Access Manager-------------------');
+    console.log('----------Deploying Rahat Access Manager-------------------');
     const RahatAccessManager = await this.deployContract('RahatAccessManager', [
       deployerAccount.address,
     ]);
@@ -63,7 +63,7 @@ class SeedProject extends commonLib {
     };
 
     console.log(
-      '----------Depolying Rahat ERC7221Forwarder-------------------'
+      '----------Deploying Rahat ERC7221Forwarder-------------------'
     );
     const ERC2771Forwarder = await this.deployContract('ERC2771Forwarder', [
       'RahatForwarder',

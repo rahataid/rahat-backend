@@ -1,0 +1,857 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@rahat-os/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">@rahat-os/source documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-typealiases">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Type aliases</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#addBulkBeneficiaryToProject" title="libs/extensions/src/dtos/beneficiary/add.beneficiary.project.dto.ts" ><b>addBulkBeneficiaryToProject</b>&nbsp;&nbsp;&nbsp;(libs/.../add.beneficiary.project.dto.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#AppClient" title="libs/sdk/src/types/app.types.ts" ><b>AppClient</b>&nbsp;&nbsp;&nbsp;(libs/.../app.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ASSIGNTOPROJECT" title="libs/sdk/src/beneficiary/beneficiary.types.ts" ><b>ASSIGNTOPROJECT</b>&nbsp;&nbsp;&nbsp;(libs/.../beneficiary.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Beneficiary" title="libs/sdk/src/beneficiary/beneficiary.types.ts" ><b>Beneficiary</b>&nbsp;&nbsp;&nbsp;(libs/.../beneficiary.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#BeneficiaryClient" title="libs/sdk/src/types/client.types.ts" ><b>BeneficiaryClient</b>&nbsp;&nbsp;&nbsp;(libs/.../client.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ExceptionResponse" title="libs/sdk/src/types/exceptionResponse.types.ts" ><b>ExceptionResponse</b>&nbsp;&nbsp;&nbsp;(libs/.../exceptionResponse.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Grievance" title="libs/sdk/src/grievance/grievance.type.ts" ><b>Grievance</b>&nbsp;&nbsp;&nbsp;(libs/.../grievance.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#GrievanceClient" title="libs/sdk/src/clients/grievance.client.ts" ><b>GrievanceClient</b>&nbsp;&nbsp;&nbsp;(libs/.../grievance.client.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ImportTempBeneficiary" title="libs/sdk/src/beneficiary/beneficiary.types.ts" ><b>ImportTempBeneficiary</b>&nbsp;&nbsp;&nbsp;(libs/.../beneficiary.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#OptionalPagination" title="libs/sdk/src/clients/grievance.client.ts" ><b>OptionalPagination</b>&nbsp;&nbsp;&nbsp;(libs/.../grievance.client.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#OptionalPagination" title="libs/sdk/src/types/client.types.ts" ><b>OptionalPagination</b>&nbsp;&nbsp;&nbsp;(libs/.../client.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PrismaErrorToHttpCodeMap" title="apps/beneficiary/src/exceptions/prisma.filter.ts" ><b>PrismaErrorToHttpCodeMap</b>&nbsp;&nbsp;&nbsp;(apps/.../prisma.filter.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Project" title="libs/sdk/src/project/project.types.ts" ><b>Project</b>&nbsp;&nbsp;&nbsp;(libs/.../project.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ProjectActions" title="libs/sdk/src/project/project.types.ts" ><b>ProjectActions</b>&nbsp;&nbsp;&nbsp;(libs/.../project.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ProjectClient" title="libs/sdk/src/types/project.types.ts" ><b>ProjectClient</b>&nbsp;&nbsp;&nbsp;(libs/.../project.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#projectUuid" title="libs/extensions/src/dtos/beneficiary/add.beneficiary.project.dto.ts" ><b>projectUuid</b>&nbsp;&nbsp;&nbsp;(libs/.../add.beneficiary.project.dto.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#referrerBeneficiary" title="libs/extensions/src/dtos/beneficiary/add.beneficiary.project.dto.ts" ><b>referrerBeneficiary</b>&nbsp;&nbsp;&nbsp;(libs/.../add.beneficiary.project.dto.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#referrerVendor" title="libs/extensions/src/dtos/beneficiary/add.beneficiary.project.dto.ts" ><b>referrerVendor</b>&nbsp;&nbsp;&nbsp;(libs/.../add.beneficiary.project.dto.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Response" title="libs/sdk/src/types/response.types.ts" ><b>Response</b>&nbsp;&nbsp;&nbsp;(libs/.../response.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SendCommandFunction" title="libs/sdk/src/project/project.types.ts" ><b>SendCommandFunction</b>&nbsp;&nbsp;&nbsp;(libs/.../project.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SettingClient" title="libs/sdk/src/types/settings.clients.types.ts" ><b>SettingClient</b>&nbsp;&nbsp;&nbsp;(libs/.../settings.clients.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SettingInput" title="libs/sdk/src/settings/settings.types.ts" ><b>SettingInput</b>&nbsp;&nbsp;&nbsp;(libs/.../settings.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SettingList" title="libs/sdk/src/settings/settings.types.ts" ><b>SettingList</b>&nbsp;&nbsp;&nbsp;(libs/.../settings.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SettingResponse" title="libs/sdk/src/settings/settings.types.ts" ><b>SettingResponse</b>&nbsp;&nbsp;&nbsp;(libs/.../settings.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Stats" title="libs/sdk/src/types/response.types.ts" ><b>Stats</b>&nbsp;&nbsp;&nbsp;(libs/.../response.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TAuthApp" title="libs/sdk/src/app/app.types.ts" ><b>TAuthApp</b>&nbsp;&nbsp;&nbsp;(libs/.../app.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TempBeneficiary" title="libs/sdk/src/beneficiary/beneficiary.types.ts" ><b>TempBeneficiary</b>&nbsp;&nbsp;&nbsp;(libs/.../beneficiary.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TFile" title="libs/sdk/src/types/file.types.ts" ><b>TFile</b>&nbsp;&nbsp;&nbsp;(libs/.../file.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TPIIData" title="libs/sdk/src/beneficiary/beneficiary.types.ts" ><b>TPIIData</b>&nbsp;&nbsp;&nbsp;(libs/.../beneficiary.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#type" title="libs/extensions/src/dtos/beneficiary/add.beneficiary.project.dto.ts" ><b>type</b>&nbsp;&nbsp;&nbsp;(libs/.../add.beneficiary.project.dto.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ValidateWallet" title="libs/sdk/src/types/validateWallet.types.ts" ><b>ValidateWallet</b>&nbsp;&nbsp;&nbsp;(libs/.../validateWallet.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#VendorClient" title="libs/sdk/src/types/vendor.types.ts" ><b>VendorClient</b>&nbsp;&nbsp;&nbsp;(libs/.../vendor.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#VerifySignature" title="libs/sdk/src/types/verifySignature.types.ts" ><b>VerifySignature</b>&nbsp;&nbsp;&nbsp;(libs/.../verifySignature.types.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>libs/extensions/src/dtos/beneficiary/add.beneficiary.project.dto.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addBulkBeneficiaryToProject"></a>
+                    <span class="name "><b>addBulkBeneficiaryToProject</b><a href="#addBulkBeneficiaryToProject"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="projectUuid"></a>
+                    <span class="name "><b>projectUuid</b><a href="#projectUuid"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>UUID</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="referrerBeneficiary"></a>
+                    <span class="name "><b>referrerBeneficiary</b><a href="#referrerBeneficiary"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/variables.html" target="_self" >UUID | undefined</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="referrerVendor"></a>
+                    <span class="name "><b>referrerVendor</b><a href="#referrerVendor"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/variables.html" target="_self" >UUID | undefined</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="type"></a>
+                    <span class="name "><b>type</b><a href="#type"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/enumerations.html#BeneficiaryType" target="_self" >BeneficiaryType</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/types/app.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AppClient"></a>
+                    <span class="name "><b>AppClient</b><a href="#AppClient"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/beneficiary/beneficiary.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ASSIGNTOPROJECT"></a>
+                    <span class="name "><b>ASSIGNTOPROJECT</b><a href="#ASSIGNTOPROJECT"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Beneficiary"></a>
+                    <span class="name "><b>Beneficiary</b><a href="#Beneficiary"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ImportTempBeneficiary"></a>
+                    <span class="name "><b>ImportTempBeneficiary</b><a href="#ImportTempBeneficiary"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TempBeneficiary"></a>
+                    <span class="name "><b>TempBeneficiary</b><a href="#TempBeneficiary"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TPIIData"></a>
+                    <span class="name "><b>TPIIData</b><a href="#TPIIData"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/types/client.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="BeneficiaryClient"></a>
+                    <span class="name "><b>BeneficiaryClient</b><a href="#BeneficiaryClient"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OptionalPagination"></a>
+                    <span class="name "><b>OptionalPagination</b><a href="#OptionalPagination"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>Partial&lt;Pagination&gt;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/types/exceptionResponse.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ExceptionResponse"></a>
+                    <span class="name "><b>ExceptionResponse</b><a href="#ExceptionResponse"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/grievance/grievance.type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Grievance"></a>
+                    <span class="name "><b>Grievance</b><a href="#Grievance"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/clients/grievance.client.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="GrievanceClient"></a>
+                    <span class="name "><b>GrievanceClient</b><a href="#GrievanceClient"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OptionalPagination"></a>
+                    <span class="name "><b>OptionalPagination</b><a href="#OptionalPagination"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>Partial&lt;Pagination&gt;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/beneficiary/src/exceptions/prisma.filter.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PrismaErrorToHttpCodeMap"></a>
+                    <span class="name "><b>PrismaErrorToHttpCodeMap</b><a href="#PrismaErrorToHttpCodeMap"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../classes/Stat.html" target="_self" >Record&lt;string | StatusCodes&gt;</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/project/project.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Project"></a>
+                    <span class="name "><b>Project</b><a href="#Project"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ProjectActions"></a>
+                    <span class="name "><b>ProjectActions</b><a href="#ProjectActions"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SendCommandFunction"></a>
+                    <span class="name "><b>SendCommandFunction</b><a href="#SendCommandFunction"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/types/project.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ProjectClient"></a>
+                    <span class="name "><b>ProjectClient</b><a href="#ProjectClient"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/types/response.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Response"></a>
+                    <span class="name "><b>Response</b><a href="#Response"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Stats"></a>
+                    <span class="name "><b>Stats</b><a href="#Stats"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/types/settings.clients.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SettingClient"></a>
+                    <span class="name "><b>SettingClient</b><a href="#SettingClient"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/settings/settings.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SettingInput"></a>
+                    <span class="name "><b>SettingInput</b><a href="#SettingInput"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SettingList"></a>
+                    <span class="name "><b>SettingList</b><a href="#SettingList"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SettingResponse"></a>
+                    <span class="name "><b>SettingResponse</b><a href="#SettingResponse"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/app/app.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TAuthApp"></a>
+                    <span class="name "><b>TAuthApp</b><a href="#TAuthApp"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/types/file.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TFile"></a>
+                    <span class="name "><b>TFile</b><a href="#TFile"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/types/validateWallet.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ValidateWallet"></a>
+                    <span class="name "><b>ValidateWallet</b><a href="#ValidateWallet"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/types/vendor.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="VendorClient"></a>
+                    <span class="name "><b>VendorClient</b><a href="#VendorClient"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/sdk/src/types/verifySignature.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="VerifySignature"></a>
+                    <span class="name "><b>VerifySignature</b><a href="#VerifySignature"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/typealiases.html#type" target="_self" >literal type</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-typealiases';
+            var COMPODOC_CURRENT_PAGE_URL = 'typealiases.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

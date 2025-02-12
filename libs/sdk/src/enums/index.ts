@@ -5,6 +5,12 @@ export enum Gender {
   UKNOWN = 'UNKNOWN',
 }
 
+export enum KoboBeneficiaryStatus {
+  PENDING = 'PENDING',
+  FAILED = 'FAILED',
+  SUCCESS = 'SUCCESS'
+}
+
 export enum BeneficiaryType {
   REFERRED = 'REFERRED',
   ENROLLED = 'ENROLLED',

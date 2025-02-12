@@ -1,7 +1,7 @@
 import { Module } from "@nestjs/common";
-import { RahatProcessor } from "./rahat.processor";
-import { ProjectProcessor } from "./project.processor";
 import { ClientsModule, Transport } from "@nestjs/microservices";
+import { ProjectProcessor } from "./project.processor";
+import { RahatProcessor } from "./rahat.processor";
 
 @Module({
     imports: [

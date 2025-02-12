@@ -30,7 +30,10 @@ migrate_seed() {
     pnpm seed:aadevsettings $current_dir
     pnpm seed:cvadevsettings $current_dir
     pnpm seed:rpdevsettings $current_dir
+    pnpm seed:kenyadevsettings $current_dir
+    pnpm seed:cambodiadevsettings $current_dir
     pnpm seed:chainsettings
+    npx ts-node prisma/seed.communication-settings.ts
 }
 
 create_rahat_volumes() {
@@ -90,6 +93,7 @@ contract_setup(){
 }
 
 graph_setup() {
+    pnpm graph:codegen
     pnpm graph:create-local
     graph_url=$(pnpm graph:deploy-local | grep -o 'http://[^ ]*' | tail -1)
     export graph_url

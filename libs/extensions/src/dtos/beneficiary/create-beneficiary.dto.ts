@@ -151,7 +151,7 @@ export class CreateBeneficiaryDto implements Beneficiary {
     },
   })
   @IsOptional()
-  piiData?: TPIIData;
+  piiData: TPIIData;
 
   @ApiProperty({
     example: [randomUUID().toString()],

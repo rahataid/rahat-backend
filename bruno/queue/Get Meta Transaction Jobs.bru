@@ -1,0 +1,29 @@
+
+meta {
+  name: get-meta-txn-jobs
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{url}}/queue/meta-txn-jobs
+  query: {
+    status: delayed
+    name: rahat.jobs.meta.process_transaction
+    startDate: 2024-01-01
+    endDate: 2024-12-31
+  }
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body: isJson
+}
+
+tests {
+  test('should return list of meta transaction jobs', async () => {
+    const data = res.getBody();
+    expect(data).to.have.property('data');
+  });
+}

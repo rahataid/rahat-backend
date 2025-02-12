@@ -1,0 +1,3707 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@rahat-os/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">@rahat-os/source documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >RoleGranted</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/graph/generated/schema.ts</code>
+        </p>
+
+
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code>Entity</code>
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#load" >load</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#loadInBlock" >loadInBlock</a>
+                            </li>
+                            <li>
+                                <a href="#save" >save</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#id" >id</a>
+                                </li>
+                                <li>
+                                    <a href="#roleId" >roleId</a>
+                                </li>
+                                <li>
+                                    <a href="#account" >account</a>
+                                </li>
+                                <li>
+                                    <a href="#delay" >delay</a>
+                                </li>
+                                <li>
+                                    <a href="#since" >since</a>
+                                </li>
+                                <li>
+                                    <a href="#newMember" >newMember</a>
+                                </li>
+                                <li>
+                                    <a href="#blockNumber" >blockNumber</a>
+                                </li>
+                                <li>
+                                    <a href="#blockTimestamp" >blockTimestamp</a>
+                                </li>
+                                <li>
+                                    <a href="#transactionHash" >transactionHash</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(id: Bytes)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="627" class="link-to-prism">apps/graph/generated/schema.ts:627</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>id</td>
+                                                  
+                                                        <td>
+                                                                    <code>Bytes</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="load"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>load</b></span>
+                        <a href="#load"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>load(id: Bytes)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="651"
+                                    class="link-to-prism">apps/graph/generated/schema.ts:651</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                        <code>Bytes</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>RoleGranted | null</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadInBlock"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>loadInBlock</b></span>
+                        <a href="#loadInBlock"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadInBlock(id: Bytes)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="645"
+                                    class="link-to-prism">apps/graph/generated/schema.ts:645</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                        <code>Bytes</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>RoleGranted | null</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="save"></a>
+                    <span class="name">
+                        <span ><b>save</b></span>
+                        <a href="#save"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>save()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="633"
+                                    class="link-to-prism">apps/graph/generated/schema.ts:633</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+            <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="id"></a>
+                        <span class="name"><b>id</b><a href="#id"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>id()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="657" class="link-to-prism">apps/graph/generated/schema.ts:657</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>id(value: Bytes)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="666" class="link-to-prism">apps/graph/generated/schema.ts:666</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                        <code>Bytes</code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="roleId"></a>
+                        <span class="name"><b>roleId</b><a href="#roleId"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>roleId()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="670" class="link-to-prism">apps/graph/generated/schema.ts:670</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>roleId(value: BigInt)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="679" class="link-to-prism">apps/graph/generated/schema.ts:679</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                        <code>BigInt</code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="account"></a>
+                        <span class="name"><b>account</b><a href="#account"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>account()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="683" class="link-to-prism">apps/graph/generated/schema.ts:683</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>account(value: Bytes)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="692" class="link-to-prism">apps/graph/generated/schema.ts:692</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                        <code>Bytes</code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="delay"></a>
+                        <span class="name"><b>delay</b><a href="#delay"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>delay()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="696" class="link-to-prism">apps/graph/generated/schema.ts:696</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>delay(value: BigInt)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="705" class="link-to-prism">apps/graph/generated/schema.ts:705</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                        <code>BigInt</code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="since"></a>
+                        <span class="name"><b>since</b><a href="#since"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>since()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="709" class="link-to-prism">apps/graph/generated/schema.ts:709</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>since(value: BigInt)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="718" class="link-to-prism">apps/graph/generated/schema.ts:718</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                        <code>BigInt</code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="newMember"></a>
+                        <span class="name"><b>newMember</b><a href="#newMember"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>newMember()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="722" class="link-to-prism">apps/graph/generated/schema.ts:722</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>newMember(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="731" class="link-to-prism">apps/graph/generated/schema.ts:731</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="blockNumber"></a>
+                        <span class="name"><b>blockNumber</b><a href="#blockNumber"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>blockNumber()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="735" class="link-to-prism">apps/graph/generated/schema.ts:735</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>blockNumber(value: BigInt)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="744" class="link-to-prism">apps/graph/generated/schema.ts:744</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                        <code>BigInt</code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="blockTimestamp"></a>
+                        <span class="name"><b>blockTimestamp</b><a href="#blockTimestamp"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>blockTimestamp()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="748" class="link-to-prism">apps/graph/generated/schema.ts:748</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>blockTimestamp(value: BigInt)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="757" class="link-to-prism">apps/graph/generated/schema.ts:757</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                        <code>BigInt</code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="transactionHash"></a>
+                        <span class="name"><b>transactionHash</b><a href="#transactionHash"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>transactionHash()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="761" class="link-to-prism">apps/graph/generated/schema.ts:761</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>transactionHash(value: Bytes)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="770" class="link-to-prism">apps/graph/generated/schema.ts:770</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                        <code>Bytes</code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  TypedMap,
+  Entity,
+  Value,
+  ValueKind,
+  store,
+  Bytes,
+  BigInt,
+  BigDecimal,
+} from &quot;@graphprotocol/graph-ts&quot;;
+
+export class OperationCanceled extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save OperationCanceled entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type OperationCanceled must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;OperationCanceled&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): OperationCanceled | null {
+    return changetype&lt;OperationCanceled | null&gt;(
+      store.get_in_block(&quot;OperationCanceled&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): OperationCanceled | null {
+    return changetype&lt;OperationCanceled | null&gt;(
+      store.get(&quot;OperationCanceled&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get operationId(): Bytes {
+    let value &#x3D; this.get(&quot;operationId&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set operationId(value: Bytes) {
+    this.set(&quot;operationId&quot;, Value.fromBytes(value));
+  }
+
+  get nonce(): BigInt {
+    let value &#x3D; this.get(&quot;nonce&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set nonce(value: BigInt) {
+    this.set(&quot;nonce&quot;, Value.fromBigInt(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class OperationExecuted extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save OperationExecuted entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type OperationExecuted must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;OperationExecuted&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): OperationExecuted | null {
+    return changetype&lt;OperationExecuted | null&gt;(
+      store.get_in_block(&quot;OperationExecuted&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): OperationExecuted | null {
+    return changetype&lt;OperationExecuted | null&gt;(
+      store.get(&quot;OperationExecuted&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get operationId(): Bytes {
+    let value &#x3D; this.get(&quot;operationId&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set operationId(value: Bytes) {
+    this.set(&quot;operationId&quot;, Value.fromBytes(value));
+  }
+
+  get nonce(): BigInt {
+    let value &#x3D; this.get(&quot;nonce&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set nonce(value: BigInt) {
+    this.set(&quot;nonce&quot;, Value.fromBigInt(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class OperationScheduled extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save OperationScheduled entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type OperationScheduled must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;OperationScheduled&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): OperationScheduled | null {
+    return changetype&lt;OperationScheduled | null&gt;(
+      store.get_in_block(&quot;OperationScheduled&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): OperationScheduled | null {
+    return changetype&lt;OperationScheduled | null&gt;(
+      store.get(&quot;OperationScheduled&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get operationId(): Bytes {
+    let value &#x3D; this.get(&quot;operationId&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set operationId(value: Bytes) {
+    this.set(&quot;operationId&quot;, Value.fromBytes(value));
+  }
+
+  get nonce(): BigInt {
+    let value &#x3D; this.get(&quot;nonce&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set nonce(value: BigInt) {
+    this.set(&quot;nonce&quot;, Value.fromBigInt(value));
+  }
+
+  get schedule(): BigInt {
+    let value &#x3D; this.get(&quot;schedule&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set schedule(value: BigInt) {
+    this.set(&quot;schedule&quot;, Value.fromBigInt(value));
+  }
+
+  get caller(): Bytes {
+    let value &#x3D; this.get(&quot;caller&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set caller(value: Bytes) {
+    this.set(&quot;caller&quot;, Value.fromBytes(value));
+  }
+
+  get target(): Bytes {
+    let value &#x3D; this.get(&quot;target&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set target(value: Bytes) {
+    this.set(&quot;target&quot;, Value.fromBytes(value));
+  }
+
+  get data(): Bytes {
+    let value &#x3D; this.get(&quot;data&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set data(value: Bytes) {
+    this.set(&quot;data&quot;, Value.fromBytes(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class RoleAdminChanged extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save RoleAdminChanged entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type RoleAdminChanged must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;RoleAdminChanged&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): RoleAdminChanged | null {
+    return changetype&lt;RoleAdminChanged | null&gt;(
+      store.get_in_block(&quot;RoleAdminChanged&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): RoleAdminChanged | null {
+    return changetype&lt;RoleAdminChanged | null&gt;(
+      store.get(&quot;RoleAdminChanged&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get roleId(): BigInt {
+    let value &#x3D; this.get(&quot;roleId&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set roleId(value: BigInt) {
+    this.set(&quot;roleId&quot;, Value.fromBigInt(value));
+  }
+
+  get admin(): BigInt {
+    let value &#x3D; this.get(&quot;admin&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set admin(value: BigInt) {
+    this.set(&quot;admin&quot;, Value.fromBigInt(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class RoleGrantDelayChanged extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(
+      id !&#x3D; null,
+      &quot;Cannot save RoleGrantDelayChanged entity without an ID&quot;,
+    );
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type RoleGrantDelayChanged must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;RoleGrantDelayChanged&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): RoleGrantDelayChanged | null {
+    return changetype&lt;RoleGrantDelayChanged | null&gt;(
+      store.get_in_block(&quot;RoleGrantDelayChanged&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): RoleGrantDelayChanged | null {
+    return changetype&lt;RoleGrantDelayChanged | null&gt;(
+      store.get(&quot;RoleGrantDelayChanged&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get roleId(): BigInt {
+    let value &#x3D; this.get(&quot;roleId&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set roleId(value: BigInt) {
+    this.set(&quot;roleId&quot;, Value.fromBigInt(value));
+  }
+
+  get delay(): BigInt {
+    let value &#x3D; this.get(&quot;delay&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set delay(value: BigInt) {
+    this.set(&quot;delay&quot;, Value.fromBigInt(value));
+  }
+
+  get since(): BigInt {
+    let value &#x3D; this.get(&quot;since&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set since(value: BigInt) {
+    this.set(&quot;since&quot;, Value.fromBigInt(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class RoleGranted extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save RoleGranted entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type RoleGranted must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;RoleGranted&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): RoleGranted | null {
+    return changetype&lt;RoleGranted | null&gt;(
+      store.get_in_block(&quot;RoleGranted&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): RoleGranted | null {
+    return changetype&lt;RoleGranted | null&gt;(
+      store.get(&quot;RoleGranted&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get roleId(): BigInt {
+    let value &#x3D; this.get(&quot;roleId&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set roleId(value: BigInt) {
+    this.set(&quot;roleId&quot;, Value.fromBigInt(value));
+  }
+
+  get account(): Bytes {
+    let value &#x3D; this.get(&quot;account&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set account(value: Bytes) {
+    this.set(&quot;account&quot;, Value.fromBytes(value));
+  }
+
+  get delay(): BigInt {
+    let value &#x3D; this.get(&quot;delay&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set delay(value: BigInt) {
+    this.set(&quot;delay&quot;, Value.fromBigInt(value));
+  }
+
+  get since(): BigInt {
+    let value &#x3D; this.get(&quot;since&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set since(value: BigInt) {
+    this.set(&quot;since&quot;, Value.fromBigInt(value));
+  }
+
+  get newMember(): boolean {
+    let value &#x3D; this.get(&quot;newMember&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      return false;
+    } else {
+      return value.toBoolean();
+    }
+  }
+
+  set newMember(value: boolean) {
+    this.set(&quot;newMember&quot;, Value.fromBoolean(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class RoleGuardianChanged extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save RoleGuardianChanged entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type RoleGuardianChanged must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;RoleGuardianChanged&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): RoleGuardianChanged | null {
+    return changetype&lt;RoleGuardianChanged | null&gt;(
+      store.get_in_block(&quot;RoleGuardianChanged&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): RoleGuardianChanged | null {
+    return changetype&lt;RoleGuardianChanged | null&gt;(
+      store.get(&quot;RoleGuardianChanged&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get roleId(): BigInt {
+    let value &#x3D; this.get(&quot;roleId&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set roleId(value: BigInt) {
+    this.set(&quot;roleId&quot;, Value.fromBigInt(value));
+  }
+
+  get guardian(): BigInt {
+    let value &#x3D; this.get(&quot;guardian&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set guardian(value: BigInt) {
+    this.set(&quot;guardian&quot;, Value.fromBigInt(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class RoleLabel extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save RoleLabel entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type RoleLabel must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;RoleLabel&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): RoleLabel | null {
+    return changetype&lt;RoleLabel | null&gt;(
+      store.get_in_block(&quot;RoleLabel&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): RoleLabel | null {
+    return changetype&lt;RoleLabel | null&gt;(
+      store.get(&quot;RoleLabel&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get roleId(): BigInt {
+    let value &#x3D; this.get(&quot;roleId&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set roleId(value: BigInt) {
+    this.set(&quot;roleId&quot;, Value.fromBigInt(value));
+  }
+
+  get label(): string {
+    let value &#x3D; this.get(&quot;label&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toString();
+    }
+  }
+
+  set label(value: string) {
+    this.set(&quot;label&quot;, Value.fromString(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class RoleRevoked extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save RoleRevoked entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type RoleRevoked must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;RoleRevoked&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): RoleRevoked | null {
+    return changetype&lt;RoleRevoked | null&gt;(
+      store.get_in_block(&quot;RoleRevoked&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): RoleRevoked | null {
+    return changetype&lt;RoleRevoked | null&gt;(
+      store.get(&quot;RoleRevoked&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get roleId(): BigInt {
+    let value &#x3D; this.get(&quot;roleId&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set roleId(value: BigInt) {
+    this.set(&quot;roleId&quot;, Value.fromBigInt(value));
+  }
+
+  get account(): Bytes {
+    let value &#x3D; this.get(&quot;account&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set account(value: Bytes) {
+    this.set(&quot;account&quot;, Value.fromBytes(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class TargetAdminDelayUpdated extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(
+      id !&#x3D; null,
+      &quot;Cannot save TargetAdminDelayUpdated entity without an ID&quot;,
+    );
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type TargetAdminDelayUpdated must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;TargetAdminDelayUpdated&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): TargetAdminDelayUpdated | null {
+    return changetype&lt;TargetAdminDelayUpdated | null&gt;(
+      store.get_in_block(&quot;TargetAdminDelayUpdated&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): TargetAdminDelayUpdated | null {
+    return changetype&lt;TargetAdminDelayUpdated | null&gt;(
+      store.get(&quot;TargetAdminDelayUpdated&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get target(): Bytes {
+    let value &#x3D; this.get(&quot;target&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set target(value: Bytes) {
+    this.set(&quot;target&quot;, Value.fromBytes(value));
+  }
+
+  get delay(): BigInt {
+    let value &#x3D; this.get(&quot;delay&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set delay(value: BigInt) {
+    this.set(&quot;delay&quot;, Value.fromBigInt(value));
+  }
+
+  get since(): BigInt {
+    let value &#x3D; this.get(&quot;since&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set since(value: BigInt) {
+    this.set(&quot;since&quot;, Value.fromBigInt(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class TargetClosed extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save TargetClosed entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type TargetClosed must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;TargetClosed&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): TargetClosed | null {
+    return changetype&lt;TargetClosed | null&gt;(
+      store.get_in_block(&quot;TargetClosed&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): TargetClosed | null {
+    return changetype&lt;TargetClosed | null&gt;(
+      store.get(&quot;TargetClosed&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get target(): Bytes {
+    let value &#x3D; this.get(&quot;target&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set target(value: Bytes) {
+    this.set(&quot;target&quot;, Value.fromBytes(value));
+  }
+
+  get closed(): boolean {
+    let value &#x3D; this.get(&quot;closed&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      return false;
+    } else {
+      return value.toBoolean();
+    }
+  }
+
+  set closed(value: boolean) {
+    this.set(&quot;closed&quot;, Value.fromBoolean(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class TargetFunctionRoleUpdated extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(
+      id !&#x3D; null,
+      &quot;Cannot save TargetFunctionRoleUpdated entity without an ID&quot;,
+    );
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type TargetFunctionRoleUpdated must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;TargetFunctionRoleUpdated&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): TargetFunctionRoleUpdated | null {
+    return changetype&lt;TargetFunctionRoleUpdated | null&gt;(
+      store.get_in_block(&quot;TargetFunctionRoleUpdated&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): TargetFunctionRoleUpdated | null {
+    return changetype&lt;TargetFunctionRoleUpdated | null&gt;(
+      store.get(&quot;TargetFunctionRoleUpdated&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get target(): Bytes {
+    let value &#x3D; this.get(&quot;target&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set target(value: Bytes) {
+    this.set(&quot;target&quot;, Value.fromBytes(value));
+  }
+
+  get selector(): Bytes {
+    let value &#x3D; this.get(&quot;selector&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set selector(value: Bytes) {
+    this.set(&quot;selector&quot;, Value.fromBytes(value));
+  }
+
+  get roleId(): BigInt {
+    let value &#x3D; this.get(&quot;roleId&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set roleId(value: BigInt) {
+    this.set(&quot;roleId&quot;, Value.fromBigInt(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class AuthorityUpdated extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save AuthorityUpdated entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type AuthorityUpdated must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;AuthorityUpdated&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): AuthorityUpdated | null {
+    return changetype&lt;AuthorityUpdated | null&gt;(
+      store.get_in_block(&quot;AuthorityUpdated&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): AuthorityUpdated | null {
+    return changetype&lt;AuthorityUpdated | null&gt;(
+      store.get(&quot;AuthorityUpdated&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get authority(): Bytes {
+    let value &#x3D; this.get(&quot;authority&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set authority(value: Bytes) {
+    this.set(&quot;authority&quot;, Value.fromBytes(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class TokenCreated extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save TokenCreated entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type TokenCreated must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;TokenCreated&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): TokenCreated | null {
+    return changetype&lt;TokenCreated | null&gt;(
+      store.get_in_block(&quot;TokenCreated&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): TokenCreated | null {
+    return changetype&lt;TokenCreated | null&gt;(
+      store.get(&quot;TokenCreated&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get tokenAddress(): Bytes {
+    let value &#x3D; this.get(&quot;tokenAddress&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set tokenAddress(value: Bytes) {
+    this.set(&quot;tokenAddress&quot;, Value.fromBytes(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class TokenMintedAndApproved extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(
+      id !&#x3D; null,
+      &quot;Cannot save TokenMintedAndApproved entity without an ID&quot;,
+    );
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type TokenMintedAndApproved must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;TokenMintedAndApproved&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): TokenMintedAndApproved | null {
+    return changetype&lt;TokenMintedAndApproved | null&gt;(
+      store.get_in_block(&quot;TokenMintedAndApproved&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): TokenMintedAndApproved | null {
+    return changetype&lt;TokenMintedAndApproved | null&gt;(
+      store.get(&quot;TokenMintedAndApproved&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get tokenAddress(): Bytes {
+    let value &#x3D; this.get(&quot;tokenAddress&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set tokenAddress(value: Bytes) {
+    this.set(&quot;tokenAddress&quot;, Value.fromBytes(value));
+  }
+
+  get approveAddress(): Bytes {
+    let value &#x3D; this.get(&quot;approveAddress&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set approveAddress(value: Bytes) {
+    this.set(&quot;approveAddress&quot;, Value.fromBytes(value));
+  }
+
+  get amount(): BigInt {
+    let value &#x3D; this.get(&quot;amount&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set amount(value: BigInt) {
+    this.set(&quot;amount&quot;, Value.fromBigInt(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class TokenMintedAndSent extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save TokenMintedAndSent entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type TokenMintedAndSent must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;TokenMintedAndSent&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): TokenMintedAndSent | null {
+    return changetype&lt;TokenMintedAndSent | null&gt;(
+      store.get_in_block(&quot;TokenMintedAndSent&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): TokenMintedAndSent | null {
+    return changetype&lt;TokenMintedAndSent | null&gt;(
+      store.get(&quot;TokenMintedAndSent&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get tokenAddress(): Bytes {
+    let value &#x3D; this.get(&quot;tokenAddress&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set tokenAddress(value: Bytes) {
+    this.set(&quot;tokenAddress&quot;, Value.fromBytes(value));
+  }
+
+  get receiverAddress(): Bytes {
+    let value &#x3D; this.get(&quot;receiverAddress&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set receiverAddress(value: Bytes) {
+    this.set(&quot;receiverAddress&quot;, Value.fromBytes(value));
+  }
+
+  get amount(): BigInt {
+    let value &#x3D; this.get(&quot;amount&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set amount(value: BigInt) {
+    this.set(&quot;amount&quot;, Value.fromBigInt(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class Approval extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save Approval entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type Approval must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;Approval&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): Approval | null {
+    return changetype&lt;Approval | null&gt;(
+      store.get_in_block(&quot;Approval&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): Approval | null {
+    return changetype&lt;Approval | null&gt;(store.get(&quot;Approval&quot;, id.toHexString()));
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get owner(): Bytes {
+    let value &#x3D; this.get(&quot;owner&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set owner(value: Bytes) {
+    this.set(&quot;owner&quot;, Value.fromBytes(value));
+  }
+
+  get spender(): Bytes {
+    let value &#x3D; this.get(&quot;spender&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set spender(value: Bytes) {
+    this.set(&quot;spender&quot;, Value.fromBytes(value));
+  }
+
+  get value(): BigInt {
+    let value &#x3D; this.get(&quot;value&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set value(value: BigInt) {
+    this.set(&quot;value&quot;, Value.fromBigInt(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class RahatTokenAuthorityUpdated extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(
+      id !&#x3D; null,
+      &quot;Cannot save RahatTokenAuthorityUpdated entity without an ID&quot;,
+    );
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type RahatTokenAuthorityUpdated must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;RahatTokenAuthorityUpdated&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): RahatTokenAuthorityUpdated | null {
+    return changetype&lt;RahatTokenAuthorityUpdated | null&gt;(
+      store.get_in_block(&quot;RahatTokenAuthorityUpdated&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): RahatTokenAuthorityUpdated | null {
+    return changetype&lt;RahatTokenAuthorityUpdated | null&gt;(
+      store.get(&quot;RahatTokenAuthorityUpdated&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get authority(): Bytes {
+    let value &#x3D; this.get(&quot;authority&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set authority(value: Bytes) {
+    this.set(&quot;authority&quot;, Value.fromBytes(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class OwnerAdded extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save OwnerAdded entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type OwnerAdded must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;OwnerAdded&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): OwnerAdded | null {
+    return changetype&lt;OwnerAdded | null&gt;(
+      store.get_in_block(&quot;OwnerAdded&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): OwnerAdded | null {
+    return changetype&lt;OwnerAdded | null&gt;(
+      store.get(&quot;OwnerAdded&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get param0(): Bytes {
+    let value &#x3D; this.get(&quot;param0&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set param0(value: Bytes) {
+    this.set(&quot;param0&quot;, Value.fromBytes(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class OwnerRemoved extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save OwnerRemoved entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type OwnerRemoved must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;OwnerRemoved&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): OwnerRemoved | null {
+    return changetype&lt;OwnerRemoved | null&gt;(
+      store.get_in_block(&quot;OwnerRemoved&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): OwnerRemoved | null {
+    return changetype&lt;OwnerRemoved | null&gt;(
+      store.get(&quot;OwnerRemoved&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get param0(): Bytes {
+    let value &#x3D; this.get(&quot;param0&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set param0(value: Bytes) {
+    this.set(&quot;param0&quot;, Value.fromBytes(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+}
+
+export class Transfer extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save Transfer entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type Transfer must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;Transfer&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): Transfer | null {
+    return changetype&lt;Transfer | null&gt;(
+      store.get_in_block(&quot;Transfer&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): Transfer | null {
+    return changetype&lt;Transfer | null&gt;(store.get(&quot;Transfer&quot;, id.toHexString()));
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get from(): Bytes {
+    let value &#x3D; this.get(&quot;from&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set from(value: Bytes) {
+    this.set(&quot;from&quot;, Value.fromBytes(value));
+  }
+
+  get to(): Bytes {
+    let value &#x3D; this.get(&quot;to&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set to(value: Bytes) {
+    this.set(&quot;to&quot;, Value.fromBytes(value));
+  }
+
+  get value(): BigInt {
+    let value &#x3D; this.get(&quot;value&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set value(value: BigInt) {
+    this.set(&quot;value&quot;, Value.fromBigInt(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value &#x3D; this.get(&quot;blockNumber&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set(&quot;blockNumber&quot;, Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value &#x3D; this.get(&quot;blockTimestamp&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set(&quot;blockTimestamp&quot;, Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value &#x3D; this.get(&quot;transactionHash&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set(&quot;transactionHash&quot;, Value.fromBytes(value));
+  }
+
+  get tokenAddress(): Bytes {
+    let value &#x3D; this.get(&quot;tokenAddress&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set tokenAddress(value: Bytes) {
+    this.set(&quot;tokenAddress&quot;, Value.fromBytes(value));
+  }
+}
+
+export class TokenDetail extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set(&quot;id&quot;, Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id &#x3D; this.get(&quot;id&quot;);
+    assert(id !&#x3D; null, &quot;Cannot save TokenDetail entity without an ID&quot;);
+    if (id) {
+      assert(
+        id.kind &#x3D;&#x3D; ValueKind.BYTES,
+        &#x60;Entities of type TokenDetail must have an ID of type Bytes but the id &#x27;${id.displayData()}&#x27; is of type ${id.displayKind()}&#x60;,
+      );
+      store.set(&quot;TokenDetail&quot;, id.toBytes().toHexString(), this);
+    }
+  }
+
+  static loadInBlock(id: Bytes): TokenDetail | null {
+    return changetype&lt;TokenDetail | null&gt;(
+      store.get_in_block(&quot;TokenDetail&quot;, id.toHexString()),
+    );
+  }
+
+  static load(id: Bytes): TokenDetail | null {
+    return changetype&lt;TokenDetail | null&gt;(
+      store.get(&quot;TokenDetail&quot;, id.toHexString()),
+    );
+  }
+
+  get id(): Bytes {
+    let value &#x3D; this.get(&quot;id&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set id(value: Bytes) {
+    this.set(&quot;id&quot;, Value.fromBytes(value));
+  }
+
+  get tokenAddress(): Bytes {
+    let value &#x3D; this.get(&quot;tokenAddress&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set tokenAddress(value: Bytes) {
+    this.set(&quot;tokenAddress&quot;, Value.fromBytes(value));
+  }
+
+  get name(): string {
+    let value &#x3D; this.get(&quot;name&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toString();
+    }
+  }
+
+  set name(value: string) {
+    this.set(&quot;name&quot;, Value.fromString(value));
+  }
+
+  get decimals(): BigInt {
+    let value &#x3D; this.get(&quot;decimals&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set decimals(value: BigInt) {
+    this.set(&quot;decimals&quot;, Value.fromBigInt(value));
+  }
+
+  get symbol(): string {
+    let value &#x3D; this.get(&quot;symbol&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toString();
+    }
+  }
+
+  set symbol(value: string) {
+    this.set(&quot;symbol&quot;, Value.fromString(value));
+  }
+
+  get totalSupply(): BigInt {
+    let value &#x3D; this.get(&quot;totalSupply&quot;);
+    if (!value || value.kind &#x3D;&#x3D; ValueKind.NULL) {
+      throw new Error(&quot;Cannot return null for a required field.&quot;);
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set totalSupply(value: BigInt) {
+    this.set(&quot;totalSupply&quot;, Value.fromBigInt(value));
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'RoleGranted.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

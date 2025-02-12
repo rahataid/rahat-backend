@@ -1,0 +1,24 @@
+meta {
+  name: get settings
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/projects/{{project_id}}/actions
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{access_token}}
+}
+
+body:json {
+  {
+    "action": "settings.list",
+    "payload": {
+   
+    }
+  }
+}

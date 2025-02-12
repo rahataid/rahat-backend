@@ -16,5 +16,7 @@ get_ganache_accounts
 
 migrate_seed
 
+pnpm graph:codegen
+
 contract_setup
 graph_setup

@@ -60,9 +60,19 @@ export class GrievanceService {
       }
     }
 
+    if (query.title) {
+      where.title = {
+        contains: query.title,
+        mode: 'insensitive'
+      }
+    }
+
     return paginate(this.prisma.grievance, {
       include,
-      where
+      where,
+      orderBy: {
+        createdAt: 'desc'
+      }
     }, {
       page: query.page,
       perPage: query.perPage,

@@ -1,0 +1,18 @@
+meta {
+  name: get-fiat-wallet
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{url}}/offramps/providers/actions
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "uuid":"a6527118-d88d-4cfb-be9a-e8307e08182a",
+    "action":"get-fiat-wallet"
+  }
+}

@@ -1,20 +1,17 @@
 import { PrismaClient } from '@prisma/client';
-import { PrismaService, } from '@rumsan/prisma';
+import { PrismaService } from '@rumsan/prisma';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
 const prisma = new PrismaService();
-const prismaClient = new PrismaClient()
+const prismaClient = new PrismaClient();
 
-const data =
-{
-  URL: "",
-  APP_ID: ""
-}
-
+const data = {
+  URL: '',
+  APP_ID: '',
+};
 
 const main = async () => {
-
   await prismaClient.setting.create({
     data: {
       value: data as object,
@@ -23,11 +20,10 @@ const main = async () => {
       name: 'COMMUNICATION',
       dataType: 'OBJECT',
 
-      requiredFields: ["URL", "APP_ID"],
-    }
+      requiredFields: ['URL', 'APP_ID'],
+    },
   });
 };
-
 
 main()
   .catch((e) => {

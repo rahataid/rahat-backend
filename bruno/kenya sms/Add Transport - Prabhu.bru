@@ -1,0 +1,32 @@
+meta {
+  name: Add Transport - Prabhu
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://connect.rumsan.net/api/v1/transports
+  body: json
+  auth: none
+}
+
+headers {
+  app-id: cm1ysl7p10026sahfam3ho2qe
+}
+
+body:json {
+  {
+      "app": "cm1ysl7p10026sahfam3ho2qe",
+     "name": "Prabhu SMS",
+      "type": "API",
+      "config": {
+          "url": "https://smsml.creationsoftnepal.com/SendBulkV1?token=",
+          "body": [
+              {
+                  "Message": "{%message.content%}",
+                  "MobileNumber": "{%address%}"
+              }
+          ]
+      }
+  }
+}
