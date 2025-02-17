@@ -251,5 +251,22 @@ export const MS_ACTIONS = {
     GET_ONE_GROUP: 'rpProject.beneficiary.getOneGroup',
     GET_BENEFICIARIES_DISBURSEMENTS: 'rpProject.beneficiaries.getDisbursements',
     UPDATE_OFFLINE: 'rpProject.offlineBeneficiaries.update',
-  }
+  },
+  COMMS: {
+    CREATE_CAMPAIGN: 'comms.campaign.create',
+    UPDATE_CAMPAIGN: 'comms.campaign.update',
+    CREATE_AUDIENCE: 'comms.campaign.create_audience',
+    CREATE_BULK_AUDIENCE: 'comms.campaign.create_bulk_audience',
+    GET_ALL_CAMPAIGN: 'comms.campaign.get',
+    GET_CAMPAIGN: 'comms.campaign.getOne',
+    GET_ALL_TRANSPORT: 'comms.campaign.get_transport',
+    GET_ALL_AUDIENCE: 'comms.campaign.get_audience',
+    TRIGGER_CAMPAIGN: 'comms.campaign.trigger',
+    GET_ALL_COMMUNICATION_LOGS: 'comms.campaign.communication_logs',
+    GET_ALL_COMMUNICATION_STATS: 'comms.campaign.communication_stats',
+    GET_CAMPAIGN_LOG: 'comms.campaign.log',
+    ADD_GROUP: 'comms.beneficiary.addGroup',
+    GET_ALL_GROUPS: 'comms.beneficiary.getAllGroups',
+    GET_ONE_GROUP: 'comms.beneficiary.getOneGroup',
+  },
 };

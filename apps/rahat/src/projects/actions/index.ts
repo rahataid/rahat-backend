@@ -4,5 +4,6 @@ export { beneficiaryActions, projectActions, settingActions, vendorActions } fro
 export { elActions } from './el.action';
 
 export { cambodiaActions } from './cambodia.action';
+export { commsActions } from './comms.action';
 export { cvaActions } from './cva.action';
 

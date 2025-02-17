@@ -43,6 +43,7 @@ export const JOBS = {
   CAMPAIGN: {
     CREATE_CAMPAIGN: 'rahat.jobs.campaign.create',
     LIST_CAMPAIGN: 'rahat.jobs.campaign.list',
+    UPDATE_CAMPAIGN: 'rahat.jobs.campaign.update',
     FINDONE_CAMPAIGN: 'rahat.jobs.campaign.get',
     GET_ALL_TRANSPORT: 'rahat.jobs.campaign.get_transport',
     GET_ALL_AUDIENCE: 'rahat.jobs.campaign.get_audience',
